@@ -93,25 +93,276 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
+body {
+    font: 20px/30px 'Puritan20Normal', Arial, serif;
+    min-width: 1000px;
+}
+h1, h2, h3, h4, h5 {
+    font-family: CabinRegular, sans-serif;
+}
+li {
+    list-style: none;
+}
 
 section {
+    box-shadow: 0 0 12px #666;
     min-height: 800px;
-    border: 1px solid #CCC;
 }
-
-#intro {
+article {
     text-align: center;
+    padding: 200px 0;
+    margin: 0 auto;
+}
+#content {
+    position: relative;
+    width: 100%;
+    position: relative;
+}
+#intro {
+    padding: 0 20%;
+}
+#intro, #contact {
+    background: url(../img/broken_noise.png);
+    color: #FFF;
+}
+#intro header {
+    padding-top: 20%;
+    max-width: 1000px;
+}
+#intro h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+#intro h1 .prelude {
+    font-size: .6em;
+    text-transform: none;
+    display: block;
+}
+#bio {
+    background: url(../img/mountain.png) no-repeat;
+}
+#bio article,
+#blog article {
+    background: rgba(255, 255, 255, .4);
+    padding: 2em;
+    margin: 200px auto;
+    box-shadow: 0 0 6px rgba(255, 255, 255, .2) inset;
+}
+#projects {
+    background: url(../img/old_mathematics.png);
+}
+#contact li,
+#projects li {
+    float: left;
+    width: 23%;
+    margin: 0 10px;
+}
+#projects ul {
+    border-top: 1px solid #CCC;
+    box-shadow: 0 3px 8px -5px rgba(0, 0, 0, .2) inset;
+    margin-top: 2em;
+    padding: 3em 0 0;
+}
+#projects article {
+    width: 80%;
+    padding-top: 80px;
+}
+#projects h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+}
+#projects h3 {
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+#blog a,
+#projects a {
+    text-decoration: none;
+    color: #141414;
+    -webkit-transition: all 1s;
+}
+#blog a:hover,
+#blog a:focus,
+#projects a:hover,
+#projects a:focus {
+    color: #000;
+    text-shadow: 0 0 8px rgba(112, 114, 182, .7);
+}
+#projects img {
+    height: 190px;
+    width: 190px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+}
+.lt-ie9 #projects img {
+    border: 0;
+}
+#projects aside {
+    color: #848484;
+    font-size: smaller;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#blog {
+    background: url(../img/park.png);
+    font-weight: bold;
+}
+#blog article {
+    background: rgba(0, 0, 0, .3);
+    margin-top: 300px;
+    font-size: 1.1em;
+    color: #FFF;
+    text-align: right;
+}
+#blog a {
+    color: #BE2D38;
+}
+#contact article {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+#contact .social {
+    font-size: 1.5em;
+    margin:2em auto 2em;
+    padding: 1em 0;
+    width:80%;
+    border-bottom: 1px solid #CCC;
+    box-shadow: 0 3px 10px -7px rgba(255, 255, 255, .5);
+}
+#contact li {
+    width: 15%;
+    margin-bottom: 20px;
+}
+#contact a {
+    display: inline-block;
+    color: #222;
+    text-decoration: none;
+    position: relative;
+}
+#contact a:active {
+    top: 2px;
+}
+.speckle {
+    position: absolute;
+    background: #F1F1F1;
+    opacity: .5;
+}
+.twinkle {
+    -moz-animation: flash 3s infinite alternate ease-in-out;
+    -ms-animation: flash 3s infinite alternate ease-in-out;
+    -webkit-animation: flash 3s infinite alternate ease-in-out;
+    animation: flash 5s infinite alternate;
+}
+form {
+    text-align: left;
+    width: 50%;
+    margin: auto;
+}
+form div {
+    margin-top: 1em;
+    width: 100%;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin: 0 auto .8em;
+}
+textarea,
+input[type="email"] {
+    display: block;
+    padding: 4px;
+    font-size: larger;
+    border: 1px solid #CCC;
+    width: 100%;
+    margin: auto;
+}
+input[type="submit"] {
+    background-color: #f3f3f3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#cecece));
+    background-image: -webkit-linear-gradient(top, #f3f3f3, #cecece);
+    background-image: -moz-linear-gradient(top, #f3f3f3, #cecece);
+    background-image: -ms-linear-gradient(top, #f3f3f3, #cecece);
+    background-image: linear-gradient(top, #f3f3f3, #cecece);
+    border: 1px solid #CCC;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+    display: block;
+    margin: auto;
+    padding: .3em 2em;
+    -webkit-transition: background .5s;
+    -ms-transition: background .5s;
+    -moz-transition: background .5s;
+    text-shadow: 0 1px 0 #FFF;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background-color: #cecece;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#f3f3f3));
+    background-image: -webkit-linear-gradient(top, #cecece, #f3f3f3);
+    background-image: -moz-linear-gradient(top, #cecece, #f3f3f3);
+    background-image: -ms-linear-gradient(top, #cecece, #f3f3f3);
+    background-image: linear-gradient(top, #cecece, #f3f3f3);
+}
+input[type="submit"]:active {
+    background-color: #b6b6b6;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#b6b6b6), to(#e9e9e9));
+    background-image: -webkit-linear-gradient(top, #b6b6b6, #e9e9e9);
+    background-image: -moz-linear-gradient(top, #b6b6b6, #e9e9e9);
+    background-image: -ms-linear-gradient(top, #b6b6b6, #e9e9e9);
+    background-image: linear-gradient(top, #b6b6b6, #e9e9e9);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .6);
 }
 
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
 
+@media only screen and (max-width: 1495px) {
+    #contact li {
+        width: 20%;
+    }
+}
+@media only screen and (max-width: 1290px) {
+    #projects li {
+        width: 47%;
+    }
+    #projects li:nth-child(odd) {
+        clear: left;
+    }
+    #contact li {
+        width: 26%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    article {
+        padding-top: 100px;
+    }
+    #intro {
+        padding: 10px;
+    }
+    #intro h1 {
+        font-size: 2em;
+    }
+    #projects li {
+        width: 100%;
+        float: none;
+        margin: 0 0 3.3em;
+    }
+    form {
+        width: 90%;
+    }
+    #contact article {
+        padding-bottom: 50px;
+    }
+}
 
+/* ==========================================================================
+   Retina
+   ========================================================================== */
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 
-
-
-
-
+}
 
 
 /* ==========================================================================
@@ -299,5 +550,14 @@ section {
     h2,
     h3 {
         page-break-after: avoid;
+    }
+}
+
+
+@-webkit-keyframes flash {
+    to {
+        opacity: 1;
+        background: #FFF;
+        box-shadow: 1px 1px 10px rgba(255, 255, 255, .4);
     }
 }

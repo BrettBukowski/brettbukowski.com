@@ -11,33 +11,111 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="css/curtain.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+        <div id="content" class="curtains">
+            <section id="intro" class="cover">
+            <!--[if lt IE 8]>
+                <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+                <header>
+                    <h1><span class="prelude">Hi, I'm</span> Brett Bukowski</h1>
+                </header>
+            </section>
 
-        <section id="intro">
-            <h1>Hello. I'm Brett Bukowski.</h1>
-        </section>
+            <section id="bio">
+                <article>
+                    <h2>I'm a software developer.</h2>
+                    <p>I love making apps, particularly web apps.</p>
+                    <p>I'm currently working at <strike>RightNow Technologies</strike> Oracle building a customer service web platform.</p>
+                    <p>I'm a Packers fan, UI enthusiast, comicbook reader, movie watcher, book learner.</p>
+                </article>
+            </section>
 
-        <section id="synopsis">
-        </section>
+            <section id="projects">
+                <article>
+                    <h2>Projects</h2>
+                    These are some of the things I work on for fun and always in order to scratch a particular itch.
+                    <ul>
+                        <li class="downisup">
+                            <img src="img/downisup.png" alt="screen shot of the app"/>
+                            <div class="details">
+                                <h3><a href="http://downisup.heroku.com/">Down is Up</a></h3>
+                                <aside>Rails</aside>
+                                <p>When markdown wasn't yet a household name I made a lil' side-by-side previewer.</p>
+                            </div>
+                        </li>
+                        <li class="catchlater">
+                            <img src="img/catchlater.png" alt="Catchlater logo"/>
+                            <div class="details">
+                                <h3><a href="http://catchlater.com/">Catchlater</a></h3>
+                                <aside>Rails + MongoDB</aside>
+                                <p>A watch it later service for web videos.</p>
+                            </div>
+                        </li>
+                        <li class="tweetstasher">
+                            <img src="img/tweetstasher.png" alt="Tweetstasher logo"/>
+                            <div class="details">
+                                <h3><a href="http://tweetstasher.com/">Tweetstasher</a></h3>
+                                <aside>Express + CouchDB</aside>
+                                <p>Save drafts of tweets to post later.</p>
+                            </div>
+                        </li>
+                        <li class="colorant">
+                            <img src="img/colorant.png" alt="Colorant logo"/>
+                            <div class="details">
+                                <h3><a href="http://colorantapp.com/">Colorant</a></h3>
+                                <aside>Pure Objective-C</aside>
+                                <p>My first iPhone app. Go in and inspect color details of your photos.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </section>
 
-        <section id="projects">
-        </section>
+            <section id="blog">
+                <article>
+                    <p>I also maintain a <strong>blog</strong> called <a href="http://gestaltism.com">Gestaltism</a> that explores factors of design and craftsmanship.</p>
+                </article>
+            </section>
 
-        <section id="blog">
-        </section>
-
-        <section id="contact">
-        </section>
-
+            <section id="contact">
+                <article>
+                    <h2>Contact</h2>
+                    <ul class="clearfix social">
+                        <li><a class="icon-twitter" href="https://twitter.com/brettbukowski"><span class="visuallyhidden">Twitter</span></a></li>
+                        <li><a class="icon-facebook" href="https://facebook.com/brettbukowski"><span class="visuallyhidden">Facebook</span></a></li>
+                        <li><a class="icon-github" href="https://github.com/brettbukowski"><span class="visuallyhidden">Github</span></a></li>
+                        <li><a class="icon-instagram" href="https://instagram.com/brettbukowski"><span class="visuallyhidden">Instagram</span></a></li>
+                        <li><a class="icon-tumblr" href="http://valveofignatius.tumblr.com"><span class="visuallyhidden">Tumblr</span></a></li>
+                        <li><a class="icon-flickr" href="http://www.flickr.com/photos/bukowskib/"><span class="visuallyhidden">Flickr</span></a></li>
+                    </ul>
+                    <form class="clearfix">
+                        <div>
+                            <label>
+                                Email address
+                                <input type="email" required/>
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                Message
+                                <textarea rows="5" required></textarea>
+                            </label>
+                        </div>
+                        <input type="submit" value="Send"/>
+                    </form>
+                </article>
+            </section>
+        </div>
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/vendor/curtain.js"></script>
         <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </body>
 </html>
