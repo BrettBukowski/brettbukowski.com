@@ -361,7 +361,12 @@ input[type="submit"]:active {
    ========================================================================== */
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-
+    #intro, #contact {
+        background: url(../img/broken_noise@2x.png);
+    }
+    #projects {
+        background: url(../img/old_mathematics@2x.png);
+    }
 }
 
 
