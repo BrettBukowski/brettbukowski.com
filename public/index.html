@@ -9,11 +9,7 @@
         <title>Brett Bukowski</title>
         <meta name="description" content="Brett Bukowski - software maker">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/curtain.css">
-        <link rel="stylesheet" href="css/fonts.css">
-        <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
+        <link rel="stylesheet" href="assets/application.css">
     </head>
     <body>
         <div id="content" class="curtains">
@@ -29,9 +25,9 @@
             <section id="bio">
                 <article>
                     <h2>I'm a software developer.</h2>
-                    <p>I love making apps, particularly web apps.</p>
+                    <p>I love building things, particularly web apps.</p>
                     <p>I'm currently working at <strike>RightNow Technologies</strike> Oracle building a customer service web platform.</p>
-                    <p>I'm a Packers fan, UI enthusiast, comicbook reader, movie watcher, book learner.</p>
+                    <p>I'm a Packers fan, UI enthusiast, comicbook reader, movie watcher, book learner, gentleman coder.</p>
                 </article>
             </section>
 
@@ -93,17 +89,17 @@
                         <li><a class="icon-tumblr" href="http://valveofignatius.tumblr.com"><span class="visuallyhidden">Tumblr</span></a></li>
                         <li><a class="icon-flickr" href="http://www.flickr.com/photos/bukowskib/"><span class="visuallyhidden">Flickr</span></a></li>
                     </ul>
-                    <form class="clearfix">
+                    <form class="clearfix" action="/contact" method="post">
                         <div>
                             <label>
                                 Email address
-                                <input type="email" required/>
+                                <input type="email" name="email" required/>
                             </label>
                         </div>
                         <div>
                             <label>
                                 Message
-                                <textarea rows="5" required></textarea>
+                                <textarea rows="5" name="message" required></textarea>
                             </label>
                         </div>
                         <input type="submit" value="Send"/>
@@ -111,11 +107,9 @@
                 </article>
             </section>
         </div>
-        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/vendor/curtain.js"></script>
+        <script src="assets/application.js"></script>
         <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </body>
 </html>

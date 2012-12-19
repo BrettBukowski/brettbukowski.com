@@ -1,0 +1,5 @@
+source 'http://rubygems.org'
+gem 'thin'
+gem 'sinatra'
+gem 'mail', '~> 2.5'
+gem 'sprockets', '~> 2.0'

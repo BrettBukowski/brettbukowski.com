@@ -1,1 +1,0 @@
-/Users/brettbukowski/src/projects/curtain.js/curtain.js
