@@ -254,6 +254,13 @@ article {
     -webkit-animation: flash 3s infinite alternate ease-in-out;
     animation: flash 5s infinite alternate;
 }
+#formMessage {
+    background: #8cdbef;
+    color: #31489D;
+    padding: 10px;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 4px rgba(255, 255, 255, .5);
+}
 form {
     text-align: left;
     width: 50%;
@@ -311,6 +318,10 @@ input[type="submit"]:active {
     background-image: -ms-linear-gradient(top, #b6b6b6, #e9e9e9);
     background-image: linear-gradient(top, #b6b6b6, #e9e9e9);
     box-shadow: 0 0 1px rgba(0, 0, 0, .6);
+}
+input[type="submit"]:disabled {
+    background: #f3f3f3;
+    color: #555;
 }
 
 /* ==========================================================================

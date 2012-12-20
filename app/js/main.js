@@ -92,18 +92,65 @@ var retinaSwapper = Component.extend({
   }
 }, {
   isRetina: function() {
-    return window.devicePixelRatio > 1 || window.matchMedia && window.matchMedia(retinaSwapper.mediaQuery).matches;
+    return window.devicePixelRatio > 1 || (window.matchMedia && window.matchMedia(retinaSwapper.mediaQuery).matches);
   },
   // From <https://github.com/imulus/retinajs/blob/master/src/retina.js>
   mediaQuery: "(-webkit-min-device-pixel-ratio: 1.5),\
-                      (min--moz-device-pixel-ratio: 1.5),\
-                      (-o-min-device-pixel-ratio: 3/2),\
-                      (min-resolution: 1.5dppx)"
+                (min--moz-device-pixel-ratio: 1.5),\
+                (-o-min-device-pixel-ratio: 3/2),\
+                (min-resolution: 1.5dppx)"
 });
 
 new retinaSwapper($('#projects img')).swap();
 
 
 $('#content').curtain();
+
+
+var FormDealer = Component.extend({
+  submitButton: null,
+  form: null,
+  constructor: function() {
+    $(document).delegate('form', 'submit', Component.bind(this.onSubmit, this));
+  },
+  onSubmit: function(e) {
+      this.form = $(e.target);
+
+      e.preventDefault();
+
+      this.submitButton = this.form.find('input[type="submit"]');
+      this.submitButton
+        .val('Sending...')
+        .prop('disabled', true);
+
+      this.submitForm(this.form);
+  },
+  submitForm: function(form) {
+    $.ajax(form.attr('action'), {
+      data: form.serializeArray(),
+      type: form.attr('method') || 'POST',
+      dataType: 'json',
+      context: this
+    })
+      .done(this.onSuccess)
+      .fail(this.onFail);
+  },
+  onSuccess: function(response, status, xhr) {
+    if (response.sent) {
+      this.form.animate({ height: 0 }, 'slow', 'linear', function() {
+        $('#formMessage').html("Thanks for getting in touch! I'll respond to you presently.").removeClass('hidden');
+        $(this).remove();
+      });
+    }
+    else {
+      this.onFail();
+    }
+  },
+  onFail: function(xhr, status, error) {
+      $('#formMessage').html('Huh. Something... unexpected happened. Please try again.').removeClass('hidden');
+      this.submitButton.val('Send').prop('disabled', false);
+  }
+});
+new FormDealer();
 
 });
