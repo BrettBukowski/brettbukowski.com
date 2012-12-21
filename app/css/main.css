@@ -95,7 +95,6 @@ textarea {
 
 body {
     font: 20px/30px 'Puritan20Normal', Arial, serif;
-    min-width: 1000px;
 }
 h1, h2, h3, h4, h5 {
     font-family: CabinRegular, sans-serif;
@@ -107,6 +106,7 @@ li {
 section {
     box-shadow: 0 0 12px #666;
     min-height: 800px;
+    overflow: hidden;
 }
 article {
     text-align: center;
@@ -254,7 +254,7 @@ article {
     -webkit-animation: flash 3s infinite alternate ease-in-out;
     animation: flash 5s infinite alternate;
 }
-#formMessage {
+.message {
     background: #8cdbef;
     color: #31489D;
     padding: 10px;

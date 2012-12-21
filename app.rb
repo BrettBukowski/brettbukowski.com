@@ -13,7 +13,7 @@ end
 
 class RootController < App
   get '/' do
-    send_file File.join(settings.public_folder, 'index.html')
+    erb :index
   end
 
   post '/contact' do
@@ -43,13 +43,13 @@ MESSAGE
         if request.preferred_type == 'application/json'
           {:sent => true}.to_json
         else
-          request.preferred_type
+          erb :index, :locals => {:message => "Thanks for getting in touch! I'll respond presently."}
         end
       else
         if request.preferred_type == 'application/json'
           {:sent => false}.to_json
         else
-          "sent"
+          erb :index, :locals => {:message => "There was a problem. Check the form and please try again."}
         end
       end
     end

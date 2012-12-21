@@ -147,7 +147,7 @@ var FormDealer = Component.extend({
     }
   },
   onFail: function(xhr, status, error) {
-      $('#formMessage').html('Huh. Something... unexpected happened. Please try again.').removeClass('hidden');
+      $('#formMessage').html('There was a problem. Check the form and please try again.').removeClass('hidden');
       this.submitButton.val('Send').prop('disabled', false);
   }
 });
