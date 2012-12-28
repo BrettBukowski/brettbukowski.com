@@ -1,4 +1,5 @@
 $(function() {
+$('#cover').remove();
 
 var Scroller = Component.extend({
   constructor: function(viewport, content) {
@@ -51,7 +52,7 @@ var Speckle = Component.extend({
   bounds: 3
 });
 
-for (var i = 0, parent = $('#intro,#contact'); i < 400; i++) {
+for (var i = 0, parent = $('#hi,#contact'); i < 400; i++) {
   new Speckle(parent);
 }
 
@@ -72,7 +73,7 @@ var bgScroller = Component.extend({
     this.view.css('backgroundPosition', (top * 2) + 'px -' + (top * this.scrollSpeed) + 'px');
   }
 });
-new bgScroller($($.browser.mozilla || $.browser.msie ? 'html' : 'body'), $('#intro,#contact'));
+// new bgScroller($($.browser.mozilla || $.browser.msie ? 'html' : 'body'), $('#hi,#contact'));
 
 
 var retinaSwapper = Component.extend({
@@ -103,9 +104,7 @@ var retinaSwapper = Component.extend({
 
 new retinaSwapper($('#projects img')).swap();
 
-
 $('#content').curtain();
-
 
 var FormDealer = Component.extend({
   submitButton: null,
