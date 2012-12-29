@@ -123,7 +123,7 @@ article {
     padding: 0 20%;
 }
 #hi, #contact {
-    background: url(/img/mountainflip.png) no-repeat 0 -480px, url(/img/broken_noise.png);
+    background: url(/img/mountainflip.png) no-repeat 0 -480px, url(/img/broken_noise.jpg);
     color: #FFF;
 }
 #contact {
@@ -145,7 +145,7 @@ article {
     display: block;
 }
 #bio {
-    background: url(/img/mountain.png) no-repeat;
+    background: url(/img/mountain.jpg) no-repeat;
 }
 #bio article,
 #blog article {
@@ -155,7 +155,7 @@ article {
     box-shadow: 0 0 6px rgba(255, 255, 255, .2) inset;
 }
 #projects {
-    background: url(/img/old_mathematics.png);
+    background: url(/img/old_mathematics.jpg);
 }
 #contact li,
 #projects li {
@@ -378,10 +378,10 @@ input[type="submit"]:disabled {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     #hi, #contact {
-        background: url(/img/broken_noise@2x.png);
+        background: url(/img/broken_noise@2x.jpg);
     }
     #projects {
-        background: url(/img/old_mathematics@2x.png);
+        background: url(/img/old_mathematics@2x.jpg);
     }
 }
 
