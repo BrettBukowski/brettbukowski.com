@@ -23,9 +23,7 @@ var Scroller = Component.extend({
       }
     }
   },
-  onResize: function() {
-
-  },
+  // onResize: function() {},
   toTop: function() {
     this.viewport.scrollTop(5);
   },
@@ -34,7 +32,7 @@ var Scroller = Component.extend({
   }
 });
 
-// new Scroller($($.browser.mozilla || $.browser.msie ? 'html' : 'body'), $('#content'));
+new Scroller($($.browser.mozilla || $.browser.msie ? 'html' : 'body'), $('#content'));
 
 
 var Speckle = Component.extend({
@@ -52,9 +50,9 @@ var Speckle = Component.extend({
   bounds: 3
 });
 
-for (var i = 0, parent = $('#hi,#contact'); i < 400; i++) {
-  new Speckle(parent);
-}
+// for (var i = 0, parent = $('#hi,#contact'); i < 400; i++) {
+  // new Speckle(parent);
+// }
 
 var bgScroller = Component.extend({
   view: null,
@@ -104,52 +102,6 @@ var retinaSwapper = Component.extend({
 
 new retinaSwapper($('#projects img')).swap();
 
-$('#content').curtain();
-
-var FormDealer = Component.extend({
-  submitButton: null,
-  form: null,
-  constructor: function() {
-    $(document).delegate('form', 'submit', Component.bind(this.onSubmit, this));
-  },
-  onSubmit: function(e) {
-      this.form = $(e.target);
-
-      e.preventDefault();
-
-      this.submitButton = this.form.find('input[type="submit"]');
-      this.submitButton
-        .val('Sending...')
-        .prop('disabled', true);
-
-      this.submitForm(this.form);
-  },
-  submitForm: function(form) {
-    $.ajax(form.attr('action'), {
-      data: form.serializeArray(),
-      type: form.attr('method') || 'POST',
-      dataType: 'json',
-      context: this
-    })
-      .done(this.onSuccess)
-      .fail(this.onFail);
-  },
-  onSuccess: function(response, status, xhr) {
-    if (response.sent) {
-      this.form.animate({ height: 0 }, 'slow', 'linear', function() {
-        $('#formMessage').html("Thanks for getting in touch! I'll respond to you presently.").removeClass('hidden');
-        $(this).remove();
-      });
-    }
-    else {
-      this.onFail();
-    }
-  },
-  onFail: function(xhr, status, error) {
-      $('#formMessage').html('There was a problem. Check the form and please try again.').removeClass('hidden');
-      this.submitButton.val('Send').prop('disabled', false);
-  }
-});
-new FormDealer();
+// $('#content').curtain();
 
 });
