@@ -1,0 +1,13 @@
+environment: production
+chdir: /var/brettbukowski/current/
+address: 127.0.0.1
+user: brett
+group: brett
+port: 4567
+pid: /var/brettbukowski/current/tmp/thin.pid
+rackup: /var/brettbukowski/current/config.ru
+log: /var/brettbukowski/current/log/thin.log
+max_conns: 1024
+timeout: 30
+max_persistent_conns: 512
+daemonize: true
