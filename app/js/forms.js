@@ -1,4 +1,4 @@
-!function() {
+$(function() {
 var FormDealer = Component.extend({
   submitButton: null,
   form: null,
@@ -44,4 +44,4 @@ var FormDealer = Component.extend({
   }
 });
 new FormDealer();
-}();
+});

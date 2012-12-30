@@ -1,4 +1,4 @@
-!function() {
+$(function() {
 
 var Panel = Component.extend({
   element: null,
@@ -15,8 +15,8 @@ var Panel = Component.extend({
     var newHeight = $(window).height() + 10;
     this.element.css('minHeight', newHeight);
     var top = this.element.offset().top;
-                this.element.attr('data-top', top)
-                .attr('data-bottom', top + this.element.height());
+                this.element.attr('data-top', Math.ceil(top))
+                .attr('data-bottom', Math.ceil(top + this.element.height()));
   }
 });
 
@@ -49,9 +49,9 @@ var Controller = Component.extend({
 
     this.monitor
       .scroll(Component.bind(this._updateScrollLocation, this))
+      .bind('popstate', Component.bind(this.goToHash, this))
       .trigger('scroll');
 
-    this.monitor.bind('popstate', Component.bind(this.goToHash, this));
 
     window.setInterval(Component.bind(this._updateHash, this), 100);
 
@@ -169,7 +169,7 @@ var Controller = Component.extend({
   },
 
   // Scrolls to the panel specified by the direction:
-  // first, last, next, prev
+  // -first, last, next, prev
   goToPanel: function(which) {
     var elementIndex = null;
 
@@ -208,4 +208,4 @@ $('#content > section').each(function() {
   panelController.addPanel(new Panel($(this)));
 });
 
-}();
+});
