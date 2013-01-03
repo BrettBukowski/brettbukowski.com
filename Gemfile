@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+gem 'rake'
 gem 'thin'
 gem 'sinatra'
 gem 'sprockets', '~> 2.0'
