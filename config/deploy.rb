@@ -7,6 +7,7 @@ server "brettbukowski.com", :app, :web
 
 set :user, 'brett'
 set :deploy_to, '/var/brettbukowski'
+set :deploy_to, '/var/www/brettbukowski'
 set :use_sudo, true
 set :deploy_via, :copy
 set :copy_strategy, :export
