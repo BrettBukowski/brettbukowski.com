@@ -28,17 +28,12 @@ class RootController < App
       if !email.empty? && email =~ /^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$/ && !message.empty?
         message = <<MESSAGE
 From: #{email} <#{email}>
-To: Brett Bukowski <brett.bukowski@gmail.com>
-Subject: Message Received From Contact Form
 
 #{message}
 MESSAGE
-        require 'net/smtp'
         require 'json'
 
-        Net::SMTP.start('pontifex.startlogic.com', 587, 'brettbukowski.com', 'root@brettbukowski.com', 'pkrpUiotFzDz6weC9F', :login) do |smtp|
-          smtp.send_message(message, 'root@brettbukowski.com', 'brett.bukowski@gmail.com')
-        end
+        `echo "#{message}" | mail -s "Message Received From Contact Form" brett.bukowski@gmail.com`
 
         if request.preferred_type == 'application/json'
           {:sent => true}.to_json
