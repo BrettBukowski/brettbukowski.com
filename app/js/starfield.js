@@ -1,15 +1,16 @@
 $(function() {
+
+if (!CanvasSupported()) return;
+
 var StarField = Component.extend({
   constructor: function(toAppend) {
-    if (!this.canvasSupported()) return;
-
-    toAppend.append('<div class="starFieldContainer"><canvas class="starField"></canvas></div>');
+    toAppend.append('<div class="canvasContainer"><canvas class="canvas"></canvas></div>');
     this.draw();
     $(window).resize(this.draw);
   },
 
   draw: function() {
-    var numberOfStars = $(window).outerWidth() / 9;
+    var numberOfStars = $(window).outerWidth() / 6;
 
     $('canvas').each(function(index) {
       var canvas = $(this),
@@ -35,11 +36,6 @@ var StarField = Component.extend({
         ctx.fill();
       }
     });
-  },
-
-  canvasSupported: function() {
-    var elem = document.createElement('canvas');
-    return !!(elem.getContext && elem.getContext('2d'));
   }
 });
 

@@ -59,4 +59,11 @@ Component.bind = bind;
 
 exports.Component = Component;
 
+function CanvasSupported() {
+    var elem = document.createElement('canvas');
+    return !!(elem.getContext && elem.getContext('2d'));
+}
+
+exports.CanvasSupported = CanvasSupported;
+
 }(window);

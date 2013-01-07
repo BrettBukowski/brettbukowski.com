@@ -126,7 +126,7 @@ section > header {
     position: relative;
 }
 #hi {
-    padding: 0 20%;
+    padding: 0 20% 4em;
 }
 #hi, #contact {
     background: url(/img/mountainflip.png) no-repeat 0 -480px, url(/img/broken_noise.jpg);
@@ -152,6 +152,7 @@ section > header {
 }
 #bio {
     background: url(/img/mountain.jpg) no-repeat;
+    background-size: cover;
 }
 #bio article,
 #blog article {
@@ -192,6 +193,8 @@ section > header {
     text-decoration: none;
     color: #141414;
     -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
 }
 #blog a:hover,
 #blog a:focus,
@@ -206,6 +209,15 @@ section > header {
     border: 6px solid #fff;
     border-radius: 50%;
 }
+.js #projects img {
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -ms-transition: all .6s;
+    cursor: pointer;
+}
+.js #projects img:hover {
+    box-shadow: 0 0 14px rgba(112, 114, 182, .7);
+}
 .lt-ie9 #projects img {
     border: 0;
 }
@@ -217,6 +229,7 @@ section > header {
 }
 #blog {
     background: url(/img/park.jpg);
+    background-size: cover;
     font-weight: bold;
 }
 #blog article {
@@ -239,7 +252,6 @@ section > header {
     padding: 1em 0;
     width:80%;
     border-bottom: 1px solid #CCC;
-    box-shadow: 0 3px 10px -7px rgba(255, 255, 255, .5);
 }
 #contact li {
     width: 15%;
@@ -254,7 +266,7 @@ section > header {
 #contact a:active {
     top: 2px;
 }
-.starFieldContainer {
+.canvasContainer {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -262,7 +274,7 @@ section > header {
     right: 0;
     z-index: 0;
 }
-.starField {
+.canvas {
     position: fixed;
     top: 0;
     left: 0;
