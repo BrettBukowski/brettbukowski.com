@@ -1,7 +1,5 @@
 !function(exports) {
 
-var emptyConstructor = function() {};
-
 function mix(receiver, provider) {
     for (key in provider) {
         receiver[key] = provider[key];
@@ -10,32 +8,24 @@ function mix(receiver, provider) {
     return receiver;
 }
 
-function inherit(parent, props, statics) {
-    var child = (props && props.hasOwnProperty('constructor'))
-        ? props.constructor
-        : function() { parent.apply(this, arguments); };
+function extend(props, statics) {
+    var parent = this,
+        child = (props && props.hasOwnProperty('constructor'))
+            ? props.constructor
+            : function() { parent.apply(this, arguments); };
 
     mix(child, parent);
+    mix(child, statics);
 
+    var emptyConstructor = function(){ this.constructor = child; };
     emptyConstructor.prototype = parent.prototype;
-    child.constructor = new emptyConstructor();
+    child.prototype = new emptyConstructor;
 
     if (props) {
         mix(child.prototype, props);
     }
-    if (statics) {
-        mix(child, statics);
-    }
 
-    child.prototype.constructor = child;
     child.__super__ = parent.prototype;
-
-    return child;
-}
-
-function extend(props, statics) {
-    var child = inherit(this, props, statics);
-    child.extend = this.extend;
 
     return child;
 }

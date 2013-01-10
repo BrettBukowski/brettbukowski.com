@@ -156,10 +156,14 @@ section > header {
 }
 #bio article,
 #blog article {
-    background: rgba(255, 255, 255, .4);
     padding: 2em;
     margin: 200px auto;
-    box-shadow: 0 0 6px rgba(255, 255, 255, .2) inset;
+}
+#bio article {
+    background: rgba(255, 255, 255, .2) url(/img/grid_noise.png);
+}
+#blog article {
+    background: rgba(255, 255, 255, .4);
 }
 #projects {
     background: url(/img/old_mathematics.jpg);
@@ -278,12 +282,6 @@ section > header {
     position: fixed;
     top: 0;
     left: 0;
-}
-.twinkle {
-    -moz-animation: flash 3s infinite alternate ease-in-out;
-    -ms-animation: flash 3s infinite alternate ease-in-out;
-    -webkit-animation: flash 3s infinite alternate ease-in-out;
-    animation: flash 5s infinite alternate;
 }
 .message {
     background: #8cdbef;
@@ -408,6 +406,9 @@ input[type="submit"]:disabled {
     }
     #projects {
         background: url(/img/old_mathematics@2x.jpg);
+    }
+    #bio article {
+        background-image: url(/img/grid_noise@2x.png);
     }
 }
 

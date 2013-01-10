@@ -2,6 +2,7 @@ $(function() {
 
 var Panel = Component.extend({
   element: null,
+  height: 0,
 
   constructor: function(element) {
     this.element = element;
@@ -14,9 +15,87 @@ var Panel = Component.extend({
   setDimensions: function() {
     var newHeight = $(window).height() + 10;
     this.element.css('minHeight', newHeight);
+
     var top = this.element.offset().top;
-                this.element.attr('data-top', Math.ceil(top))
-                .attr('data-bottom', Math.ceil(top + this.element.height()));
+    this.height = this.element.height();
+    this.element.attr('data-top', Math.ceil(top))
+                .attr('data-bottom', Math.ceil(top + this.height));
+  },
+
+  nowCurrent: function() {
+
+  },
+
+  notCurrent: function() {
+
+  }
+});
+
+var TopPanel = Panel.extend({
+  scrollY: 0,
+
+  canvas: null,
+
+  context: null,
+
+  monitor: $('body'),
+
+  animationID: null,
+
+  constructor: function(element) {
+    this.constructor.__super__.constructor.call(this, element);
+
+    if (!CanvasSupported()) return;
+
+    element.append('<div class="canvasContainer dotCanvas"><canvas class="canvas"></canvas></div>');
+    resizeCanvas(element);
+    this.canvas = element.find('.dotCanvas canvas')[0];
+    this.context = this.canvas.getContext('2d');
+    this.draw();
+  },
+
+  nowCurrent: function() {
+    $(window).bind('scroll.topPanel', Component.bind(this.updatePosition, this));
+    this.animate();
+  },
+
+  notCurrent: function() {
+    $(window).unbind('scroll.topPanel');
+    cancelAnimationFrame(this.animationID);
+  },
+
+  updatePosition: function() {
+    this.scrollY = this.monitor.scrollTop();
+  },
+
+  animate: function() {
+    this.animationID = requestAnimationFrame(Component.bind(this.animate, this));
+    this.draw();
+  },
+
+  draw: function() {
+    var ctx = this.context;
+
+    if (this.scrollY >= this.canvas.height || this.scrollY <= 0) {
+      ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      return;
+    }
+
+    var x = this.canvas.width / 2,
+        y = this.canvas.height - 200,
+        radius = this.scrollY,
+        grd = ctx.createRadialGradient(x, y, radius / 3, x, y, radius);
+
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    grd.addColorStop(0, "rgba(0, 0, 0, .1)");
+    grd.addColorStop(.2, "rgba(255, 255, 255, .1)");
+    grd.addColorStop(1, "transparent");
+    ctx.fillStyle = grd;
+
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+    ctx.fill();
   }
 });
 
@@ -96,18 +175,29 @@ var Controller = Component.extend({
   // Checks if the current page should update the location hash
   // and does so if it should
   _updateHash: function() {
-    var y = this.scrollY;
+    var y = this.scrollY,
+        prevPanelChanged = false;
 
     this._somePanels(function(panel, i) {
       if (i !== this.currentPanel &&
-          y >= parseInt(panel.attr('data-top'), 10) &&
-          y < parseInt(panel.attr('data-bottom'), 10)) {
+          y >= parseInt(panel.element.attr('data-top'), 10) &&
+          y < parseInt(panel.element.attr('data-bottom'), 10)) {
+        prevPanelChanged = this.currentPanel;
+
         this.currentPanel = i;
-        this._setHash(panel.attr('id'), panel.attr('data-title') || '');
+        panel.nowCurrent();
+        this._setHash(panel.element.attr('id'), panel.element.attr('data-title') || '');
 
         return true;
       }
     });
+
+    if (prevPanelChanged !== false) {
+      var prev = this.collection[prevPanelChanged];
+      if (prev) {
+        prev.notCurrent();
+      }
+    }
   },
 
   // Sets the hash
@@ -127,7 +217,7 @@ var Controller = Component.extend({
   // and the function returns the callback's return value.
   _somePanels: function(callback) {
     for (var returnVal, i = 0, collection = this.collection, len = collection.length; i < len; i++) {
-      returnVal = callback.call(this, collection[i].element, i);
+      returnVal = callback.call(this, collection[i], i);
       if (returnVal) return returnVal;
     }
   },
@@ -152,7 +242,7 @@ var Controller = Component.extend({
       hash = hash.substr(1);
       this._somePanels(function(panel) {
         if (panel.attr('id') === hash) {
-          return yPosition = panel.attr('data-top');
+          return yPosition = panel.element.attr('data-top');
         }
       })
     }
@@ -204,7 +294,9 @@ var Controller = Component.extend({
 
 var panelController = new Controller();
 
-$('#content > section').each(function() {
+panelController.addPanel(new TopPanel($('#hi')));
+
+$('#bio,#projects,#blog,#contact').each(function() {
   panelController.addPanel(new Panel($(this)));
 });
 

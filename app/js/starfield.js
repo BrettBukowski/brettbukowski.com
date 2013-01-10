@@ -4,24 +4,19 @@ if (!CanvasSupported()) return;
 
 var StarField = Component.extend({
   constructor: function(toAppend) {
-    toAppend.append('<div class="canvasContainer"><canvas class="canvas"></canvas></div>');
+    this.el = toAppend;
+    toAppend.append('<div class="canvasContainer"><canvas class="canvas starField"></canvas></div>');
     this.draw();
-    $(window).resize(this.draw);
+    $(window).resize(Component.bind(this.draw, this));
   },
 
   draw: function() {
+    resizeCanvas(this.el);
+
     var numberOfStars = $(window).outerWidth() / 6;
 
-    $('canvas').each(function(index) {
-      var canvas = $(this),
-          parent = canvas.parent(),
-          width = parent.outerWidth(),
-          height = parent.outerHeight();
-
-      canvas.attr('width', width)
-            .attr('height', height)
-
-      for (var i = 0, ctx = canvas[0].getContext('2d'), angle = Math.PI * 2; i < numberOfStars; i++) {
+    $('canvas.starField').each(function() {
+      for (var i = 0, canvas = $(this)[0], width = canvas.width, height = canvas.height, ctx = canvas.getContext('2d'), angle = Math.PI * 2; i < numberOfStars; i++) {
         ctx.beginPath();
         ctx.arc(
           Math.random() * width,  // x
@@ -31,7 +26,6 @@ var StarField = Component.extend({
           angle,                  // end angle
           true                    // clockwise
         );
-        // ctx.closePath();
         ctx.fillStyle = "rgba(255, 255, 255, " + Math.random() + ")";
         ctx.fill();
       }
