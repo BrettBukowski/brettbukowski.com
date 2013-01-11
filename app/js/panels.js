@@ -22,13 +22,9 @@ var Panel = Component.extend({
                 .attr('data-bottom', Math.ceil(top + this.height));
   },
 
-  nowCurrent: function() {
+  nowCurrent: function() {},
 
-  },
-
-  notCurrent: function() {
-
-  }
+  notCurrent: function() {}
 });
 
 var TopPanel = Panel.extend({
@@ -74,27 +70,21 @@ var TopPanel = Panel.extend({
   },
 
   draw: function() {
-    var ctx = this.context;
+    var ctx = this.context,
+        canvas = this.canvas,
+        width = canvas.width,
+        height = canvas.height;
 
-    if (this.scrollY >= this.canvas.height || this.scrollY <= 0) {
-      ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    if (this.scrollY >= height || this.scrollY <= 0) {
+      ctx.clearRect(0, 0, width, height);
       return;
     }
 
-    var x = this.canvas.width / 2,
-        y = this.canvas.height - 200,
-        radius = this.scrollY,
-        grd = ctx.createRadialGradient(x, y, radius / 3, x, y, radius);
+    ctx.clearRect(0, 0, width, height);
 
-    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-    grd.addColorStop(0, "rgba(0, 0, 0, .1)");
-    grd.addColorStop(.2, "rgba(255, 255, 255, .1)");
-    grd.addColorStop(1, "transparent");
-    ctx.fillStyle = grd;
-
+    ctx.fillStyle = 'rgba(107, 196, 202, .2)';
     ctx.beginPath();
-    ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+    ctx.arc(width / 2, height / 2, this.scrollY, 0, Math.PI * 2, true);
     ctx.fill();
   }
 });
