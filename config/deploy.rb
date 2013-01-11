@@ -3,15 +3,18 @@ set :repository,  "git://brettbukowski@bitbucket.org/brettbukowski/brettbukowski
 set :branch, "master"
 set :scm, :git
 
-server "brettbukowski.com", :app, :web
+server "gato", :app, :web
 
 set :user, 'brett'
-set :deploy_to, '/var/brettbukowski'
 set :deploy_to, '/var/www/brettbukowski'
 set :use_sudo, true
 set :deploy_via, :copy
 set :copy_strategy, :export
 default_run_options[:pty] = true
+
+set :rvm_ruby_string, 'ruby-1.9.3-p362'
+set :rvm_type, :system
+require 'rvm/capistrano'
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
