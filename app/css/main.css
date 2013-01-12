@@ -182,6 +182,7 @@ section > header {
 }
 #projects article {
     width: 80%;
+    overflow: hidden;
     padding-top: 80px;
 }
 #projects h2 {
