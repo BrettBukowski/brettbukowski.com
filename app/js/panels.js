@@ -112,6 +112,8 @@ var Controller = Component.extend({
     down:  40
   },
 
+  originalDocumentTitle: document.title,
+
   // Starts listening to all the events
   constructor: function() {
     this.monitor = $(window);
@@ -199,6 +201,7 @@ var Controller = Component.extend({
       // as the window snaps to the anchor location as soon
       // as the hash is changed
       window.history.pushState(hash, title, hash);
+      document.title = this.originalDocumentTitle + ' / ' + title;
     }
   },
 
