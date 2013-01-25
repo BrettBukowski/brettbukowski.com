@@ -6,7 +6,6 @@ var Scroller = Component.extend({
     this.scrollY = 0;
 
     $(window).scroll(Component.bind(this.onScroll, this));
-    // $(window).resize(this.onResize).trigger('resize');
   },
   onScroll: function() {
     var delta = this.viewport.scrollTop() - this.scrollY,
@@ -21,15 +20,25 @@ var Scroller = Component.extend({
       }
     }
   },
-  // onResize: function() {},
   toTop: function() {
     this.viewport.scrollTop(5);
   },
   toBottom: function() {
     this.viewport.scrollTop(this.content.outerHeight() - 5);
   }
+}, {
+  browser: (function() {
+    var ua = navigator.userAgent,
+        webkit = /AppleWebKit\/([^\s]*)/.test(ua);
+
+    return {
+      webkit:  webkit,
+      msie:    !webkit && /MSIE\s([^;]*)/.test(ua),
+      mozilla: !webkit && /Gecko\/([^\s]*)/.test(ua)
+    };
+  })()
 });
 
-new Scroller($($.browser.mozilla || $.browser.msie ? 'html' : 'body'), $('#content'));
+new Scroller($(Scroller.browser.mozilla || Scroller.browser.msie ? 'html' : 'body'), $('#content'));
 
 });
