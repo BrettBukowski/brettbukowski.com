@@ -1,6 +1,5 @@
 require 'bundler/setup'
 require 'uglifier'
-require 'cssmin'
 require './app'
 
 namespace :assets do
@@ -10,7 +9,7 @@ namespace :assets do
 
     minJS = Uglifier.compile(File.read('public/assets/application.js'), :mangle => true)
     File.open('public/assets/application.js', 'w') { |f| f.write(minJS) }
-    css = File.open('public/assets/application.css', 'r').read
-    File.open('public/assets/application.css', 'w') { |f| f.write(CSSMin.minify(css)) }
+    minCSS = File.open('public/assets/application.css', 'r').read.gsub!(/(\s{2,}|\n)/, '')
+    File.open('public/assets/application.css', 'w') { |f| f.write(minCSS) }
   end
 end
