@@ -403,7 +403,7 @@ input[type="submit"]:disabled {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     #hi, #contact {
-        background: url(/img/broken_noise@2x.jpg);
+        background: url(/img/mountainflip.png) no-repeat 0 -480px, url(/img/broken_noise@2x.jpg);
     }
     #projects {
         background: url(/img/old_mathematics@2x.jpg);
