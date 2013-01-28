@@ -6,4 +6,5 @@
 //= require line.js
 //= require panels.js
 //= require main.js
+//= require triangle.js
 //= require forms.js
