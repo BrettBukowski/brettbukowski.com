@@ -16,6 +16,10 @@ class RootController < App
     erb :index
   end
 
+  get '/resume' do
+    erb :resume
+  end
+
   post '/contact' do
     if request.form_data?
       given = Rack::Utils.parse_nested_query(request.body.read)

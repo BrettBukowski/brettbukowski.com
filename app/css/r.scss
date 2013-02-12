@@ -1,0 +1,116 @@
+/* MIXINS */
+@mixin img($path) {
+  background-image: url(/img/r/#{$path});
+}
+
+/* GENERICS */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  color: #222;
+  padding: 2em;
+  @include img('white_sand.png');
+}
+a {
+  color: #3C3B3B;
+  text-decoration: none;
+}
+p {
+  margin: 2px;
+}
+header {
+  border-bottom: 1px solid #222;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 4px;
+
+  &:after {
+    border-top: 1px solid #222;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    top: 98%;
+    width: 100%;
+  }
+
+  section {
+    padding:0 1em 1em;
+  }
+}
+
+/* SELECTORS */
+.name {
+  float: left;
+  width: 60%;
+}
+.info {
+  float: right;
+  width: 30%;
+  border-left: 1px solid #222;
+}
+.about {
+  margin: 2em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #222;
+}
+.skills, .education {
+  clear: left;
+  float: left;
+  width: 30%;
+  margin: 0 1em 1em 0;
+}
+#main {
+  width: 68%;
+  float: right;
+  overflow: hidden;
+}
+#main,
+.skills,
+.education {
+  background: #FFF;
+  padding: 1em;
+
+  h3 {
+    border-bottom: 1px solid #222;
+  }
+}
+
+/* RETINA */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  html {
+    @include img('white_sand@2x.png');
+  }
+}
+
+/* RESPONSIVE */
+@media screen and (max-width:900px) {
+  #main,
+  .skills,
+  .education {
+    float: none;
+    width: 100%;
+  }
+  #main {
+    margin-bottom: 1em;
+  }
+}
+@media screen and (max-width:650px) {
+  .info {
+    border-left: 0;
+    border-top: 1px solid #222;
+  }
+  .info,
+  .name {
+    float: none;
+    width: auto;
+  }
+}
+
+/* PRINT */
+@media print {
+
+}
