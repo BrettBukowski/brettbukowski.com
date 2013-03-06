@@ -1,5 +1,5 @@
 set :application, "brettbukowski"
-set :repository,  "git://brettbukowski@bitbucket.org/brettbukowski/brettbukowski.com.git"
+set :repository,  "https://brettbukowski:FpdY7jfpZmhJU6fb@bitbucket.org/brettbukowski/brettbukowski.com.git"
 set :branch, "master"
 set :scm, :git
 

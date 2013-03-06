@@ -17,7 +17,12 @@ class RootController < App
   end
 
   get '/resume' do
-    erb :resume
+    erb :resume, :locals => { :company_name => 'you' }
+  end
+
+  get '/resume/markdown' do
+    content_type 'text/plain'
+    File.read settings.views + '/resume.md'
   end
 
   post '/contact' do
