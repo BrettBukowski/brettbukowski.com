@@ -1,3 +1,4 @@
+// Swap out images for their 2x versions.
 $(function () {
 var retinaSwapper = Component.extend({
   constructor: function(toSwap) {

@@ -1,3 +1,4 @@
+// Drawing on bio panel.
 $(function() {
 
 if (!CanvasSupported()) return;

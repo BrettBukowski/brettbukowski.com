@@ -1,3 +1,4 @@
+// Panel behavior.
 $(function() {
 
 var Panel = Component.extend({
@@ -30,6 +31,8 @@ var Panel = Component.extend({
 var TopPanel = Panel.extend({
   scrollY: 0,
 
+  lastDrawPos: 0,
+
   canvas: null,
 
   context: null,
@@ -41,18 +44,27 @@ var TopPanel = Panel.extend({
   constructor: function(element) {
     this.constructor.__super__.constructor.call(this, element);
 
+    if (Browser.ios || Browser.android) {
+      // Don't do the fancy animation / image on low powered devices.
+      this.nowCurrent = this.notCurrent = function () {};
+      return;
+    }
+
+    this.loadBackground();
+
     if (!CanvasSupported()) return;
 
-    element.append('<div class="canvasContainer dotCanvas"><canvas class="canvas"></canvas></div>');
+    element.append('<div class="canvasContainer spireCanvas"><canvas class="canvas"></canvas></div>');
     resizeCanvas(element);
-    this.canvas = element.find('.dotCanvas canvas')[0];
+    this.canvas = element.find('.spireCanvas canvas')[0];
     this.context = this.canvas.getContext('2d');
     this.draw();
   },
 
   nowCurrent: function() {
-    $(window).bind('scroll.topPanel', Component.bind(this.updatePosition, this));
-    this.animate();
+    $(window).bind('scroll.topPanel', Component.bind(this._updatePosition, this));
+    this._updatePosition();
+    this._animate();
   },
 
   notCurrent: function() {
@@ -60,33 +72,200 @@ var TopPanel = Panel.extend({
     cancelAnimationFrame(this.animationID);
   },
 
-  updatePosition: function() {
+  _updatePosition: function() {
     this.scrollY = this.monitor.scrollTop();
   },
 
-  animate: function() {
-    this.animationID = requestAnimationFrame(Component.bind(this.animate, this));
+  _animate: function() {
+    this.animationID = requestAnimationFrame(Component.bind(this._animate, this));
     this.draw();
+  },
+
+coords: [
+      {
+        start: [125, 90],
+        points: [
+          50,
+          80,
+          120,
+          190
+        ]
+      },
+      {
+        start: [510, 220],
+        points: [
+          350,
+          400,
+          510,
+          550
+        ]
+      },
+      {
+        start: [590, 120],
+        points: [
+          560,
+          590,
+          610
+        ]
+      },
+      {
+        start: [770, 170],
+        points: [
+          680,
+          700,
+          790
+        ]
+      },
+      {
+        start: [930, 90],
+        points: [
+          820,
+          950,
+          1000
+        ]
+      },
+      {
+        start: [1150, 140],
+        points: [
+          1100,
+          1154,
+          1200
+        ]
+      },
+      {
+        start: [1250, 350],
+        points: [
+          1204,
+          1270
+        ]
+      },
+      {
+        start: [ 1400,370 ],
+        points: [
+          1280,
+          1300,
+          1400,
+          1450
+        ]
+      },
+      {
+        start: [ 1550,420 ],
+        points: [
+          1500,
+          1560,
+          1580
+        ]
+      },
+      {
+        start: [ 1600,400 ],
+        points: [
+          1580,
+          1640
+        ]
+      },
+      {
+        start: [ 1650,420 ],
+        points: [
+          1640
+        ]
+      },
+      {
+        start: [ 1700,410 ],
+        points: []
+      }
+    ],
+
+  updateCanvas: function () {
+    var scrollY = this.scrollY,
+        height = this.canvas.height;
+
+    if (scrollY > 300) {
+      $('.spireCanvas canvas').css({
+        position: 'absolute',
+        top: '300px'
+      });
+    }
+    else {
+      $('.spireCanvas canvas').css({
+        position: 'fixed',
+        top: '0'
+      });
+    }
   },
 
   draw: function() {
     var ctx = this.context,
         canvas = this.canvas,
+        coords = this.coords.slice(),
         width = canvas.width,
-        height = canvas.height;
+        height = canvas.height,
+        scrollY = this.scrollY;
 
-    if (this.scrollY >= height || this.scrollY <= 0) {
-      ctx.clearRect(0, 0, width, height);
-      return;
-    }
+    if (scrollY == this.lastDrawPos || scrollY >= height || scrollY < 0) return;
 
     ctx.clearRect(0, 0, width, height);
+    this.updateCanvas();
 
-    ctx.fillStyle = 'rgba(107, 196, 202, .2)';
-    ctx.beginPath();
-    ctx.arc(width / 2, height / 2, this.scrollY, 0, Math.PI * 2, true);
-    ctx.fill();
-  }
+    ctx.moveTo(0, 80);
+    while (coords.length) {
+      var coord = coords.shift();
+      var start = coord.start;
+      var points = coord.points.slice();
+
+      ctx.strokeStyle = 'rgba(255, 255, 255, .3)';
+      ctx.lineTo(start[0], start[1]);
+      ctx.stroke();
+
+      ctx.beginPath();
+
+      var delta = Math.min(10, scrollY - this.lastDrawPos);
+
+      while (points.length) {
+        var point = points.shift();
+        ctx.moveTo(start[0], start[1]);
+        if (point > start[0]) {
+          point -= ((scrollY / height) * ( (point - start[0]) ));
+        }
+        else {
+          point += ((scrollY / height) * ( (start[0] - point) ));
+        }
+        ctx.lineTo(point, -1);
+      }
+
+      ctx.lineWidth = '1';
+      ctx.strokeStyle = 'rgba(255, 255, 255, .1)';
+      ctx.stroke();
+      ctx.moveTo(start[0], start[1]);
+    }
+
+    this.lastDrawPos = this.scrollY;
+  },
+
+  loadBackground: function() {
+    var img = new Image(),
+        src = '/img/mountainflip.png',
+        loadBg = function () {
+          $('#hi,#contact').append('<img src="' + src + '" alt="">');
+          $('#hi img').animate({
+            top: '-450px'
+          }, 100, function () {
+            $(this).animate({
+              top: '-488px'
+            }, 300);
+          });
+        },
+        start = +new Date();
+
+    img.addEventListener('load', function () {
+      if ((+new Date()) - start < 1000) {
+        setTimeout(loadBg, 1000);
+      }
+      else {
+        loadBg();
+      }
+    });
+    img.src = src;
+  },
 });
 
 var Controller = Component.extend({

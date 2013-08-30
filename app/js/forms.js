@@ -1,3 +1,4 @@
+// Handles the contact form interaction.
 $(function() {
 var FormDealer = Component.extend({
   submitButton: null,

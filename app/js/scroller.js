@@ -1,3 +1,4 @@
+// Loop around behavior.
 $(function() {
 var Scroller = Component.extend({
   constructor: function(viewport, content) {
@@ -26,19 +27,8 @@ var Scroller = Component.extend({
   toBottom: function() {
     this.viewport.scrollTop(this.content.outerHeight() - 5);
   }
-}, {
-  browser: (function() {
-    var ua = navigator.userAgent,
-        webkit = /AppleWebKit\/([^\s]*)/.test(ua);
-
-    return {
-      webkit:  webkit,
-      msie:    !webkit && /MSIE\s([^;]*)/.test(ua),
-      mozilla: !webkit && /Gecko\/([^\s]*)/.test(ua)
-    };
-  })()
 });
 
-new Scroller($(Scroller.browser.mozilla || Scroller.browser.msie ? 'html' : 'body'), $('#content'));
+new Scroller($(Browser.mozilla || Browser.msie ? 'html' : 'body'), $('#content'));
 
 });

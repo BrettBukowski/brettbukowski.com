@@ -1,3 +1,4 @@
+// Generate stars on two of the panels.
 $(function() {
 
 if (!CanvasSupported()) return;

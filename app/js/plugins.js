@@ -1,3 +1,4 @@
+// Commonalities.
 !function(exports) {
 
 function mix(receiver, provider) {
@@ -55,5 +56,18 @@ function CanvasSupported() {
 }
 
 exports.CanvasSupported = CanvasSupported;
+
+exports.Browser = (function() {
+    var ua = navigator.userAgent,
+        webkit = /AppleWebKit\/([^\s]*)/.test(ua);
+
+    return {
+      webkit:  webkit,
+      msie:    !webkit && /MSIE\s([^;]*)/.test(ua),
+      mozilla: !webkit && /Gecko\/([^\s]*)/.test(ua),
+      ios:     webkit && /(iPhone|iPad|iPod)/.test(ua),
+      android: webkit && /Android/.test(ua)
+    };
+})();
 
 }(window);

@@ -1,3 +1,5 @@
+// Canvas normalization for the rest of the
+// components on the page.
 // From <https://gist.github.com/1579671>
 (function() {
     var lastTime = 0;

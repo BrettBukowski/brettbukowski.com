@@ -92,6 +92,9 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html {
+    -webkit-text-size-adjust: none;
+}
 
 body {
     background: #1a1a1a;
@@ -129,8 +132,21 @@ section > header {
     padding: 0 20% 4em;
 }
 #hi, #contact {
-    background: url(/img/mountainflip.png) no-repeat 0 -480px, url(/img/broken_noise.jpg);
+    background: url(/img/broken_noise.jpg);
     color: #FFF;
+}
+#contact img,
+#hi img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
+}
+#hi img {
+    top: -488px;
+}
+#contact img {
+    bottom: -488px;
 }
 #contact {
     background-position: 0 550px;

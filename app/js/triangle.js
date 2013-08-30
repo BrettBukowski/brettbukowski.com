@@ -1,3 +1,4 @@
+// Draw some shapes on the blog panel.
 $(function() {
 
 if (!CanvasSupported()) return;
