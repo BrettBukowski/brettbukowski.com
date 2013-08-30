@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+gem 'sass'
 gem 'rake'
 gem 'thin'
 gem 'sinatra'

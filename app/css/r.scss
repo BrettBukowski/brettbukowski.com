@@ -30,6 +30,15 @@
   animation-iteration-count: 1;
   animation-timing-function: $timing;
 }
+@mixin icon-font {
+  font-family: 'entypo';
+  font-size: 2em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
 
 /* VARIABLES */
 $text: #222;
@@ -265,13 +274,14 @@ header {
     font-weight: 600;
     margin-top:.3em;
   }
-  &:before {
-    content:"→";
-    font-size: smaller;
+  i:before {
     position: absolute;
-    height: 12px;
-    width: 12px;
     left: -4px;
+    top: -4px;
+    @media print {
+      top: -2px;
+      left: -2px;
+    }
   }
 }
 .role {
@@ -448,13 +458,7 @@ h4 {
   font-style: normal;
 }
 [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: 'entypo';
-  font-size: 2em;
-  font-style: normal;
-  speak: none;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
+  @include icon-font;
   color: $bluish;
 }
 .icon-education:before {
@@ -482,7 +486,7 @@ h4 {
   content: "\1f4d1";
 }
 .icon-right:before {
-  content: "→";
+  content: "\27a1";
 }
 .icon-print:before {
   content: "\e716";
@@ -502,6 +506,7 @@ h4 {
   padding: 4px;
   @media print {
     bottom: -16px;
+    padding-top:0;
   }
 }
 
@@ -515,39 +520,69 @@ h4 {
     font-size:.6em;
     border: 0;
     box-shadow: none;
+    padding: 10px 2em;
   }
   ol, ul {
-    padding-left: 20px;
-    list-style-type: disc;
-  }
-  li {
-    list-style: disc outside;
+    padding-left: 0;
+    li:before {
+      content: "•";
+      padding-right: 3px;
+    }
   }
   .heading-bar,
   .what {
     display: none;
   }
+  .info {
+    padding-bottom: 1em;
+  }
   .box {
     padding: 10px 4px 4px;
     box-shadow: none;
+    overflow: visible;
   }
   .experience {
     page-break-after: always;
-    margin-bottom:3em;
-  }
-  #main,
-  .siderail {
-    float: none;
-    width: 100%;
-  }
-    .columns {
-    overflow: hidden;
-    padding-top:.3em;
-    article {
-      float: left;
-      width: 50%;
+    margin-bottom:20em;
+    &:after {
+      margin-top: 1em;
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      content: "Continued...";
     }
   }
+  .cta,
+  .skills > article,
+  .side-projects {
+    margin-top: 20em;
+    position: relative;
+    top: 30px;
+    padding-bottom: 20px;
+  }
+  .cta {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin-top: 2em;
+    top: 60px;
+  }
+    // margin-top: 20em;
+    // page-break-after: always;
+  // }
+  // #main,
+  // .siderail {
+  //   float: none;
+  //   width: 100%;
+  // }
+  //   .columns {
+  //   overflow: hidden;
+  //   padding-top:.3em;
+  //   article {
+  //     float: left;
+  //     width: 50%;
+  //   }
+  // }
 }
 
 // ANIMATIONS

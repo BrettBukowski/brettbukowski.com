@@ -16,12 +16,12 @@ I'm an experienced web developer looking to advance my career. I want to help bu
 * PHP
 * Ruby
 * Objective-C
-* C\#
+* C#
 * Python
 * Java
 * C
 
-#### Experience with the following frameworks & technologies
+#### Experience with the following frameworks and technologies
 
 * CodeIgniter
 * Rails
@@ -30,8 +30,8 @@ I'm an experienced web developer looking to advance my career. I want to help bu
 * YUI
 * jQuery
 * Express
-* Apache & Nginx
-* MySQL
+* Apache and Nginx
+* MySQL and Postgres
 * Redis and memcached
 * MongoDB
 * CouchDB
@@ -94,3 +94,9 @@ Simple web app to save off drafts of tweets to post later.
 Niche iPhone app to inspect colors in photos with a color picker.
 
 → Built with pure Objective-C and UIKit APIs.
+
+#### [Tomatar](http://tomatar.com)
+
+Pomodoro timer web app.
+
+→ Built with AngularJS, Postgres, and the Flatiron NodeJS libraries.
