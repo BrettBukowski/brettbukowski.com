@@ -1,15 +1,15 @@
 // Commonalities.
 !function(exports) {
 
-function mix(receiver, provider) {
-    for (key in provider) {
-        receiver[key] = provider[key];
+  function mix(receiver, provider) {
+    for (var key in provider) {
+      receiver[key] = provider[key];
     }
 
     return receiver;
-}
+  }
 
-function extend(props, statics) {
+  function extend(props, statics) {
     var parent = this,
         child = (props && props.hasOwnProperty('constructor'))
             ? props.constructor
@@ -18,46 +18,46 @@ function extend(props, statics) {
     mix(child, parent);
     mix(child, statics);
 
-    var emptyConstructor = function(){ this.constructor = child; };
-    emptyConstructor.prototype = parent.prototype;
-    child.prototype = new emptyConstructor;
+    var EmptyConstructor = function(){ this.constructor = child; };
+    EmptyConstructor.prototype = parent.prototype;
+    child.prototype = new EmptyConstructor;
 
     if (props) {
-        mix(child.prototype, props);
+      mix(child.prototype, props);
     }
 
     child.__super__ = parent.prototype;
 
     return child;
-}
+  }
 
-var slice = Array.prototype.slice;
+  var slice = Array.prototype.slice;
 
-function bind(func, context) {
+  function bind(func, context) {
     if (func.bind === Function.prototype.bind) {
-        return Function.prototype.bind.apply(func, slice.call(arguments, 1));
+      return Function.prototype.bind.apply(func, slice.call(arguments, 1));
     }
 
     var args = slice.call(arguments, 2);
     return function() {
-        return func.apply(context, args.concat(slice.call(arguments)));
+      return func.apply(context, args.concat(slice.call(arguments)));
     };
-}
+  }
 
-var Component = function() {};
-Component.extend = extend;
-Component.bind = bind;
+  var Component = function() {};
+  Component.extend = extend;
+  Component.bind = bind;
 
-exports.Component = Component;
+  exports.Component = Component;
 
-function CanvasSupported() {
+  function CanvasSupported() {
     var elem = document.createElement('canvas');
     return !!(elem.getContext && elem.getContext('2d'));
-}
+  }
 
-exports.CanvasSupported = CanvasSupported;
+  exports.CanvasSupported = CanvasSupported;
 
-exports.Browser = (function() {
+  exports.Browser = (function() {
     var ua = navigator.userAgent,
         webkit = /AppleWebKit\/([^\s]*)/.test(ua);
 
@@ -68,6 +68,6 @@ exports.Browser = (function() {
       ios:     webkit && /(iPhone|iPad|iPod)/.test(ua),
       android: webkit && /Android/.test(ua)
     };
-})();
+  })();
 
 }(window);
