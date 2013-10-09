@@ -92,6 +92,13 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
     -webkit-text-size-adjust: none;
 }
@@ -184,11 +191,14 @@ section > header {
 #projects {
     background: url(/img/old_mathematics.jpg);
 }
-#contact li,
 #projects li {
     float: left;
-    width: 23%;
+    width: 30%;
     margin: 0 10px;
+    height: 440px;
+}
+#projects li:nth-child(4) {
+    margin-left: 15%;
 }
 #projects ul {
     border-top: 1px solid #CCC;
@@ -216,28 +226,37 @@ section > header {
     -webkit-transition: all 1s;
     -moz-transition: all 1s;
     -ms-transition: all 1s;
+    transition: all 1s;
 }
 #blog a:hover,
 #blog a:focus,
 #projects a:hover,
 #projects a:focus {
     color: #000;
-    text-shadow: 0 0 8px rgba(112, 114, 182, .7);
+    text-shadow: 0 0 8px rgba(112, 114, 182, .4);
 }
 #projects img {
-    height: 190px;
-    width: 190px;
     border: 6px solid #fff;
     border-radius: 50%;
+    display: block;
+    height: 190px;
+    margin: auto auto 25px;
+    width: 190px;
 }
 .js #projects img {
     -webkit-transition: all .6s;
     -moz-transition: all .6s;
     -ms-transition: all .6s;
+    transition: all .6s;
     cursor: pointer;
 }
-.js #projects img:hover {
-    box-shadow: 0 0 14px rgba(112, 114, 182, .7);
+.js #projects a:hover img,
+.js #projects a:focus img {
+    box-shadow: 0 0 14px rgba(112, 114, 182, .4);
+    -webkit-transform: scale(.99);
+    -moz-transform: scale(.99);
+    -ms-transform: scale(.99);
+    transform: scale(.99);
 }
 .lt-ie9 #projects img {
     border: 0;
@@ -275,8 +294,9 @@ section > header {
     border-bottom: 1px solid #CCC;
 }
 #contact li {
+    float: left;
+    margin: 0 10px 20px;
     width: 15%;
-    margin-bottom: 20px;
 }
 #contact a {
     display: inline-block;
@@ -382,9 +402,16 @@ input[type="submit"]:disabled {
 @media only screen and (max-width: 1290px) {
     #projects li {
         width: 47%;
+        height: auto;
     }
     #projects li:nth-child(odd) {
         clear: left;
+    }
+    #projects li:nth-child(4) {
+        margin-left: auto;
+    }
+    #projects li:nth-child(5) {
+        margin-left: 25%;
     }
     #contact li {
         width: 26%;
@@ -404,6 +431,9 @@ input[type="submit"]:disabled {
         width: 100%;
         float: none;
         margin: 0 0 3.3em;
+    }
+    #projects li:nth-child(5) {
+        margin-left: auto;
     }
     form {
         width: 90%;
