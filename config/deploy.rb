@@ -1,47 +1,62 @@
-set :application, "brettbukowski"
-set :repository,  "https://brettbukowski:FpdY7jfpZmhJU6fb@bitbucket.org/brettbukowski/brettbukowski.com.git"
-set :branch, "master"
-set :scm, :git
+set :application, 'brettbukowski'
+set :repo_url, 'https://brettbukowski:FpdY7jfpZmhJU6fb@bitbucket.org/brettbukowski/brettbukowski.com.git'
 
-server "gato", :app, :web
-
-set :user, 'brett'
 set :deploy_to, '/var/www/brettbukowski'
-set :use_sudo, true
-set :deploy_via, :copy
-set :copy_strategy, :export
-default_run_options[:pty] = true
+set :scm, :git
+set :stage, :production
+server 'gato', roles: %w{web app}
 
-set :rvm_ruby_string, 'ruby-1.9.3-p362'
-set :rvm_type, :system
-require 'rvm/capistrano'
+set :format, :pretty
+set :log_level, :debug
+set :pty, true
+
+# set :linked_files, %w{config/database.yml}
+# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+set :keep_releases, 5
+
+set :chruby_ruby, 'ruby-2.1.0'
 
 namespace :deploy do
-  task :start, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current && nohup thin -e production -C config/thin.yml -R config.ru start"
+
+  thin_cmd = "exec thin -e production -C config/thin/production.yml -R config.ru"
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      within release_path do
+        execute :bundle, "#{thin_cmd} restart"
+      end
+    end
   end
 
-  task :stop, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current && nohup thin -e production -C config/thin.yml -R config.ru stop"
+  desc 'Start application'
+  task :start do
+    on roles(:app), in: :sequence, wait: 5 do
+      within release_path do
+        execute :bundle, "#{thin_cmd} start"
+      end
+    end
   end
 
-  task :restart, :roles => [:web, :app] do
-    deploy.stop
-    deploy.start
+  desc 'Stop application'
+  task :start do
+    on roles(:app), in: :sequence, wait: 5 do
+      within release_path do
+        execute :bundle, "#{thin_cmd} stop"
+      end
+    end
   end
 
-  task :cold do
-    deploy.update
-    deploy.start
-  end
+  # after :restart, :clear_cache do
+  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
+  #     # Here we can do anything such as:
+  #     # within release_path do
+  #     #   execute :rake, 'cache:clear'
+  #     # end
+  #   end
+  # end
+
+  after :finishing, 'deploy:cleanup'
+
 end
-
-namespace :brett do
-  desc "Compile assets"
-  task :compile_assets do
-    run "cd #{deploy_to}/current; bundle exec rake assets:compile"
-  end
-end
-
-after "deploy:create_symlink", "brett:compile_assets"
-after "deploy:restart", "deploy:cleanup"

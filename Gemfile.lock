@@ -1,32 +1,38 @@
+GIT
+  remote: git://github.com/capistrano/chruby.git
+  revision: 37c4bb8df844bf874dc0e6f59ba0b06ac21ae90d
+  specs:
+    capistrano-chruby (0.1.0)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
-    capistrano (2.14.1)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
+    capistrano (3.0.1)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 0.0.23)
+    capistrano-bundler (1.1.1)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2.0)
+    capistrano-rails (1.1.0)
+      capistrano (>= 3.0.0)
+      capistrano-bundler (>= 1.0.0)
     daemons (1.1.9)
     eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    highline (1.6.15)
     hike (1.2.1)
+    i18n (0.6.9)
     multi_json (1.5.0)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-sftp (2.0.5)
-      net-ssh (>= 2.0.9)
-    net-ssh (2.6.3)
-    net-ssh-gateway (1.1.0)
-      net-ssh (>= 1.99.1)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
     rack (1.4.1)
     rack-protection (1.3.2)
       rack
     rake (10.0.3)
-    rvm-capistrano (1.2.7)
-      capistrano (>= 2.0.0)
     sass (3.2.9)
     sinatra (1.3.3)
       rack (~> 1.3, >= 1.3.6)
@@ -37,11 +43,18 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sshkit (1.2.0)
+      net-scp (>= 1.1.2)
+      net-ssh
+      term-ansicolor
+    term-ansicolor (1.2.2)
+      tins (~> 0.8)
     thin (1.5.0)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
     tilt (1.3.3)
+    tins (0.13.1)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
@@ -50,8 +63,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano (~> 3.0)
+  capistrano-bundler
+  capistrano-chruby!
+  capistrano-rails
   rake
-  rvm-capistrano
   sass
   sinatra
   sprockets (~> 2.0)
