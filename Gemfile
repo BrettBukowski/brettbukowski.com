@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 gem 'sass'
 gem 'rake'
+gem 'eventmachine', '~> 1.0.3'
 gem 'thin'
 gem 'sinatra'
 gem 'sprockets', '~> 2.0'

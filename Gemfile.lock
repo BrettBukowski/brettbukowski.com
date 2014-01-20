@@ -17,7 +17,7 @@ GEM
       capistrano (~> 3.0)
       sshkit (>= 1.2.0)
     daemons (1.1.9)
-    eventmachine (1.0.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.1)
@@ -63,6 +63,7 @@ DEPENDENCIES
   capistrano (~> 3.0)
   capistrano-bundler
   capistrano-chruby!
+  eventmachine (~> 1.0.3)
   rake
   sass
   sinatra
