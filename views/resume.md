@@ -16,8 +16,9 @@ I'm an experienced web developer looking to advance my career. I want to help bu
 * PHP
 * Ruby
 * Objective-C
-* C#
+* Go
 * Python
+* C#
 * Java
 * C
 
@@ -60,7 +61,7 @@ I'm a member on a team that builds a web platform powering many big-time custome
 * I have experience building developer-facing framework APIs in PHP and JavaScript.
 * I've also built a number of enduser-facing features comprised of PHP, JavaScript, and CSS components.
 * I help instruct customers / platform developers via an online forum.
-* I'm a 3-time RightNow-Oracle development hackathon winner (1 solo, 2 team)
+* I'm a 4-time RightNow-Oracle development hackathon winner (1 solo, 3 team)
 * I've given talks at multiple developer conferences (2010 & 2011 RightNow Developers Conference) as well as several talks internal to the organization.
 
 

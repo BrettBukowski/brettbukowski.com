@@ -71,7 +71,7 @@ $redish: #924949;
 html {
   font-family: OpenSansRegular;
   color: $text;
-  padding: 2.6em 2em 2em;
+  padding: 3em 2em 2em;
   @include img('white_sand.png');
   position: relative;
   border-bottom: 4px solid $heading-bar;
@@ -290,8 +290,14 @@ header {
 }
 h4 {
   margin:.3em 0;
-  font-size:1.3em;
-  font-weight: 500;
+  @media print {
+    font-size: 10px !important;
+    font-weight: normal;
+  }
+  @media screen {
+    font-size:1.3em;
+    font-weight: 500;
+  }
 }
 .gray {
     color: $gray-blue;
@@ -370,7 +376,6 @@ h4 {
   }
   .contact-info {
     a {
-      display: block;
       margin-bottom: 0;
       font-size: .9em;
     }
@@ -451,7 +456,7 @@ h4 {
   font-family: 'entypo';
   src:url('/fonts/Entypo/entypo.eot');
   src:url('/fonts/Entypo/entypo.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/Entypo/entypo.svg#entypo') format('svg'),
+      // url('/fonts/Entypo/entypo.svg#entypo') format('svg'),
       url('/fonts/Entypo/entypo.woff') format('woff'),
       url('/fonts/Entypo/entypo.ttf') format('truetype');
   font-weight: normal;
@@ -474,7 +479,7 @@ h4 {
   content: "\1f517";
 }
 .icon-email:before {
-  content: "🔿";
+  content: "\1f53f";
 }
 .icon-phone:before {
   content: "\1f4de";
@@ -512,8 +517,11 @@ h4 {
 
 /* PRINT */
 @media print {
+  * {
+    font-weight: normal !important;
+  }
   a.print:after {
-    font-size: smaller;
+    font-size: 10px;
     content:" (" attr(href) ") ";
   }
   html {
@@ -522,12 +530,12 @@ h4 {
     box-shadow: none;
     padding: 10px 2em;
   }
+  h4, h4 a {
+    font-size: 8px !important;
+    font-weight: normal !important;
+  }
   ol, ul {
-    padding-left: 0;
-    li:before {
-      content: "•";
-      padding-right: 3px;
-    }
+    padding-left: 1.5em;
   }
   .heading-bar,
   .what {
@@ -535,11 +543,22 @@ h4 {
   }
   .info {
     padding-bottom: 1em;
+    aside {
+      right: 10% !important;
+    }
   }
   .box {
     padding: 10px 4px 4px;
     box-shadow: none;
     overflow: visible;
+    border-top-width: 3px;
+
+    &:before {
+      top: -1px;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent;
+      border-top: 4px solid $bluish;
+    }
   }
   .experience {
     page-break-after: always;
@@ -548,7 +567,6 @@ h4 {
       margin-top: 1em;
       display: block;
       text-align: center;
-      font-weight: bold;
       content: "Continued...";
     }
   }
@@ -561,11 +579,12 @@ h4 {
     padding-bottom: 20px;
   }
   .cta {
-    float: none;
+    box-shadow: none;
     clear: both;
-    width: 100%;
+    float: none;
     margin-top: 2em;
     top: 60px;
+    width: 100%;
   }
     // margin-top: 20em;
     // page-break-after: always;

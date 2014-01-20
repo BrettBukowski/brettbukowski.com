@@ -16,14 +16,14 @@ class RootController < App
     erb :index
   end
 
-  # get '/resume' do
-  #   erb :resume, :locals => { :company_name => 'you' }
-  # end
+  get '/resume' do
+    erb :resume, :locals => { :company_name => 'you' }
+  end
 
-  # get '/resume.md' do
-  #   content_type 'text/plain'
-  #   File.read settings.views + '/resume.md'
-  # end
+  get '/resume.md' do
+    content_type 'text/plain'
+    File.read settings.views + '/resume.md'
+  end
 
   post '/contact' do
     if request.form_data?
@@ -42,7 +42,7 @@ From: #{email} <#{email}>
 MESSAGE
         require 'json'
 
-        `echo "#{message}" | mail -s "Message Received From Contact Form" brett.bukowski@gmail.com`
+        system "mail", "-s", "'Message Received From Contact Form' brett.bukowski@gmail.com", message
 
         if request.preferred_type == 'application/json'
           {:sent => true}.to_json

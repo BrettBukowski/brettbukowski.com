@@ -44,10 +44,10 @@
         You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.
         </p>
       <![endif]-->
-      <section class="heading-bar" tabindex="0">
-          <i class="icon-pencil"></i> <a href="/resume.md">Markdown version</a>
-          <i class="icon-doc"></i> <a href="/resume.pdf#zoom=100">PDF version</a>
-          <i class="icon-print"></i> <a href="javascript:window.print()">Print</a>
+      <section class="heading-bar" tabindex="0" role="toolbar">
+          <i class="icon-pencil" role="presentation" aria-hidden="true"></i> <a href="/resume.md">Markdown version</a>
+          <i class="icon-doc" role="presentation" aria-hidden="true"></i> <a href="/resume.pdf#zoom=100">PDF version</a>
+          <i class="icon-print" role="presentation" aria-hidden="true"></i> <a href="javascript:window.print()" role="button">Print</a>
       </section>
       <header>
         <section class="name">
@@ -108,7 +108,7 @@ I'm an experienced web developer looking to advance my career. I want to help bu
 <li>I have experience building developer-facing framework APIs in PHP and JavaScript.</li>
 <li>I&#8217;ve also built a number of enduser-facing features comprised of PHP, JavaScript, and CSS components.</li>
 <li>I help instruct customers / platform developers via an online forum.</li>
-<li>I&#8217;m a 3-time RightNow-Oracle development hackathon winner (1 solo, 2 team).</li>
+<li>I&#8217;m a 4-time RightNow-Oracle development hackathon winner (1 solo, 3 team).</li>
 <li>I&#8217;ve given talks at multiple developer conferences (2010 &amp; 2011 RightNow Developers Conference) as well as several talks internal to the organization.</li>
 </ul>
           </article>
@@ -178,8 +178,9 @@ I'm an experienced web developer looking to advance my career. I want to help bu
               <li>PHP</li>
               <li>Ruby</li>
               <li>Objective-C</li>
-              <li>C#</li>
+              <li>Go</li>
               <li>Python</li>
+              <li>C#</li>
               <li>Java</li>
               <li>C</li>
             </ul>
@@ -220,10 +221,14 @@ I'm an experienced web developer looking to advance my career. I want to help bu
       </section>
       <section class="siderail cta">
         <p class="prelude icon-work-together">I would love to work with <%= company_name || 'you' %>.</p>
-        <p>Get in touch...</p>
+        <p>Get in touch…</p>
         <div class="contact-info">
-          <a class="icon-phone" href="tel:406-624-9094">406-624-9094</a>
-          <a class="icon-email" href="mailto:brett.bukowski@gmail.com">brett.bukowski@gmail.com</a>
+          <div>
+            <i class="icon-phone" aria-hidden="true" role="presentation"></i> <a href="tel:406-624-9094">406-624-9094</a>
+          </div>
+          <div>
+            <i class="icon-email" aria-hidden="true" role="presentation"></i> <a href="mailto:brett.bukowski@gmail.com">brett.bukowski@gmail.com</a>
+          </div>
         </div>
       </section>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
