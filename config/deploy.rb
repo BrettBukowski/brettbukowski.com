@@ -17,7 +17,7 @@ set :chruby_ruby, 'ruby-2.1.0'
 
 namespace :deploy do
 
-  thin_cmd = "exec thin -e production -C config/thin/production.yml -R config.ru"
+  thin_cmd = "exec thin -e production -C config/thin.yml -R config.ru"
 
   desc 'Restart application'
   task :restart do
@@ -38,7 +38,7 @@ namespace :deploy do
   end
 
   desc 'Stop application'
-  task :start do
+  task :stop do
     on roles(:app), in: :sequence, wait: 5 do
       within release_path do
         execute :bundle, "#{thin_cmd} stop"
@@ -57,14 +57,14 @@ namespace :deploy do
 
   desc "Compile assets"
   task :compile_assets do
-    on :all, in: sequence, wait: 5 do
+    on roles(:app), in: :sequence, wait: 5 do
       within release_path do
-        execute :bundle, "rake assets:compile"
+        execute :bundle, "exec rake assets:compile"
       end
     end
   end
 
-  after :create_symlink, 'deploy:compile_assets'
+  after 'symlink:release', 'deploy:compile_assets'
   after :finishing, 'deploy:cleanup'
 
 end
