@@ -3,8 +3,6 @@ set :repo_url, 'https://brettbukowski:FpdY7jfpZmhJU6fb@bitbucket.org/brettbukows
 
 set :deploy_to, '/var/www/brettbukowski'
 set :scm, :git
-set :stage, :production
-server 'gato', roles: %w{web app}
 
 set :format, :pretty
 set :log_level, :debug
