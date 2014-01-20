@@ -64,7 +64,7 @@ namespace :deploy do
     end
   end
 
-  after 'deploy:create_symlink', 'deploy:compile_assets'
+  after :create_symlink, 'deploy:compile_assets'
   after :finishing, 'deploy:cleanup'
 
 end
