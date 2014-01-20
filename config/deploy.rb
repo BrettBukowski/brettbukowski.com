@@ -55,6 +55,16 @@ namespace :deploy do
   #   end
   # end
 
+  desc "Compile assets"
+  task :compile_assets do
+    on :all, in: sequence, wait: 5 do
+      within release_path do
+        execute :bundle, "rake assets:compile"
+      end
+    end
+  end
+
+  after 'deploy:create_symlink', 'deploy:compile_assets'
   after :finishing, 'deploy:cleanup'
 
 end
