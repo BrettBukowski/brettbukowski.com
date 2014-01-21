@@ -1,3 +1,4 @@
+/* global $*/
 $(function() {
   function supplyTooltips () {
     $('[title]').each(function() {
@@ -7,7 +8,7 @@ $(function() {
     });
     function fadeToggle () {
       $(this).next().fadeToggle();
-    };
+    }
     $('.what').hover(fadeToggle, fadeToggle);
   }
   supplyTooltips();
