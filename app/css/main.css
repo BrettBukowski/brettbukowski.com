@@ -453,9 +453,11 @@ input[type="submit"]:disabled {
     }
     #projects {
         background: url(/img/old_mathematics@2x.jpg);
+        background-size: 200px 200px;
     }
     #bio article {
         background-image: url(/img/grid_noise@2x.png);
+        background-size: 98px 98px;
     }
 }
 

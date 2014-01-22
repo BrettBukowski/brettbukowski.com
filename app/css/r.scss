@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 /* MIXINS */
-@mixin img($path) {
+@mixin img($path, $size) {
   background-image: url(/img/r/#{$path});
+  background-size: $size $size;
 }
 @mixin anim($name, $delay: .5s, $duration: 1s, $timing: ease, $fill-mode: both) {
   -webkit-animation-name: $name;
@@ -72,7 +73,7 @@ html {
   font-family: OpenSansRegular;
   color: $text;
   padding: 3em 2em 2em;
-  @include img('white_sand.png');
+  @include img('white_sand.png', 211px);
   position: relative;
   border-bottom: 4px solid $heading-bar;
   box-shadow: 0 -2px 3px rgba(0, 0, 0, .2) inset;
@@ -386,7 +387,7 @@ h4 {
 /* RETINA */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   html {
-    @include img('white_sand@2x.png');
+    @include img('white_sand@2x.png', 211px);
   }
 }
 
