@@ -42,7 +42,7 @@ From: #{email} <#{email}>
 MESSAGE
         require 'json'
 
-        system "mail", "-s", "'Message Received From Contact Form' brett.bukowski@gmail.com", message
+        system "mail", "-s", "Message Received From Contact Form", "brett.bukowski@gmail.com", message
 
         if request.preferred_type == 'application/json'
           {:sent => true}.to_json
