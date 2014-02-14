@@ -55,11 +55,11 @@ $(function() {
 
       if (!CanvasSupported()) return;
 
-      element.append('<div class="canvasContainer spireCanvas"><canvas class="canvas"></canvas></div>');
+      element.append('<div class="canvasContainer"><canvas class="canvas spireCanvas"></canvas></div>');
       resizeCanvas(element);
-      this.canvas = element.find('.spireCanvas canvas')[0];
+      this.canvas = element.find('canvas.spireCanvas')[0];
       this.context = this.canvas.getContext('2d');
-      this.draw();
+      $(window).resize(Component.bind(this.draw, this));
     },
 
     nowCurrent: function() {
@@ -173,25 +173,44 @@ $(function() {
       {
         start: [ 1700,410 ],
         points: []
+      },
+      {
+        start: [1750, 420],
+        points: [
+          1700,
+          1725,
+          1770
+        ]
+      },
+      {
+        start: [1890, 420],
+        points: [
+          1780,
+          1825,
+          1900
+        ]
+      },
+      {
+        start: [1950, 434],
+        points: [
+          1920,
+          1955
+        ]
+      },
+      {
+        start: [2010, 415],
+        points: [
+          2000
+        ]
       }
     ],
 
     updateCanvas: function () {
-      var scrollY = this.scrollY;//,
-          // height = this.canvas.height;
+      var pos = (this.scrollY > 300)
+        ? {position: 'absolute', top: '300px'}
+        : {position: 'fixed', top: '0'};
 
-      if (scrollY > 300) {
-        $('.spireCanvas canvas').css({
-          position: 'absolute',
-          top: '300px'
-        });
-      }
-      else {
-        $('.spireCanvas canvas').css({
-          position: 'fixed',
-          top: '0'
-        });
-      }
+      $(this.canvas).css(pos);
     },
 
     draw: function() {
@@ -243,8 +262,8 @@ $(function() {
     loadBackground: function() {
       var img = new Image(),
           src = '/img/mountainflip.png',
-          loadBg = function () {
-            $('#hi,#contact').append('<img src="' + src + '" alt="">');
+          loadBg = function (loaded) {
+            $('#hi,#contact').append(loaded);
             $('#hi img').animate({
               top: '-450px'
             }, 100, function () {
@@ -255,15 +274,16 @@ $(function() {
           },
           start = +new Date();
 
-      img.addEventListener('load', function () {
+      img.addEventListener('load', function (e) {
         if ((+new Date()) - start < 1000) {
-          setTimeout(loadBg, 1000);
+          setTimeout(loadBg, 1000, e.target);
         }
         else {
-          loadBg();
+          loadBg(e.target);
         }
       });
       img.src = src;
+      img.alt = "";
     },
   });
 
