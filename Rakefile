@@ -1,4 +1,6 @@
 require 'bundler/setup'
+require 'net/http'
+require 'json'
 require 'uglifier'
 require './app'
 
@@ -17,6 +19,36 @@ namespace :assets do
     Dir.glob('public/assets/*.css').each do |file_path|
       minCSS = File.open(file_path, 'r').read.gsub!(/(\s{2,}|\n)/, '')
       File.open(file_path, 'w') { |f| f.write(minCSS) }
+    end
+  end
+end
+
+namespace :cloudflare do
+  task :purge_cache do
+    site = 'brettbukowski.com'
+    files_to_purge = %w{app/application.js app/application.css index.html}
+    uri = URI('https://www.cloudflare.com/api_json.html')
+    options = {
+        z:      site,
+        a:      'zone_file_purge',
+        tkn:    'b850eed00d535542d7e0c586ed265909dbe4b',
+        email:  'brett.bukowski@gmail.com',
+    }
+
+    files_to_purge.each do |file|
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+      request = Net::HTTP::Post.new(uri.request_uri)
+      request.form_data = options.merge({
+        url: "http://#{site}/#{file}",
+      })
+      response = JSON.parse(http.request(request).body)
+
+      if response['result'] == 'success'
+        puts "Purged #{file}"
+      else
+        puts "Error: #{response['msg']}"
+      end
     end
   end
 end
