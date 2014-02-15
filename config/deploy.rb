@@ -46,7 +46,7 @@ namespace :deploy do
     end
   end
 
-  desc "Compile assets"
+  desc 'Compile assets'
   task :compile_assets do
     on roles(:app), in: :sequence, wait: 5 do
       within release_path do
@@ -55,7 +55,17 @@ namespace :deploy do
     end
   end
 
+  desc 'Purge Cloudflare'
+  task :purge_cache do
+    on roles(:app), in: :sequence, wait: 5 do
+      within release_path do
+        execute :bundle, "exec rake cloudflare:purge_cache"
+      end
+    end
+  end
+
   after 'symlink:release', 'deploy:compile_assets'
   after :finishing, 'deploy:cleanup'
+  after :finishing, 'deploy:purge_cache'
 
 end
