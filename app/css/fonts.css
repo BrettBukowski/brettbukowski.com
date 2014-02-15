@@ -152,19 +152,19 @@
 }
 
 @font-face {
-    font-family: 'icomoon';
-    src:url('/fonts/IcoMoon/icomoon.eot');
-    src:url('/fonts/IcoMoon/icomoon.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/IcoMoon/icomoon.svg#icomoon') format('svg'),
-        url('/fonts/IcoMoon/icomoon.woff') format('woff'),
-        url('/fonts/IcoMoon/icomoon.ttf') format('truetype');
+    font-family: 'fontello';
+    src:url('/fonts/Fontello/fontello.eot');
+    src:url('/fonts/Fontello/fontello.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Fontello/fontello.svg#fontello') format('svg'),
+        url('/fonts/Fontello/fontello.woff') format('woff'),
+        url('/fonts/Fontello/fontello.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-    font-family: 'icomoon';
+    font-family: 'fontello';
     content: attr(data-icon);
     speak: none;
     font-weight: normal;
@@ -174,7 +174,7 @@
 
 /* Use the following CSS code if you want to have a class per icon */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: 'icomoon';
+    font-family: 'fontello';
     font-style: normal;
     speak: none;
     font-weight: normal;
@@ -183,25 +183,29 @@
 }
 .icon-instagram:before {
     color: #416f95;
-    content: "\e001";
+    content: '\e800';
 }
 .icon-twitter:before {
     color: #00acee;
-    content: "\e002";
+    content: '\e801';
 }
 .icon-facebook:before {
     color: #3b5998;
-    content: "\e000";
+    content: '\e802';
 }
 .icon-flickr:before {
     color: #ff0084;
-    content: "\e003";
+    content: '\e803';
 }
 .icon-github:before {
     color: #FFF;
-    content: "\e004";
+    content: '\e804';
 }
 .icon-tumblr:before {
     color: #2c435a;
-    content: "\e005";
+    content: '\e805';
+}
+.icon-email:before {
+    color: #FFF;
+    content: '\e806';
 }
