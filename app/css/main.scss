@@ -229,7 +229,6 @@ section > header {
     font-weight: bold;
 
     article {
-        // background: rgba(255, 255, 255, .4);
         background: rgba(0, 0, 0, .3);
         margin-top: 300px;
         font-size: 1.1em;
@@ -245,24 +244,26 @@ section > header {
 
 #projects {
     background: url(/img/old_mathematics.jpg);
+    h2 {
+        margin-top: 0;
+    }
+    p {
+        margin: 1em;
+    }
 
     .main-projects {
+        margin: 1em;
+        padding: 0;
+
         li {
             float: left;
-            width: 30%;
+            width: 32%;
             margin: 0 10px;
             height: 440px;
 
             &:nth-child(4) {
                 margin-left: 15%;
             }
-        }
-
-        ul {
-            border-top: 1px solid #CCC;
-            box-shadow: 0 3px 8px -5px rgba(0, 0, 0, .2) inset;
-            margin-top: 2em;
-            padding: 3em 0 0;
         }
 
         article {
@@ -301,6 +302,7 @@ section > header {
     .other-projects {
         width: 50%;
         margin: auto;
+        padding: 0;
         a {
             .subject {
                 text-align: left;
