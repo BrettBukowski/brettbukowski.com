@@ -54,15 +54,15 @@ Highly-skilled in front-end web development techniques such as:
 #### RightNow Technologies (Acquired by Oracle, 2012) - Bozeman, MT
 Web Developer
 
-I'm a member on a team that builds a web platform powering many big-time customer support websites. This product is a hosted, PHP-based application framework that provides a rich set of default features aimed at support users that's designed to work well for most businesses from the start. But the developer framework provides a great deal of APIs so that businesses can customize the support experience they provide to better suit specific business needs or user goals.
+I'm a member on a team that builds a web platform powering many big-time customer support websites. This product is a hosted, PHP-based application framework that provides a rich set of UI widgets for building support features; it's designed to work well for most businesses out-of-the-box. But the developer framework provides a great deal of APIs so that businesses can customize the support experience they provide to better suit specific business needs or user goals.
 
 **Overview**
 
-* I have experience building developer-facing framework APIs in PHP and JavaScript.
-* I've also built a number of enduser-facing features comprised of PHP, JavaScript, and CSS components.
-* I help instruct customers / platform developers via an online forum.
-* I'm a 4-time RightNow-Oracle development hackathon winner (1 solo, 3 team)
-* I've given talks at multiple developer conferences (2010 & 2011 RightNow Developers Conference) as well as several talks internal to the organization.
+* Built developer-facing framework APIs in PHP and JavaScript.
+* Made enduser-facing features comprised of PHP, JavaScript, and CSS components.
+* Communicated with customers and platform developers via web forums.
+* 4-time RightNow-Oracle development hackathon winner (1 solo, 3 team).
+* Gave multiple talks at developer conferences (2010 & 2011 RightNow Developers Conference) and several talks internal to the organization.
 
 
 2007
@@ -71,7 +71,7 @@ Intern
 
 I worked within a team building pharmaceutical inventory management software.
 
-* My responsibilities involved fixing bugs and developing several minor features in a mature application.
+* Responsibilities involved fixing bugs and developing minor features in a mature application.
 * This required learning a new programming language.
 
 ### Side Projects
@@ -92,7 +92,7 @@ Simple web app to save off drafts of tweets to post later.
 
 #### [Colorant](http://colorantapp.com)
 
-Niche iPhone app to inspect colors in photos with a color picker.
+Niche iPhone app to inspect colors in photos with a color picker and view generated color palettes.
 
 → Built with pure Objective-C and UIKit APIs.
 
@@ -101,3 +101,16 @@ Niche iPhone app to inspect colors in photos with a color picker.
 Pomodoro timer web app.
 
 → Built with AngularJS, Postgres, and the Flatiron NodeJS libraries.
+
+
+*****
+
+I would love to work with you.
+
+Get in touch...
+
+<tel:406-624-9094>
+
+<mailto:brett.bukowski@gmail.com>
+
+＼(＾O＾)／＼(＾O＾)／＼(＾O＾)／
