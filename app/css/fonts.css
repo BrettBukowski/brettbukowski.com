@@ -182,30 +182,23 @@
     -webkit-font-smoothing: antialiased;
 }
 .icon-instagram:before {
-    color: #416f95;
     content: '\e800';
 }
 .icon-twitter:before {
-    color: #00acee;
     content: '\e801';
 }
 .icon-facebook:before {
-    color: #3b5998;
     content: '\e802';
 }
 .icon-flickr:before {
-    color: #ff0084;
     content: '\e803';
 }
 .icon-github:before {
-    color: #FFF;
     content: '\e804';
 }
 .icon-tumblr:before {
-    color: #2c435a;
     content: '\e805';
 }
 .icon-email:before {
-    color: #FFF;
     content: '\e806';
 }

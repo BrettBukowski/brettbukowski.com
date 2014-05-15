@@ -27,6 +27,6 @@ $(function () {
                   (min-resolution: 1.5dppx)"
   });
 
-  new RetinaSwapper($('#projects img')).swap();
+  new RetinaSwapper($('.projects img')).swap();
 
 });

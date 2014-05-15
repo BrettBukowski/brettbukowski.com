@@ -1,10 +1,2 @@
 //= require plugins.js
-//= require canvas.js
-//= require scroller.js
 //= require retina.js
-//= require starfield.js
-//= require line.js
-//= require panels.js
-//= require main.js
-//= require triangle.js
-//= require forms.js

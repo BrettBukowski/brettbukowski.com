@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!doctype html>
+<html lang="en-US">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,136 +7,213 @@
         <meta name="description" content="Brett Bukowski - wave of the future">
         <meta name="viewport" content="width=device-width,user-scalable=no">
         <script>window.document.documentElement.className='js'</script>
-        <style type="text/css">.js #cover{width:100%;height:100%;position:absolute;background:#121212;z-index:2}</style>
         <link rel="stylesheet" href="assets/application.css">
         <meta name="google-site-verification" content="QklU4IxZFhWSHaWTtU4Pqy2KeWWNYbNsTaMflUigVf8" />
     </head>
     <body>
-        <div id="cover"></div>
-        <div id="content">
-            <section id="hi" class="cover" data-title="Hi">
-                <!--[if lt IE 9]>
-                    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-                <![endif]-->
+        <section id="content" role="main">
+            <!--[if lt IE 9]>
+                <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+
+            <section class="hero">
                 <header>
-                    <h1><span class="prelude">Hi, I'm</span> Brett Bukowski</h1>
+                    <nav>
+                        <a href="#projects">Projects</a>
+                        <a href="#blog">Blog</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
                 </header>
+
+                <section>
+                    <aside>Hi I'm</aside>
+                    <h1>Brett Bukowski</h1>
+
+                    <article>
+                        <h2>I'm a software developer.</h2>
+                        <p>I love building things, particularly web apps.</p>
+                    </article>
+                </section>
             </section>
 
             <section id="bio" data-title="About">
                 <article>
-                    <h2>I'm a software developer.</h2>
-                    <p>I love building things, particularly web apps.</p>
                     <p>I'm currently working at <strike>RightNow Technologies</strike> Oracle Conglomerate building a customer service web platform.</p>
                     <p>I'm a Packers fan, UI enthusiast, comicbook reader, movie watcher, and a book reader who enjoys scholarly pursuits.</p>
                     <p>I like listing attributes and irony. I code like a gentleman.</p>
                 </article>
             </section>
 
-            <section id="projects" data-title="Side Projects">
+            <section id="projects" data-title="Projects">
                 <article>
                     <h2>Projects</h2>
-                    <p>These are some of the things I work on for fun and always in order to scratch a particular itch.</p>
-                    <ul class="main-projects cf">
-                        <li class="downisup">
-                            <div class="details">
-                                <h3>
-                                    <a href="http://downisup.heroku.com/">
-                                        <img src="img/downisup.png" alt="" width="190" height="190"/>
-                                        Down is Up
-                                    </a>
-                                </h3>
-                                <aside>Rails</aside>
-                                <p>Before markdown was a household name, I made a lil' side-by-side previewer.</p>
-                            </div>
-                        </li>
-                        <li class="catchlater">
-                            <div class="details">
-                                <h3>
-                                    <a href="http://catchlater.com/">
-                                        <img src="img/catchlater.png" alt="" width="190" height="190"/>
-                                        Catchlater
-                                    </a>
-                                </h3>
-                                <aside>Rails + MongoDB</aside>
-                                <p>Bookmarklet-based watch it later service for web videos.</p>
-                            </div>
-                        </li>
-                        <li class="tweetstasher">
-                            <div class="details">
-                                <h3>
-                                    <a href="http://tweetstasher.com/">
-                                        <img src="img/tweetstasher.png" alt="" width="190" height="190"/>
-                                        Tweetstasher
-                                    </a>
-                                </h3>
-                                <aside>Express + CouchDB</aside>
-                                <p>Save off drafts of tweets to post later.</p>
-                            </div>
-                        </li>
-                        <li class="colorant">
-                            <div class="details">
-                                <h3>
-                                    <a href="http://colorantapp.com/">
-                                        <img src="img/colorant.png" alt="" width="190" height="190"/>
-                                        Colorant
-                                    </a>
-                                </h3>
-                                <aside>Pure Objective-C</aside>
-                                <p>My first iPhone app. Go in and inspect color details of your photos.</p>
-                            </div>
-                        </li>
-                        <li class="tomatar">
-                            <div class="details">
-                                <h3>
-                                    <a href="http://tomatar.com/">
-                                        <img src="img/tomatar.png" alt="" width="190" height="190"/>
-                                        Tomatar
-                                    </a>
-                                </h3>
-                                <aside>Flatiron + Angular + Postgres</aside>
-                                <p>Simplified Pomodoro tracking.</p>
-                            </div>
-                        </li>
-                    </ul>
 
+                    <p>These are some of the things I work on for fun and always in order to scratch a particular itch.</p>
+                </article>
+            </section>
+
+            <section class="projects">
+                <ul class="main-projects clearfix">
+                    <li class="downisup">
+                        <div class="details">
+                            <h3>
+                                <a href="http://downisup.heroku.com/">
+                                    <img src="img/downisup.png" alt="" width="190" height="190"/>
+                                    Down is Up
+                                </a>
+                            </h3>
+                            <aside>Rails</aside>
+                            <p>A lil' side-by-side markdown previewer <br>(before md became a household name).</p>
+                        </div>
+                    </li>
+                    <li class="catchlater">
+                        <div class="details">
+                            <h3>
+                                <a href="http://catchlater.com/">
+                                    <img src="img/catchlater.png" alt="" width="190" height="190"/>
+                                    Catchlater
+                                </a>
+                            </h3>
+                            <aside>Rails + MongoDB</aside>
+                            <p>Bookmarklet-based watch it later service for web videos.</p>
+                        </div>
+                    </li>
+                    <li class="tweetstasher">
+                        <div class="details">
+                            <h3>
+                                <a href="http://tweetstasher.com/">
+                                    <img src="img/tweetstasher.png" alt="" width="190" height="190"/>
+                                    Tweetstasher
+                                </a>
+                            </h3>
+                            <aside>Express + CouchDB</aside>
+                            <p>Save off drafts of tweets to post later.</p>
+                        </div>
+                    </li>
+                    <li class="colorant">
+                        <div class="details">
+                            <h3>
+                                <a href="http://colorantapp.com/">
+                                    <img src="img/colorant.png" alt="" width="190" height="190"/>
+                                    Colorant
+                                </a>
+                            </h3>
+                            <aside>Pure Objective-C</aside>
+                            <p>My first iPhone app. Go in and inspect color details of your photos.</p>
+                        </div>
+                    </li>
+                    <li class="tomatar">
+                        <div class="details">
+                            <h3>
+                                <a href="http://tomatar.com/">
+                                    <img src="img/tomatar.png" alt="" width="190" height="190"/>
+                                    Tomatar
+                                </a>
+                            </h3>
+                            <aside>Flatiron + Angular + Postgres</aside>
+                            <p>Simplified Pomodoro tracking.</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="experiments" data-title="Explorations">
                     <h2>Other sites, tools, and experiments</h2>
-                    <ul class="other-projects cf">
-                        <li><a href="http://keycode.io"><span class="subject">Keycode.io</span> <span class="desc">Quickly find DOM key codes</span></a></li>
-                        <li><a href="http://gif.ph"><span class="subject">Gif.ph</span> <span class="desc">Meticulously-curated collection of gifs</span></a></li>
-                        <li><a href="http://brettbukowski.github.io/cropper/"><span class="subject">Cropper</span> <span class="desc">Crop images in your browser</span></a></li>
-                        <li><a href="http://brettbukowski.github.io/iconic/"><span class="subject">Iconic</span> <span class="desc">Snap a webcam pic and crop it up</span></a></li>
-                        <li><a href="https://github.com/BrettBukowski/how/"><span class="subject">How</span> <span class="desc">Quick Stackoverflow solutions in the command line</span></a></li>
-                    </ul>
+                <article>
+                        <p>
+                            <a href="http://keycode.io">
+                                Keycode.io
+                            </a>
+                            <span class="desc">Quickly find DOM key codes</span>
+                        </p>
+
+                        <p>
+                            <a href="http://gif.ph">
+                                Gif.ph
+                            </a>
+                            <span class="desc">Meticulously-curated collection of gifs</span>
+                        </p>
+
+                        <p>
+                            <a href="http://brettbukowski.github.io/cropper/">
+                                Cropper
+                            </a>
+                            <span class="desc">Crop images in your browser</span>
+                        </p>
+
+                        <p>
+                            <a href="http://brettbukowski.github.io/iconic/">
+                                Iconic
+                            </a>
+                            <span class="desc">Snap a webcam pic and crop it up</span>
+                        </p>
+
+                        <p>
+                            <a href="https://github.com/BrettBukowski/how/">
+                                How
+                            </a>
+                            <span class="desc">Quick Stackoverflow solutions in the command line</span>
+                        </p>
+
+                        <p>
+                            <a href="http://brettbukowski.github.io/locus/">
+                                Locus
+                            </a>
+                            <span class="desc">A modal dialog Polymer web component</span>
+                        </p>
+
+                        <p>
+                            <a href="http://brettbukowski.github.io/dujour/">
+                                Dujour
+                            </a>
+                            <span class="desc">A slide/push menu X-Tag web component</span>
+                        </p>
                 </article>
             </section>
 
             <section id="blog" data-title="Bloggin'">
                 <article>
-                    <p>I also write a <strong>blog</strong> called <a href="http://gestaltism.com">Gestaltism</a> that explores factors of design and craftsmanship.</p>
+                    <p>I write a blog called <a href="http://gestaltism.com">Gestaltism</a> that explores factors of design and craftsmanship.</p>
                 </article>
             </section>
 
             <section id="contact" data-title="Get in touch">
                 <article>
-                    <h2>Get in touch</h2>
-                    <ul class="clearfix social">
-                        <li><a class="icon-twitter" href="https://twitter.com/brettbukowski"><span class="visuallyhidden">Twitter</span></a></li>
-                        <li><a class="icon-facebook" href="https://facebook.com/brettbukowski"><span class="visuallyhidden">Facebook</span></a></li>
-                        <li><a class="icon-github" href="https://github.com/brettbukowski"><span class="visuallyhidden">Github</span></a></li>
-                        <li><a class="icon-instagram" href="https://instagram.com/brettbukowski"><span class="visuallyhidden">Instagram</span></a></li>
-                        <li><a class="icon-tumblr" href="http://valveofignatius.tumblr.com"><span class="visuallyhidden">Tumblr</span></a></li>
-                        <li><a class="icon-flickr" href="http://www.flickr.com/photos/bukowskib/"><span class="visuallyhidden">Flickr</span></a></li>
-                    </ul>
+                    <a id="top-link" href="javascript:window.scrollTo(0,0);">Top</a>
 
-                    <div class="email">
-                        <a class="icon-email" href="#"><span class="visuallyhidden">Email Me</span></a>
+                    <h2 class="visuallyhidden">Get in touch</h2>
+
+                    <nav class="clearfix social">
+                        <a class="icon-twitter" href="https://twitter.com/brettbukowski"><span class="visuallyhidden">Twitter</span></a>
+                        <a class="icon-facebook" href="https://facebook.com/brettbukowski"><span class="visuallyhidden">Facebook</span></a>
+                        <a class="icon-github" href="https://github.com/brettbukowski"><span class="visuallyhidden">Github</span></a>
+                        <a class="icon-instagram" href="https://instagram.com/brettbukowski"><span class="visuallyhidden">Instagram</span></a>
+                        <a class="icon-tumblr" href="http://valveofignatius.tumblr.com"><span class="visuallyhidden">Tumblr</span></a>
+                        <a class="icon-flickr" href="https://www.flickr.com/photos/bukowskib/"><span class="visuallyhidden">Flickr</span></a></li>
+                    </nav>
+
+                    <div class="clearfix">
+                        <img src="img/self.jpg" height="124" width="124" alt="" title="Thanks for stopping by!">
+
+                        <div class="traditional vcard">
+                            <span>
+                                <a class="email" href="mailto:brett.bukowski@gmail.com">
+                                    <span class="visuallyhidden">Email me at</span>
+                                    brett.bukowski@gmail.com
+                                </a>
+                            </span>
+
+                            <span class="adr">
+                                <span class="locality">Bozeman</span>,
+                                <span class="region">MT</span>
+                            </span>
+                        </div>
                     </div>
                 </article>
             </section>
-        </div>
+        </section>
+
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <script src="assets/application.js"></script>
     </body>
 </html>
