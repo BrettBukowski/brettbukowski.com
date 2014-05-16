@@ -95,7 +95,7 @@ header {
 .hero {
     background: url(/img/place.jpg) no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     color: #666;
     min-height: 40em;
     overflow: hidden;
@@ -230,9 +230,9 @@ header {
 }
 
 #experiments {
-    background: url(/img/wood.jpg) no-repeat;
+    background: #EEE url(/img/wood.jpg) no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     color: #FFF;
     padding: 3em 0 5em;
 
@@ -260,7 +260,6 @@ header {
         color: transparentize(#FFF, 0.1);
         display: block;
         font-size: smaller;
-        // font-style: italic;
         text-align: left;
     }
 
@@ -373,7 +372,7 @@ header {
 
 // Retina
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+// @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
     // #hi, #contact {
     //     background: url(/img/mountainflip.png) no-repeat 0 -480px, url(/img/broken_noise@2x.jpg);
     // }
@@ -385,4 +384,4 @@ header {
     //     background-image: url(/img/grid_noise@2x.png);
     //     background-size: 98px 98px;
     // }
-}
+// }

@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width,user-scalable=no">
         <script>window.document.documentElement.className='js'</script>
         <link rel="stylesheet" href="assets/application.css">
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
         <meta name="google-site-verification" content="QklU4IxZFhWSHaWTtU4Pqy2KeWWNYbNsTaMflUigVf8" />
     </head>
     <body>
@@ -16,12 +17,12 @@
                 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
             <![endif]-->
 
-            <section class="hero">
+            <section class="hero" data-stellar-background-ratio="0.7">
                 <header>
                     <nav>
-                        <a href="#projects">Projects</a>
-                        <a href="#blog">Blog</a>
-                        <a href="#contact">Contact</a>
+                        <a href="#projects" data-scroll="true">Projects</a>
+                        <a href="#blog" data-scroll="true">Blog</a>
+                        <a href="#contact" data-scroll="true">Contact</a>
                     </nav>
                 </header>
 
@@ -46,7 +47,7 @@
 
             <section id="projects" data-title="Projects">
                 <article>
-                    <h2>Projects</h2>
+                    <h2 class="wow fadeInRight" data-wow-delay=".3s">Projects</h2>
 
                     <p>These are some of the things I work on for fun and always in order to scratch a particular itch.</p>
                 </article>
@@ -54,7 +55,7 @@
 
             <section class="projects">
                 <ul class="main-projects clearfix">
-                    <li class="downisup">
+                    <li class="downisup wow fadeIn" data-wow-duration="2s">
                         <div class="details">
                             <h3>
                                 <a href="http://downisup.heroku.com/">
@@ -66,7 +67,7 @@
                             <p>A lil' side-by-side markdown previewer <br>(before md became a household name).</p>
                         </div>
                     </li>
-                    <li class="catchlater">
+                    <li class="catchlater wow fadeIn" data-wow-duration="2s">
                         <div class="details">
                             <h3>
                                 <a href="http://catchlater.com/">
@@ -78,7 +79,7 @@
                             <p>Bookmarklet-based watch it later service for web videos.</p>
                         </div>
                     </li>
-                    <li class="tweetstasher">
+                    <li class="tweetstasher wow fadeIn" data-wow-duration="2s">
                         <div class="details">
                             <h3>
                                 <a href="http://tweetstasher.com/">
@@ -90,7 +91,7 @@
                             <p>Save off drafts of tweets to post later.</p>
                         </div>
                     </li>
-                    <li class="colorant">
+                    <li class="colorant wow fadeIn" data-wow-duration="2s">
                         <div class="details">
                             <h3>
                                 <a href="http://colorantapp.com/">
@@ -102,7 +103,7 @@
                             <p>My first iPhone app. Go in and inspect color details of your photos.</p>
                         </div>
                     </li>
-                    <li class="tomatar">
+                    <li class="tomatar wow fadeIn" data-wow-duration="2s">
                         <div class="details">
                             <h3>
                                 <a href="http://tomatar.com/">
@@ -117,69 +118,69 @@
                 </ul>
             </section>
 
-            <section id="experiments" data-title="Explorations">
+            <section id="experiments" data-title="Explorations" data-stellar-background-ratio="0.5">
                     <h2>Other sites, tools, and experiments</h2>
-                <article>
-                        <p>
-                            <a href="http://keycode.io">
-                                Keycode.io
-                            </a>
-                            <span class="desc">Quickly find DOM key codes</span>
-                        </p>
+                <article class="wow fadeIn">
+                    <p>
+                        <a href="http://keycode.io">
+                            Keycode.io
+                        </a>
+                        <span class="desc">Quickly find DOM key codes</span>
+                    </p>
 
-                        <p>
-                            <a href="http://gif.ph">
-                                Gif.ph
-                            </a>
-                            <span class="desc">Meticulously-curated collection of gifs</span>
-                        </p>
+                    <p>
+                        <a href="http://gif.ph">
+                            Gif.ph
+                        </a>
+                        <span class="desc">Meticulously-curated collection of gifs</span>
+                    </p>
 
-                        <p>
-                            <a href="http://brettbukowski.github.io/cropper/">
-                                Cropper
-                            </a>
-                            <span class="desc">Crop images in your browser</span>
-                        </p>
+                    <p>
+                        <a href="http://brettbukowski.github.io/cropper/">
+                            Cropper
+                        </a>
+                        <span class="desc">Crop images in your browser</span>
+                    </p>
 
-                        <p>
-                            <a href="http://brettbukowski.github.io/iconic/">
-                                Iconic
-                            </a>
-                            <span class="desc">Snap a webcam pic and crop it up</span>
-                        </p>
+                    <p>
+                        <a href="http://brettbukowski.github.io/iconic/">
+                            Iconic
+                        </a>
+                        <span class="desc">Snap a webcam pic and crop it up</span>
+                    </p>
 
-                        <p>
-                            <a href="https://github.com/BrettBukowski/how/">
-                                How
-                            </a>
-                            <span class="desc">Quick Stackoverflow solutions in the command line</span>
-                        </p>
+                    <p>
+                        <a href="https://github.com/BrettBukowski/how/">
+                            How
+                        </a>
+                        <span class="desc">Quick Stackoverflow solutions in the command line</span>
+                    </p>
 
-                        <p>
-                            <a href="http://brettbukowski.github.io/locus/">
-                                Locus
-                            </a>
-                            <span class="desc">A modal dialog Polymer web component</span>
-                        </p>
+                    <p>
+                        <a href="http://brettbukowski.github.io/locus/">
+                            Locus
+                        </a>
+                        <span class="desc">A modal dialog Polymer web component</span>
+                    </p>
 
-                        <p>
-                            <a href="http://brettbukowski.github.io/dujour/">
-                                Dujour
-                            </a>
-                            <span class="desc">A slide/push menu X-Tag web component</span>
-                        </p>
+                    <p>
+                        <a href="http://brettbukowski.github.io/dujour/">
+                            Dujour
+                        </a>
+                        <span class="desc">A slide/push menu X-Tag web component</span>
+                    </p>
                 </article>
             </section>
 
             <section id="blog" data-title="Bloggin'">
-                <article>
+                <article class="wow fadeIn">
                     <p>I write a blog called <a href="http://gestaltism.com">Gestaltism</a> that explores factors of design and craftsmanship.</p>
                 </article>
             </section>
 
             <section id="contact" data-title="Get in touch">
                 <article>
-                    <a id="top-link" href="javascript:window.scrollTo(0,0);">Top</a>
+                    <a id="top-link" data-scroll="top" href="javascript:window.scrollTo(0,0);">Top</a>
 
                     <h2 class="visuallyhidden">Get in touch</h2>
 
@@ -214,6 +215,8 @@
         </section>
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.6/wow.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
         <script src="assets/application.js"></script>
     </body>
 </html>
