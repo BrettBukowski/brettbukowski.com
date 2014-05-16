@@ -26,7 +26,7 @@ end
 namespace :cloudflare do
   task :purge_cache do
     site = 'brettbukowski.com'
-    files_to_purge = %w{app/application.js app/application.css index.html}
+    files_to_purge = %w{assets/application.js assets/application.css index.html}
     uri = URI('https://www.cloudflare.com/api_json.html')
     options = {
         z:      site,
