@@ -67,5 +67,6 @@ namespace :deploy do
   after 'symlink:release', 'deploy:compile_assets'
   after :finishing, 'deploy:cleanup'
   after :finishing, 'deploy:purge_cache'
+  after :finishing, 'deploy:restart'
 
 end
