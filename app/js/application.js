@@ -19,5 +19,5 @@ $(function () {
 
   new WOW().init();
 
-  $.stellar({ responsive: true });
+  $.stellar({ responsive: true, horizontalScrolling: false });
 });

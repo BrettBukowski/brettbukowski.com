@@ -93,15 +93,17 @@ header {
 }
 
 .hero {
-    background: url(/img/place.jpg) no-repeat;
+    background: #fafbff url(/img/place.jpg) no-repeat;
     background-size: cover;
-    // background-attachment: fixed;
     color: #666;
     min-height: 40em;
     overflow: hidden;
 
     > section {
+        @include prefix(transform, translateX(-50%), webkit moz spec);
+        left: 50%;
         margin-top: 8em;
+        position: absolute;
     }
 
     aside {
@@ -232,7 +234,6 @@ header {
 #experiments {
     background: #EEE url(/img/wood.jpg) no-repeat;
     background-size: cover;
-    // background-attachment: fixed;
     color: #FFF;
     padding: 3em 0 5em;
 

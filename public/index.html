@@ -12,7 +12,7 @@
         <meta name="google-site-verification" content="QklU4IxZFhWSHaWTtU4Pqy2KeWWNYbNsTaMflUigVf8" />
     </head>
     <body>
-        <section id="content" role="main">
+        <section id="content" role="main" itemscope itemtype="http://schema.org/Person">
             <!--[if lt IE 9]>
                 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
             <![endif]-->
@@ -26,12 +26,12 @@
                     </nav>
                 </header>
 
-                <section>
+                <section data-stellar-ratio="0.7">
                     <aside>Hi I'm</aside>
-                    <h1>Brett Bukowski</h1>
+                    <h1 itemprop="name">Brett Bukowski</h1>
 
                     <article>
-                        <h2>I'm a software developer.</h2>
+                        <h2>I'm a <span itemprop="jobTitle">software developer</span>.</h2>
                         <p>I love building things, particularly web apps.</p>
                     </article>
                 </section>
@@ -39,7 +39,7 @@
 
             <section id="bio" data-title="About">
                 <article>
-                    <p>I'm currently working at <strike>RightNow Technologies</strike> Oracle Conglomerate building a customer service web platform.</p>
+                    <p>I'm currently working at <strike>RightNow Technologies</strike> <span itemprop="affiliation">Oracle Conglomerate</span> building a customer service web platform.</p>
                     <p>I'm a Packers fan, UI enthusiast, comicbook reader, movie watcher, and a book reader who enjoys scholarly pursuits.</p>
                     <p>I like listing attributes and irony. I code like a gentleman.</p>
                 </article>
@@ -47,7 +47,7 @@
 
             <section id="projects" data-title="Projects">
                 <article>
-                    <h2 class="wow fadeInRight" data-wow-delay=".3s">Projects</h2>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">Projects</h2>
 
                     <p>These are some of the things I work on for fun and always in order to scratch a particular itch.</p>
                 </article>
@@ -56,124 +56,124 @@
             <section class="projects">
                 <ul class="main-projects clearfix">
                     <li class="downisup wow fadeIn" data-wow-duration="2s">
-                        <div class="details">
+                        <div class="details" itemscope itemtype="http://schema.org/Code">
                             <h3>
-                                <a href="http://downisup.heroku.com/">
+                                <a itemprop="url" href="http://downisup.heroku.com/">
                                     <img src="img/downisup.png" alt="" width="190" height="190"/>
-                                    Down is Up
+                                    <span itemprop="name">Down is Up</span>
                                 </a>
                             </h3>
-                            <aside>Rails</aside>
-                            <p>A lil' side-by-side markdown previewer <br>(before md became a household name).</p>
+                            <aside itemprop="runtime">Rails</aside>
+                            <p itemprop="about">A lil' side-by-side markdown previewer <br>(before md became a household name).</p>
                         </div>
                     </li>
                     <li class="catchlater wow fadeIn" data-wow-duration="2s">
-                        <div class="details">
+                        <div class="details" itemscope itemtype="http://schema.org/Code">
                             <h3>
-                                <a href="http://catchlater.com/">
+                                <a itemprop="url" href="http://catchlater.com/">
                                     <img src="img/catchlater.png" alt="" width="190" height="190"/>
-                                    Catchlater
+                                    <span itemprop="name">Catchlater</span>
                                 </a>
                             </h3>
-                            <aside>Rails + MongoDB</aside>
-                            <p>Bookmarklet-based watch it later service for web videos.</p>
+                            <aside itemprop="runtime">Rails + MongoDB</aside>
+                            <p itemprop="about">Bookmarklet-based watch it later service for web videos.</p>
                         </div>
                     </li>
                     <li class="tweetstasher wow fadeIn" data-wow-duration="2s">
-                        <div class="details">
+                        <div class="details" itemscope itemtype="http://schema.org/Code">
                             <h3>
-                                <a href="http://tweetstasher.com/">
+                                <a itemprop="url" href="http://tweetstasher.com/">
                                     <img src="img/tweetstasher.png" alt="" width="190" height="190"/>
-                                    Tweetstasher
+                                    <span itemprop="name">Tweetstasher</span>
                                 </a>
                             </h3>
-                            <aside>Express + CouchDB</aside>
-                            <p>Save off drafts of tweets to post later.</p>
+                            <aside itemprop="runtime">Express + CouchDB</aside>
+                            <p itemprop="about">Save off drafts of tweets to post later.</p>
                         </div>
                     </li>
                     <li class="colorant wow fadeIn" data-wow-duration="2s">
-                        <div class="details">
+                        <div class="details" itemscope itemtype="http://schema.org/Code">
                             <h3>
-                                <a href="http://colorantapp.com/">
+                                <a itemprop="url" href="http://colorantapp.com/">
                                     <img src="img/colorant.png" alt="" width="190" height="190"/>
-                                    Colorant
+                                    <span itemprop="name">Colorant</span>
                                 </a>
                             </h3>
-                            <aside>Pure Objective-C</aside>
-                            <p>My first iPhone app. Go in and inspect color details of your photos.</p>
+                            <aside itemprop="runtime">Pure Objective-C</aside>
+                            <p itemprop="about">My first iPhone app. Go in and inspect color details of your photos.</p>
                         </div>
                     </li>
                     <li class="tomatar wow fadeIn" data-wow-duration="2s">
-                        <div class="details">
+                        <div class="details" itemscope itemtype="http://schema.org/Code">
                             <h3>
-                                <a href="http://tomatar.com/">
+                                <a itemprop="url" href="http://tomatar.com/">
                                     <img src="img/tomatar.png" alt="" width="190" height="190"/>
-                                    Tomatar
+                                    <span itemprop="name">Tomatar</span>
                                 </a>
                             </h3>
-                            <aside>Flatiron + Angular + Postgres</aside>
-                            <p>Simplified Pomodoro tracking.</p>
+                            <aside itemprop="runtime">Flatiron + Angular + Postgres</aside>
+                            <p itemprop="about">Simplified Pomodoro tracking.</p>
                         </div>
                     </li>
                 </ul>
             </section>
 
             <section id="experiments" data-title="Explorations" data-stellar-background-ratio="0.5">
-                    <h2>Other sites, tools, and experiments</h2>
+                <h2 class="wow fadeInUp">Other sites, tools, and experiments</h2>
                 <article class="wow fadeIn">
-                    <p>
-                        <a href="http://keycode.io">
-                            Keycode.io
+                    <p itemscope itemtype="http://schema.org/Code">
+                        <a href="http://keycode.io" itemprop="url">
+                            <span itemprop="name">Keycode.io</span>
                         </a>
-                        <span class="desc">Quickly find DOM key codes</span>
+                        <span class="desc" itemprop="about">Quickly find DOM key codes</span>
                     </p>
 
-                    <p>
-                        <a href="http://gif.ph">
-                            Gif.ph
+                    <p itemscope itemtype="http://schema.org/Code">
+                        <a href="http://gif.ph"  itemprop="url">
+                            <span itemprop="name">Gif.ph</span>
                         </a>
-                        <span class="desc">Meticulously-curated collection of gifs</span>
+                        <span class="desc" itemprop="about">Meticulously-curated collection of gifs</span>
                     </p>
 
-                    <p>
-                        <a href="http://brettbukowski.github.io/cropper/">
-                            Cropper
+                    <p itemscope itemtype="http://schema.org/Code">
+                        <a href="http://brettbukowski.github.io/cropper/" itemprop="url">
+                            <span itemprop="name">Cropper</span>
                         </a>
-                        <span class="desc">Crop images in your browser</span>
+                        <span class="desc" itemprop="about">Crop images in your browser</span>
                     </p>
 
-                    <p>
-                        <a href="http://brettbukowski.github.io/iconic/">
-                            Iconic
+                    <p itemscope itemtype="http://schema.org/Code">
+                        <a href="http://brettbukowski.github.io/iconic/" itemprop="url">
+                            <span itemprop="name">Iconic</span>
                         </a>
-                        <span class="desc">Snap a webcam pic and crop it up</span>
+                        <span class="desc" itemprop="about">Snap a webcam pic and crop it up</span>
                     </p>
 
-                    <p>
-                        <a href="https://github.com/BrettBukowski/how/">
-                            How
+                    <p itemscope itemtype="http://schema.org/Code">
+                        <a href="https://github.com/BrettBukowski/how/" itemprop="url">
+                            <span itemprop="name">How</span>
                         </a>
-                        <span class="desc">Quick Stackoverflow solutions in the command line</span>
+                        <span class="desc" itemprop="about">Quick Stackoverflow solutions in the command line</span>
                     </p>
 
-                    <p>
-                        <a href="http://brettbukowski.github.io/locus/">
-                            Locus
+                    <p itemscope itemtype="http://schema.org/Code">
+                        <a href="http://brettbukowski.github.io/locus/" itemprop="url">
+                            <span itemprop="name">Locus</span>
                         </a>
-                        <span class="desc">A modal dialog Polymer web component</span>
+                        <span class="desc" itemprop="about">A modal dialog Polymer web component</span>
                     </p>
 
-                    <p>
-                        <a href="http://brettbukowski.github.io/dujour/">
-                            Dujour
+                    <p itemscope itemtype="http://schema.org/Code">
+                        <a href="http://brettbukowski.github.io/dujour/" itemprop="url">
+                            <span itemprop="name">Dujour</span>
                         </a>
-                        <span class="desc">A slide/push menu X-Tag web component</span>
+                        <span class="desc" itemprop="about">A slide/push menu X-Tag web component</span>
                     </p>
                 </article>
             </section>
 
             <section id="blog" data-title="Bloggin'">
-                <article class="wow fadeIn">
+                <article class="wow fadeInUp">
                     <p>I write a blog called <a href="http://gestaltism.com">Gestaltism</a> that explores factors of design and craftsmanship.</p>
                 </article>
             </section>
@@ -196,17 +196,17 @@
                     <div class="clearfix">
                         <img src="img/self.jpg" height="124" width="124" alt="" title="Thanks for stopping by!">
 
-                        <div class="traditional vcard">
+                        <div class="traditional" id="address">
                             <span>
-                                <a class="email" href="mailto:brett.bukowski@gmail.com">
-                                    <span class="visuallyhidden">Email me at</span>
+                                <span class="visuallyhidden">Email me at</span>
+                                <a class="email" itemprop="email" href="mailto:brett.bukowski@gmail.com">
                                     brett.bukowski@gmail.com
                                 </a>
                             </span>
 
-                            <span class="adr">
-                                <span class="locality">Bozeman</span>,
-                                <span class="region">MT</span>
+                            <span class="adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                                <span class="locality" itemprop="addressLocality">Bozeman</span>,
+                                <span class="region" itemprop="addressRegion">MT</span>
                             </span>
                         </div>
                     </div>
