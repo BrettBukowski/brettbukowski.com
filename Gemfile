@@ -7,6 +7,7 @@ gem 'sinatra'
 gem 'sprockets', '~> 2.0'
 gem 'uglifier'
 gem 'capistrano', '~> 3.0'
+gem 'yui-compressor'
 
 group :development do
   gem 'capistrano-bundler'

@@ -1,32 +1,45 @@
 require 'bundler/setup'
 require 'net/http'
 require 'json'
+require 'yui/compressor'
 require 'uglifier'
 require './app'
 
 namespace :assets do
+  desc "Combine and minify assets"
   task :compile do
-    %w{application.js application.css r.js r.scss}.each do |file_name|
+    %w{application.js application.scss r.js r.scss}.each do |file_name|
       output_file_name = (File.extname(file_name) == '.scss') ? File.basename(file_name, '.scss') + '.css' : file_name
       App.sprockets[file_name].write_to "public/assets/#{output_file_name}"
     end
 
-    Dir.glob('public/assets/*.js').each do |file_path|
-      minJS = Uglifier.compile(File.read(file_path), :mangle => true)
-      File.open(file_path, 'w') { |f| f.write(minJS) }
+
+    def compress_js(files)
+      files.each do |file_path|
+        minJS = Uglifier.compile(File.read(file_path), :mangle => true)
+        File.open(file_path, 'w') { |f| f.write(minJS) }
+      end
     end
 
-    Dir.glob('public/assets/*.css').each do |file_path|
-      minCSS = File.open(file_path, 'r').read.gsub!(/(\s{2,}|\n)/, '')
-      File.open(file_path, 'w') { |f| f.write(minCSS) }
+    compress_js(Dir.glob('public/assets/*.js'))
+
+    def compress_css(files)
+      compressor = YUI::CssCompressor.new
+      files.each do |file_path|
+        minCSS = compressor.compress(File.open(file_path, 'r').read)
+        File.open(file_path, 'w') { |f| f.write(minCSS) }
+      end
     end
+
+    compress_css(Dir.glob('public/assets/*.css'))
   end
 end
 
 namespace :cloudflare do
+  desc "Purge Cloudflare's cache of site assets"
   task :purge_cache do
     site = 'brettbukowski.com'
-    files_to_purge = %w{assets/application.js assets/application.css index.html}
+    files_to_purge = %w{assets/application.js assets/application.css assets/r.js assets/r.css index.html}
     uri = URI('https://www.cloudflare.com/api_json.html')
     options = {
         z:      site,
