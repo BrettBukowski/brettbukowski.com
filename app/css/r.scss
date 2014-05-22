@@ -3,9 +3,9 @@
 @charset "UTF-8";
 
 /* MIXINS */
-@mixin img($path, $size) {
+@mixin img($path, $x, $y) {
   background-image: url(/img/r/#{$path});
-  background-size: $size $size;
+  background-size: $x $y;
 }
 @mixin anim($name, $delay: .5s, $duration: 1s, $timing: ease, $fill-mode: both) {
   -webkit-animation-name: $name;
@@ -43,6 +43,17 @@
   -webkit-font-smoothing: antialiased;
 }
 
+@mixin clearfix {
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
 /* VARIABLES */
 $text: #222;
 $white: #FFF;
@@ -62,42 +73,48 @@ $redish: #924949;
   background: $muted-blue;
   color: $white;
 }
+
 ::-moz-selection {
   background: $muted-blue;
   color: $white;
 }
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 html {
-  font-family: OpenSansRegular;
-  color: $text;
-  padding: 3em 2em 2em;
-  @include img('white_sand.png', 211px);
-  position: relative;
+  @include img('dust.png', 400px, 300px);
   border-bottom: 4px solid $heading-bar;
   box-shadow: 0 -2px 3px rgba(0, 0, 0, .2) inset;
+  color: $text;
+  font-family: OpenSansRegular;
+  padding: 3em 2em 2em;
+  position: relative;
 }
-body {
-}
+
 h1, h2, h3, h4, h5 {
   font-family: carroisgothicregular;
 }
+
 h1 {
   font-size: 2.6em;
   margin-top: 0;
 }
+
 h1, h2 {
   letter-spacing: -1px;
 }
+
 a {
   color: $link;
   text-decoration: none;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   -ms-transition: all .3s;
+
   &:hover,
   &:focus {
     color: darken($link, 15%);
@@ -105,13 +122,16 @@ a {
     text-decoration: underline;
   }
 }
+
 p {
   margin: 2px;
 }
+
 li ul {
   margin: 0;
   padding-left: 16px;
 }
+
 header {
   border-bottom: 1px solid $text;
   overflow: hidden;
@@ -145,34 +165,41 @@ header {
   padding-bottom: 4px;
   font-size: smaller;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+
   [class^="icon-"]:before, [class*=" icon-"]:before {
     color: $white;
     position: relative;
     top: 2px;
   }
+
   a {
     color: $white;
     padding-right: 6px;
   }
+
   &:focus,
   &:hover {
     @include anim(goDown, 0s, .5s);
   }
   @include anim(goUp, 2s);
 }
+
 .name {
   float: left;
   width: 60%;
 }
+
 .category {
   color: $subtitle;
 }
+
 .info {
   float: right;
   width: 40%;
   border-left: 1px solid $text;
   padding-bottom: 1.6em;
   position: relative;
+
   [class^="icon-"]:before, [class*=" icon-"]:before {
     background: $bluish;
     color: $light-gray;
@@ -181,6 +208,7 @@ header {
     margin-right: 8px;
     font-size: 1.3em;
   }
+
   aside {
     background: $text;
     border-radius: 67%;
@@ -201,16 +229,19 @@ header {
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     opacity: .2;
+
     &:hover {
       opacity: .5;
     }
   }
 }
+
 .about {
   margin: 2em 0;
   padding-bottom: 1em;
   border-bottom: 1px solid $text;
 }
+
 .siderail {
   clear: left;
   float: left;
@@ -218,17 +249,25 @@ header {
   width: 30%;
   margin-right: 1em;
 }
+
 #main {
-  width: 68%;
   float: right;
-  overflow: hidden;
+  margin-top: -1px;
+  width: 68%;
+
+  > section {
+    @include clearfix;
+    float: left;
+    width: 100%;
+  }
 }
+
 .box {
   border-top: 10px solid $bluish;
   background: $white;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  margin-bottom: 1em;
-  padding: 1em;
+  margin: 1em 0;
+  padding: 1.4em;
   position: relative;
 
   h3 {
@@ -236,6 +275,7 @@ header {
     text-transform: uppercase;
     margin-top: .3em;
     padding-bottom: .3em;
+
     &[class^="icon-"]:before {
         color: $bluish;
         float: right;
@@ -243,82 +283,99 @@ header {
         line-height: .5em;
     }
   }
-    &:before {
-      height: 0;
-      width: 0;
-      position: absolute;
-      top: 0;
-      left: 2%;
-      content: "";
-      border-right: 7px solid transparent;
-      border-left: 7px solid transparent;
-      border-top: 7px solid $bluish;
-    }
+
+  &:before {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    content: "";
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 7px solid $bluish;
+  }
 }
 
 /* STYLES */
 .contact {
   margin-top:.6em;
+
   p {
     margin-bottom:.4em;
   }
 }
+
 .time-period {
   text-transform: uppercase;
   color: $redish;
 }
+
 .roll {
   color: $dark-gray;
   padding-left: 1em;
   position: relative;
+
   strong {
     display: block;
     color: $text;
     font-weight: 600;
     margin-top:.3em;
   }
+
   i:before {
     position: absolute;
     left: -4px;
     top: -4px;
+
     @media print {
       top: -2px;
       left: -2px;
     }
   }
 }
+
 .role {
   font-weight: bold;
   margin-bottom: 1em;
 }
+
 h4 {
   margin:.3em 0;
+
   @media print {
     font-size: 10px !important;
     font-weight: normal;
   }
+
   @media screen {
     font-size:1.3em;
     font-weight: 500;
   }
 }
+
 .gray {
     color: $gray-blue;
 }
+
 .job {
   ul {
     margin-top:.5em;
   }
+
   .overview {
     display: block;
     margin-top:.8em;
   }
+
   margin-bottom: 2em;
 }
+
 .side-projects {
   .job {
     margin: 1em 0 0;
   }
+
   .icon-right:before {
     margin-right: 6px;
     vertical-align: middle;
@@ -327,6 +384,7 @@ h4 {
     color: $bluish;
   }
 }
+
 .what {
   border-radius: 50%;
   background: $dark-blue;
@@ -342,6 +400,7 @@ h4 {
   top: -7px;
   right: -4px;
 }
+
 .tooltip {
   cursor: help;
   position: absolute;
@@ -350,6 +409,7 @@ h4 {
   padding: 6px;
   border-radius: 4px;
   box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+
   &:before {
     height: 0;
     width: 0;
@@ -362,6 +422,7 @@ h4 {
     border-bottom: 5px solid $text;
   }
 }
+
 .cta {
   background: #EBF8FE;
   box-shadow:0 0 4px rgba(4, 107, 152, .2);
@@ -369,14 +430,16 @@ h4 {
   border-width: 2px 0;
   text-align: center;
   font-size: 1.1em;
-  padding: 1em;
-  margin-right: 0;
+  padding: 2.3em 1em;
+  margin: 1em 0;
+
   .prelude {
     position: relative;
     border-bottom: 1px solid #222;
     padding-bottom: 1em;
     margin-bottom: 1em;
   }
+
   .contact-info {
     a {
       margin-bottom: 0;
@@ -389,7 +452,7 @@ h4 {
 /* RETINA */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   html {
-    @include img('white_sand@2x.png', 211px);
+    @include img('dust_@2X.png', 400px, 300px);
   }
 }
 
@@ -397,9 +460,10 @@ h4 {
 @media screen and (max-width:900px) {
   #main,
   .siderail {
-    float: none;
+    overflow: hidden;
     width: 100%;
   }
+
   .columns {
     overflow: hidden;
     padding-top:.3em;
@@ -414,13 +478,24 @@ h4 {
     border-left: 0;
     border-top: 1px solid $text;
     padding-top: 1em;
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      content: "";
+      display: none;
+    }
+
+    aside {
+      right: 22px;
+    }
   }
+
   .info,
   .name {
     float: none;
     text-align: center;
     width: auto;
   }
+
   .columns {
     overflow: visible;
     padding-top: 0;
@@ -444,6 +519,7 @@ h4 {
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'OpenSansRegular';
   src: url('/fonts/OpenSans/OpenSans-Regular-webfont.eot');
@@ -454,6 +530,7 @@ h4 {
   font-weight: normal;
   font-style: normal;
 }
+
 /*! Entypo pictograms by Daniel Bruce — www.entypo.com */
 @font-face {
   font-family: 'entypo';
@@ -465,6 +542,7 @@ h4 {
   font-weight: normal;
   font-style: normal;
 }
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
   @include icon-font;
   color: $bluish;
@@ -523,38 +601,46 @@ h4 {
   * {
     font-weight: normal !important;
   }
+
   a.print:after {
     font-size: 10px;
     content:" (" attr(href) ") ";
   }
+
   html {
     font-size:.6em;
     border: 0;
     box-shadow: none;
     padding: 10px 2em;
   }
+
   h4, h4 a {
     font-size: 8px !important;
     font-weight: normal !important;
   }
+
   ol, ul {
     padding-left: 1.5em;
   }
+
   .heading-bar,
   .what {
     display: none;
   }
+
   .info {
     padding-bottom: 1em;
     aside {
       right: 10% !important;
     }
   }
+
   .box {
-    padding: 10px 4px 4px;
-    box-shadow: none;
-    overflow: visible;
     border-top-width: 3px;
+    box-shadow: none;
+    margin: 0 0 1em 0;
+    overflow: visible;
+    padding: 10px 4px 4px;
 
     &:before {
       top: -1px;
@@ -563,9 +649,11 @@ h4 {
       border-top: 4px solid $bluish;
     }
   }
+
   .experience {
     page-break-after: always;
     margin-bottom:20em;
+
     &:after {
       margin-top: 1em;
       display: block;
@@ -573,6 +661,7 @@ h4 {
       content: "Continued...";
     }
   }
+
   .cta,
   .skills > article,
   .side-projects {
@@ -581,6 +670,7 @@ h4 {
     top: 30px;
     padding-bottom: 20px;
   }
+
   .cta {
     box-shadow: none;
     clear: both;
