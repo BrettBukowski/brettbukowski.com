@@ -1,4 +1,5 @@
 @import "normalize";
+@import "mixins";
 
 @charset "UTF-8";
 
@@ -6,32 +7,6 @@
 @mixin img($path, $x, $y) {
   background-image: url(/img/r/#{$path});
   background-size: $x $y;
-}
-@mixin anim($name, $delay: .5s, $duration: 1s, $timing: ease, $fill-mode: both) {
-  -webkit-animation-name: $name;
-  -moz-animation-name: $name;
-  -ms-animation-name: $name;
-  animation-name: $name;
-  -webkit-animation-duration: $duration;
-  -webkit-animation-fill-mode: $fill-mode;
-  -webkit-animation-delay: $delay;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-timing-function: $timing;
-  -moz-animation-duration: $duration;
-  -moz-animation-fill-mode: $fill-mode;
-  -moz-animation-delay: $delay;
-  -moz-animation-iteration-count: 1;
-  -moz-animation-timing-function: $timing;
-  -ms-animation-duration: $duration;
-  -ms-animation-fill-mode: $fill-mode;
-  -ms-animation-delay: $delay;
-  -ms-animation-iteration-count: 1;
-  -ms-animation-timing-function: $timing;
-  animation-duration: $duration;
-  animation-fill-mode: $fill-mode;
-  animation-delay: $delay;
-  animation-iteration-count: 1;
-  animation-timing-function: $timing;
 }
 @mixin icon-font {
   font-family: 'entypo';
@@ -80,9 +55,7 @@ $redish: #924949;
 }
 
 * {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  @include prefix(box-sizing, border-box, moz webkit spec);
 }
 
 html {
@@ -111,9 +84,7 @@ h1, h2 {
 a {
   color: $link;
   text-decoration: none;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
+  @include prefix(transition, all .3s, moz webkit ms spec);
 
   &:hover,
   &:focus {
@@ -210,6 +181,9 @@ header {
   }
 
   aside {
+    @include prefix(transform, rotate(-20deg), webkit moz spec);
+    @include prefix(user-select, none, webkit moz spec);
+    @include prefix(transition, all .5s, webkit moz spec);
     background: $text;
     border-radius: 67%;
     color: white;
@@ -222,12 +196,6 @@ header {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     top: 1px;
     right: 45%;
-    -webkit-transform: rotate(-20deg);
-    -moz-transform: rotate(-20deg);
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
     opacity: .2;
 
     &:hover {
@@ -252,13 +220,19 @@ header {
 
 #main {
   float: right;
-  margin-top: -1px;
   width: 68%;
+
+  @media screen {
+    margin-top: -1px;
+  }
 
   > section {
     @include clearfix;
-    float: left;
     width: 100%;
+
+    @media screen {
+      float: left;
+    }
   }
 }
 

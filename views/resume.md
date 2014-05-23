@@ -37,7 +37,7 @@ I'm an experienced web developer looking to advance my career. I want to help bu
 * MongoDB
 * CouchDB
 * LESS, SASS, vanilla CSS
-    
+
 #### Areas of Expertise
 
 Highly-skilled in front-end web development techniques such as:
@@ -67,7 +67,7 @@ I'm a member on a team that builds a web platform powering many big-time custome
 
 2007
 #### Computers Unlimited - Billings, MT
-Intern
+Software Development Intern
 
 I worked within a team building pharmaceutical inventory management software.
 

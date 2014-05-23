@@ -1,40 +1,8 @@
 @import 'normalize';
 @import 'boilerplate';
 @import 'fonts';
+@import 'mixins';
 
-
-@mixin prefix($property, $value, $prefixes) {
-    @each $prefix in $prefixes {
-        @if $prefix == webkit {
-            -webkit-#{$property}: $value;
-        }
-        @else if $prefix == moz {
-            -moz-#{$property}: $value;
-        }
-        @else if $prefix == ms {
-            -ms-#{$property}: $value;
-        }
-        @else if $prefix == spec {
-            #{$property}: $value;
-        }
-        @else  {
-          @warn "Unrecognized prefix: #{$prefix}";
-        }
-    }
-}
-
-@mixin trans($duration, $prop: all) {
-    @include prefix(transition, $prop $duration, webkit moz ms spec);
-}
-
-@mixin gradientBg($start, $stop) {
-    background-color: $start;
-    background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
-    background-image: -webkit-linear-gradient(top, $start, $stop);
-    background-image: -moz-linear-gradient(top, $start, $stop);
-    background-image: -ms-linear-gradient(top, $start, $stop);
-    background-image: linear-gradient(top, $start, $stop);
-}
 
 *, *:before, *:after {
     @include prefix(box-sizing, border-box, moz webkit spec);
@@ -70,6 +38,24 @@ a {
     }
 }
 
+h2 {
+    // display: inline-block;
+    // padding-bottom: 1em;
+    // border-bottom: 1px solid;
+    margin-bottom: 60px;
+
+    &:after {
+        @include prefix(transform, translateX(-50%), webkit moz ms spec);
+        content: "";
+        position: absolute;
+        background: #FFF;
+        width: 100px;
+        height: 1px;
+        bottom: -30px;
+        left: 50%;
+    }
+}
+
 header {
     border-bottom: 1px solid #CCC;
     padding: 0em 1em 2em;
@@ -101,7 +87,7 @@ header {
     overflow: hidden;
 
     > section {
-        @include prefix(transform, translateX(-50%), webkit moz spec);
+        @include prefix(transform, translateX(-50%), webkit moz ms spec);
         border: 8px solid transparentize(#666565, .85);
         border: 12px solid #FFF;
         color: #666565;
@@ -122,6 +108,10 @@ header {
             right: 0;
             top: 0;
             z-index: -1;
+        }
+
+        h2:after {
+            content: none;
         }
     }
 
@@ -166,7 +156,7 @@ header {
 }
 
 #top-link {
-    @include prefix(transform, translateX(-25px), webkit moz spec);
+    @include prefix(transform, translateX(-25px), webkit moz ms spec);
     border-bottom: 30px solid #FFF;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
@@ -262,7 +252,7 @@ header {
 }
 
 #experiments {
-    background: #EEE url(/img/wood.jpg) no-repeat;
+    background: #73432d url(/img/wood.jpg) no-repeat;
     background-size: cover;
     color: #FFF;
     padding: 3em 0 5em;
@@ -277,7 +267,7 @@ header {
     }
 
     article {
-        @include prefix(transform, translateX(-25%), moz webkit spec);
+        @include prefix(transform, translateX(-25%), moz webkit ms spec);
         display: block;
         margin-left: 50%;
         text-align: left;
@@ -296,7 +286,7 @@ header {
 
     @media screen and (max-width: 400px) {
         article {
-            @include prefix(transform, none, webkit moz spec);
+            @include prefix(transform, none, webkit moz ms spec);
             margin: auto;
             text-align: center;
         }
