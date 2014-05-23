@@ -1,0 +1,41 @@
+@mixin prefix($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+        @if $prefix == webkit {
+            -webkit-#{$property}: $value;
+        }
+        @else if $prefix == moz {
+            -moz-#{$property}: $value;
+        }
+        @else if $prefix == ms {
+            -ms-#{$property}: $value;
+        }
+        @else if $prefix == spec {
+            #{$property}: $value;
+        }
+        @else  {
+          @warn "Unrecognized prefix: #{$prefix}";
+        }
+    }
+}
+
+@mixin trans($duration, $prop: all) {
+    @include prefix(transition, $prop $duration, webkit moz ms spec);
+}
+
+@mixin gradientBg($start, $stop) {
+    background-color: $start;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
+    background-image: -webkit-linear-gradient(top, $start, $stop);
+    background-image: -moz-linear-gradient(top, $start, $stop);
+    background-image: -ms-linear-gradient(top, $start, $stop);
+    background-image: linear-gradient(top, $start, $stop);
+}
+
+@mixin anim($name, $delay: .5s, $duration: 1s, $timing: ease, $fill-mode: both) {
+    @include prefix(animation-name, $name, moz webkit ms spec);
+    @include prefix(animation-duration, $duration, moz webkit ms spec);
+    @include prefix(animation-fill-mode, $fill-mode, moz webkit ms spec);
+    @include prefix(animation-delay, $delay, moz webkit ms spec);
+    @include prefix(animation-iteration-count, 1, moz webkit ms spec);
+    @include prefix(animation-timing-function, $timing, moz webkit ms spec);
+}
