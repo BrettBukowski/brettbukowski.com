@@ -39,3 +39,11 @@
     @include prefix(animation-iteration-count, 1, moz webkit ms spec);
     @include prefix(animation-timing-function, $timing, moz webkit ms spec);
 }
+
+@mixin clearfix {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+}

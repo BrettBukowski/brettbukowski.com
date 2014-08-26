@@ -11,7 +11,7 @@ Web Engineer
 
 I'm an experienced web developer looking to advance my career. I want to help build a product where a clear vision and a talented group of people executing on that vision produces software that helps millions of people. I want to help solve challenging problems. I'm learning to ask better questions. I hope to work with and learn from other skilled engineers in order to deepen my programming skills and learn new ways of solving problems.
 
-* I place a strong emphasis on writing testable code that's intended to be consumed by other developers.
+* I place a strong emphasis on writing testable code that's intended for consumption by other developers.
 * I value readable code and I'm always in search of more elegant solutions.
 * I enjoy learning new programming languages and at becoming more adept with languages that I'm familiar with.
 * I'm accustomed to shipping software using an agile methodology and scrum process.
@@ -59,11 +59,14 @@ Highly-skilled in front-end web development techniques such as:
 
 ### Work Experience
 
+
 2008 - Present
+
 #### RightNow Technologies (Acquired by Oracle, 2012) - Bozeman, MT
+
 Web Developer
 
-I'm a member on a team that builds a web platform powering many big-time customer support websites. This product is a hosted, PHP-based application framework that provides a rich set of UI widgets for building support features; it's designed to work well for most businesses out-of-the-box. But the developer framework provides a great deal of APIs so that businesses can customize the support experience they provide to better suit specific business needs or user goals.
+Lead member on a team that builds a web platform powering many big-time customer support websites. This product is a hosted, PHP-based application framework that provides a rich set of UI widgets for building support features; it's designed to work well for most businesses out-of-the-box. But the developer framework provides a great deal of APIs so that businesses can customize the support experience they provide to better suit specific business needs or user goals.
 
 **Overview**
 
@@ -75,10 +78,12 @@ I'm a member on a team that builds a web platform powering many big-time custome
 
 
 2007
+
 #### Computers Unlimited - Billings, MT
+
 Software Development Intern
 
-I worked within a team building pharmaceutical inventory management software.
+Worked in a team building pharmaceutical inventory management software.
 
 * Responsibilities involved fixing bugs and developing minor features in a mature application.
 * This required learning a new programming language.
@@ -87,7 +92,7 @@ I worked within a team building pharmaceutical inventory management software.
 
 These are some things I've built to scratch an itch and to explore technologies outside the purview of what I'd see at work.
 
-#### [CatchLater](http://catchlater.com)
+#### [CatchLater](https://catchlater.com)
 
 Web app to stash off online videos (Youtube, Vimeo, TED, etc.) for watching later.
 

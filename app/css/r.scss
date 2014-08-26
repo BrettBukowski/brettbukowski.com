@@ -18,17 +18,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-@mixin clearfix {
-  &:after {
-    content: " ";
-    display: table;
-  }
-
-  &:after {
-    clear: both;
-  }
-}
-
 /* VARIABLES */
 $text: #222;
 $white: #FFF;
@@ -42,6 +31,7 @@ $dark-blue: #3E3E80;
 $link: #515194;
 $subtitle: darken($bluish, 10%);
 $redish: #924949;
+$border: 1px solid lighten($text, 50);
 
 /* GENERICS */
 ::selection {
@@ -64,7 +54,7 @@ html {
   box-shadow: 0 -2px 3px rgba(0, 0, 0, .2) inset;
   color: $text;
   font-family: OpenSansRegular;
-  padding: 3em 2em 2em;
+  padding: 4em 2em 2em;
   position: relative;
 }
 
@@ -104,13 +94,16 @@ li ul {
 }
 
 header {
-  border-bottom: 1px solid $text;
+  @include clearfix;
+
+  border-bottom: $border;
   overflow: hidden;
   position: relative;
   padding-bottom: 4px;
+  margin: 1em 0;
 
   &:after {
-    border-top: 1px solid $text;
+    border-top: $border;
     content: "";
     display: block;
     height: 0;
@@ -128,7 +121,6 @@ header {
 .heading-bar {
   background: $heading-bar;
   text-align: center;
-  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
@@ -147,12 +139,6 @@ header {
     color: $white;
     padding-right: 6px;
   }
-
-  &:focus,
-  &:hover {
-    @include anim(goDown, 0s, .5s);
-  }
-  @include anim(goUp, 2s);
 }
 
 .name {
@@ -167,7 +153,7 @@ header {
 .info {
   float: right;
   width: 40%;
-  border-left: 1px solid $text;
+  border-left: $border;
   padding-bottom: 1.6em;
   position: relative;
 
@@ -179,35 +165,14 @@ header {
     margin-right: 8px;
     font-size: 1.3em;
   }
-
-  aside {
-    @include prefix(transform, rotate(-20deg), webkit moz spec);
-    @include prefix(user-select, none, webkit moz spec);
-    @include prefix(transition, all .5s, webkit moz spec);
-    background: $text;
-    border-radius: 67%;
-    color: white;
-    cursor: default;
-    font-size: .7em;
-    position: absolute;
-    max-width: 64px;
-    text-align: center;
-    padding: 14px 0;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    top: 1px;
-    right: 45%;
-    opacity: .2;
-
-    &:hover {
-      opacity: .5;
-    }
-  }
 }
 
 .about {
-  margin: 2em 0;
-  padding-bottom: 1em;
-  border-bottom: 1px solid $text;
+  @include clearfix;
+
+  font-size: large;
+  margin: 2em 0 1em;
+  padding-bottom: 2em;
 }
 
 .siderail {
@@ -237,6 +202,8 @@ header {
 }
 
 .box {
+  @include clearfix;
+
   border-top: 10px solid $bluish;
   background: $white;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -263,7 +230,7 @@ header {
     width: 0;
     position: absolute;
     top: 0;
-    left: 2%;
+    left: 1.2em;
     content: "";
     border-right: 7px solid transparent;
     border-left: 7px solid transparent;
@@ -450,16 +417,12 @@ h4 {
 @media screen and (max-width:650px) {
   .info {
     border-left: 0;
-    border-top: 1px solid $text;
+    border-top: $border;
     padding-top: 1em;
 
     [class^="icon-"]:before, [class*=" icon-"]:before {
       content: "";
       display: none;
-    }
-
-    aside {
-      right: 22px;
     }
   }
 
@@ -510,7 +473,6 @@ h4 {
   font-family: 'entypo';
   src:url('/fonts/Entypo/entypo.eot');
   src:url('/fonts/Entypo/entypo.eot?#iefix') format('embedded-opentype'),
-      // url('/fonts/Entypo/entypo.svg#entypo') format('svg'),
       url('/fonts/Entypo/entypo.woff') format('woff'),
       url('/fonts/Entypo/entypo.ttf') format('truetype');
   font-weight: normal;
@@ -577,15 +539,19 @@ h4 {
   }
 
   a.print:after {
-    font-size: 10px;
+    font-size: 11px;
     content:" (" attr(href) ") ";
   }
 
   html {
-    font-size:.6em;
+    font-size: 10px;
     border: 0;
     box-shadow: none;
     padding: 10px 2em;
+  }
+
+  header {
+    margin: 0;
   }
 
   h4, h4 a {
@@ -593,8 +559,24 @@ h4 {
     font-weight: normal !important;
   }
 
+  .side-projects {
+    h4 {
+      // Hack to get these things to actually display
+      // properly.
+      -webkit-transform: scale(.6) translateX(-145px);
+      -moz-transform: scale(.6) translateX(-145px);
+      -ms-transform: scale(.6) translateX(-145px);
+      -o-transform: scale(.6) translateX(-145px);
+      transform: scale(.6) translateX(-145px);
+    }
+  }
+
   ol, ul {
     padding-left: 1.5em;
+  }
+
+  .about {
+    font-size: inherit;
   }
 
   .heading-bar,
@@ -604,9 +586,6 @@ h4 {
 
   .info {
     padding-bottom: 1em;
-    aside {
-      right: 10% !important;
-    }
   }
 
   .box {
@@ -628,7 +607,7 @@ h4 {
     page-break-after: always;
     margin-bottom:20em;
 
-    &:after {
+    &::after {
       margin-top: 1em;
       display: block;
       text-align: center;
@@ -653,22 +632,6 @@ h4 {
     top: 60px;
     width: 100%;
   }
-    // margin-top: 20em;
-    // page-break-after: always;
-  // }
-  // #main,
-  // .siderail {
-  //   float: none;
-  //   width: 100%;
-  // }
-  //   .columns {
-  //   overflow: hidden;
-  //   padding-top:.3em;
-  //   article {
-  //     float: left;
-  //     width: 50%;
-  //   }
-  // }
 }
 
 // ANIMATIONS
