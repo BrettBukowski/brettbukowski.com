@@ -1,3 +1,12 @@
+# Brett Bukowski
+
+Web Engineer
+
+- Bozeman, MT (willing to relocate)
+- <tel:406-624-9094>
+- <mailto:brett@brettbukowski.com>
+- <http://brettbukowski.com>
+
 ### Overview
 
 I'm an experienced web developer looking to advance my career. I want to help build a product where a clear vision and a talented group of people executing on that vision produces software that helps millions of people. I want to help solve challenging problems. I'm learning to ask better questions. I hope to work with and learn from other skilled engineers in order to deepen my programming skills and learn new ways of solving problems.
@@ -111,6 +120,6 @@ Get in touch...
 
 <tel:406-624-9094>
 
-<mailto:brett.bukowski@gmail.com>
+<mailto:brett@brettbukowski.com>
 
 ＼(＾O＾)／＼(＾O＾)／＼(＾O＾)／
