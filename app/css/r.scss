@@ -350,6 +350,15 @@ h4 {
   padding: 6px;
   border-radius: 4px;
   box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+  visibility: hidden;
+  opacity: 0;
+
+  @include prefix(transition, opacity .4s ease, webkit moz spec);
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
 
   &:before {
     height: 0;
