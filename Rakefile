@@ -39,7 +39,16 @@ namespace :cloudflare do
   desc "Purge Cloudflare's cache of site assets"
   task :purge_cache do
     site = 'brettbukowski.com'
-    files_to_purge = %w{assets/application.js assets/application.css assets/r.js assets/r.css index.html}
+    files_to_purge = %w{
+      assets/application.js
+      assets/application.css
+      assets/r.js
+      assets/r.css
+      index.html
+      resume.pdf
+      resume
+      resume.md
+    }
     uri = URI('https://www.cloudflare.com/api_json.html')
     options = {
         z:      site,

@@ -74,6 +74,7 @@ Lead member on a team that builds a web platform powering many big-time customer
 * Made enduser-facing features comprised of PHP, JavaScript, and CSS components.
 * Communicated with customers and platform developers via web forums.
 * 4-time RightNow-Oracle development hackathon winner (1 solo, 3 team).
+* Built and maintained several internal, standalone web apps and other internal tools as part of 20% time.
 * Gave multiple talks at developer conferences (2010 & 2011 RightNow Developers Conference) and several talks internal to the organization.
 
 
