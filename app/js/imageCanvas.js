@@ -18,51 +18,41 @@ $(function () {
 
       this.img = new Image();
       this.img.src = imagePath;
+      this.img.className = 'parallax';
+      this.img.alt = '';
       this.img.onload = Component.bind(function () {
-        $(selector).css('background', 'none');
-        this.draw();
+        $(selector).css('background', 'none').append(this.img);
       }, this);
-
-      this.canvas = $('<canvas>').appendTo(selector)[0];
-      this.context = this.canvas.getContext('2d');
 
       this.drawing = false;
       this.lastScrollY = 0;
 
       window.addEventListener('scroll', Component.bind(this.onScroll, this));
-      window.addEventListener('resize', Component.bind(this.draw, this));
     },
 
     onScroll: function () {
       if (this.drawing) return;
 
       this.drawing = true;
-      window.requestAnimationFrame(Component.bind(this.drawCanvas, this));
+      window.requestAnimationFrame(Component.bind(this.reposition, this));
       this.lastScrollY = window.scrollY;
     },
 
-    resize: function () {
-      this.canvas.width = window.innerWidth;
-      this.canvas.height = parseInt(window.getComputedStyle(this.canvas).height, 10);
-    },
-
-    draw: function () {
-      this.resize();
-      this.drawCanvas();
-    },
-
-    drawCanvas: function () {
+    reposition: function () {
       var relativeY = this.lastScrollY / this.speed;
-
-      this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      this.context.drawImage(this.img,
-        0, 0,
-        this.img.naturalWidth, this.img.naturalHeight,
-        0, pos(0, this.range, relativeY, 0),
-        this.canvas.width, this.canvas.height
-      );
-
+      this.applyTransform(pos(0, this.range, relativeY, 0));
       this.drawing = false;
+    },
+
+    applyTransform: function (y) {
+      var props = ['transform', 'webkitTransform', 'mozTransform', 'msTransform'];
+      for (var i = 0, prop; i < props.length; i++) {
+        prop = props[i];
+        if (prop in this.img.style) {
+          this.img.style[prop] = "translate3d(0, " + y + "px, 0)";
+          return;
+        }
+      }
     }
   });
 });
