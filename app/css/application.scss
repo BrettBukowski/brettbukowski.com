@@ -84,9 +84,9 @@ img.parallax {
     right: 0;
     left: 0;
     top: 0;
-    // bottom: 0;
+    bottom: 0;
     width: 100%;
-    // height: 100%;
+    height: 100%;
     z-index: -1;
 }
 
@@ -375,16 +375,7 @@ img.parallax {
         }
     }
 
-    @media only screen and (max-width: 430px) {
-        > article > div {
-            margin: 0;
-        }
-
-        nav a {
-            display: inline-block;
-            margin: 25px 50px;
-        }
-
+    @media only screen and (max-width: 750px) {
         img {
             float: none;
         }
@@ -397,6 +388,17 @@ img.parallax {
             > span {
                 text-align: center;
             }
+        }
+
+        > article > div {
+            margin: 0;
+        }
+    }
+
+    @media only screen and (max-width: 430px) {
+        nav a {
+            display: inline-block;
+            margin: 25px 50px;
         }
     }
 }

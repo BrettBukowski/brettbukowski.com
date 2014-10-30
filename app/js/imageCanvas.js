@@ -12,7 +12,8 @@ $(function () {
 
   window.ImageCanvas = Component.extend({
 
-    constructor: function(imagePath, selector, range, speed) {
+    constructor: function(imagePath, selector, range, speed, direction) {
+      this.direction = direction;
       this.range = range;
       this.speed = speed;
 
@@ -40,7 +41,11 @@ $(function () {
 
     reposition: function () {
       var relativeY = this.lastScrollY / this.speed;
-      this.applyTransform(pos(0, this.range, relativeY, 0));
+      var newPosition = pos(0, this.range, relativeY, 0);
+      if (this.direction == 'down') {
+        newPosition = Math.abs(newPosition);
+      }
+      this.applyTransform(newPosition);
       this.drawing = false;
     },
 

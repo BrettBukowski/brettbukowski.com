@@ -32,10 +32,8 @@ $(function () {
 
   if (typeof window.matchMedia !== 'function' || window.matchMedia("(max-width: 400px)").matches) return;
 
-  setTimeout(function () {
-    new window.ImageCanvas('/img/place.jpg', '.hero', -1000, 3000);
-    new window.ImageCanvas('/img/wood.jpg', '#experiments', -100, 8000);
-  });
+  new window.ImageCanvas('/img/place.jpg', '.hero', -1000, 3000, 'down');
+  new window.ImageCanvas('/img/wood.jpg', '#experiments', -100, 8000, 'up');
 
   $('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css") );
   $.ajax({
