@@ -8,8 +8,8 @@
   background-image: url(/img/r/#{$path});
   background-size: $x $y;
 }
-@mixin icon-font {
-  font-family: 'entypo';
+@mixin icon-font($name: 'entypo') {
+  font-family: $name;
   font-size: 2em;
   font-style: normal;
   font-weight: normal;
@@ -487,10 +487,21 @@ h4 {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'entypo-social';
+  src:url('/fonts/EntypoSocial/entypo-social.eot');
+  src:url('/fonts/EntypoSocial/entypo-social.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/EntypoSocial/entypo-social.woff') format('woff'),
+      url('/fonts/EntypoSocial/entypo-social.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
   @include icon-font;
   color: $bluish;
+  text-align: center;
+  width: (18em / 14);
 }
 .icon-education:before {
   content: "\1f393";
@@ -539,6 +550,10 @@ h4 {
     bottom: -16px;
     padding-top:0;
   }
+}
+.icon-github:before {
+  @include icon-font('entypo-social');
+  content: "\f300";
 }
 
 /* PRINT */

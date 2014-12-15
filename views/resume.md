@@ -6,6 +6,7 @@ Web Engineer
 - <tel:406-624-9094>
 - <mailto:brett@brettbukowski.com>
 - <http://brettbukowski.com>
+- [https://github.com/BrettBukowski](GitHub - BrettBukowski)
 
 ### Overview
 
@@ -36,13 +37,12 @@ I'm an experienced web developer looking to advance my career. I want to help bu
 * CodeIgniter
 * Rails
 * Sinatra
-* Backbone
-* YUI
-* jQuery
+* Backbone, AngularJS, React
+* YUI, jQuery
 * Express
-* Apache and Nginx
-* MySQL and Postgres
-* Redis and memcached
+* Apache, Nginx
+* MySQL, Postgres
+* Redis, memcached
 * MongoDB
 * CouchDB
 * LESS, SASS, vanilla CSS
