@@ -2,7 +2,7 @@
 
 Web Engineer
 
-- Bozeman, MT (willing to relocate)
+- San Francisco, CA
 - <tel:406-624-9094>
 - <mailto:brett@brettbukowski.com>
 - <http://brettbukowski.com>
@@ -10,35 +10,36 @@ Web Engineer
 
 ### Overview
 
-I'm an experienced web developer looking to advance my career. I want to help build a product where a clear vision and a talented group of people executing on that vision produces software that helps millions of people. I want to help solve challenging problems. I'm learning to ask better questions. I hope to work with and learn from other skilled engineers in order to deepen my programming skills and learn new ways of solving problems.
+I'm an experienced software developer looking to advance my career. I want to help build a product where a clear vision and a talented group of people executing on that vision produces software that helps millions of people. I want to help solve challenging problems. I'm learning to ask better questions. I hope to work with and learn from other skilled engineers in order to deepen my programming skills and learn new ways of solving problems.
 
 * I place a strong emphasis on writing testable code that's intended for consumption by other developers.
 * I value readable code and I'm always in search of more elegant solutions.
 * I enjoy learning new programming languages and at becoming more adept with languages that I'm familiar with.
 * I'm accustomed to shipping software using an agile methodology and scrum process.
-* I possess practical knowledge of relational databases, distributed memory caches, and other technologies used to build modern, scalable web applications.
+* I have practical knowledge of relational databases, distributed memory caches, and other technologies used to build modern, scalable web applications.
 
 ### Skills
 
 #### Languages
 
 * JavaScript
-* PHP
 * Ruby
+* Swift
 * Objective-C
+* PHP
 * Go
 * Python
+* Perl
 * C#
 * Java
 * C
 
 #### Experience with the following frameworks and technologies
 
-* CodeIgniter
+* React
 * Rails
 * Sinatra
-* Backbone, AngularJS, React
-* YUI, jQuery
+* Backbone, AngularJS
 * Express
 * Apache, Nginx
 * MySQL, Postgres
@@ -51,7 +52,7 @@ I'm an experienced web developer looking to advance my career. I want to help bu
 
 Highly-skilled in front-end web development techniques such as:
 
-*   Modern JavaScript applications
+*   Modern React and Rails applications
 *   CSS (CSS3 as well as preprocessor frameworks)
 *   HTML5 elements and modern browser APIs
 *   Web page accessibility (supporting JAWS and Voiceover screen readers)
@@ -59,6 +60,33 @@ Highly-skilled in front-end web development techniques such as:
 
 ### Work Experience
 
+2015 - Present
+
+#### Tilt.com - San Francisco, CA
+
+Full-stack Engineer
+
+Served on several different teams, adapting to the needs of rapidly-growing company
+
+**Internal tools**
+
+* Built a number of high-value internal features in a Rails-based internal web app that provided value to customer support and the growth teams
+* Created an ambassador portal website where brand ambassadors could view leaderboards and detailed stats about promo code usage
+* Co-created an internal intranet-lite site where employees can find company resources and easily see key company metrics and stats
+  * Created a feedback system where employees can quickly and easily give feedback to one another
+
+**Growth engineering**
+
+* Ran a number of A/B experiments with goal of moving quickly and achieving maximum new user growth
+  * Implemented two different homepage experiments (six total variations), ultimately finding one that gained an X% uptick in new user signups
+  * Ran several mobile web splash screen and deep-linking experiments
+* Built the API and internal dashboard for an in-app promotional landing feature
+
+**Revenue**
+
+* Built a campaign web dashboard for organizers to view key stats and administer their campaigns
+* Added a verified seller feature (API and UI in the Tilt iOS app)
+* Added campaign administration in the Tilt iOS app
 
 2008 - Present
 
@@ -66,28 +94,17 @@ Highly-skilled in front-end web development techniques such as:
 
 Web Developer
 
-Lead member on a team that builds a web platform powering many big-time customer support websites. This product is a hosted, PHP-based application framework that provides a rich set of UI widgets for building support features; it's designed to work well for most businesses out-of-the-box. But the developer framework provides a great deal of APIs so that businesses can customize the support experience they provide to better suit specific business needs or user goals.
+Lead member on a team building a web platform powering many large companies' customer support websites.
 
 **Overview**
 
 * Built developer-facing framework APIs in PHP and JavaScript.
 * Made enduser-facing features comprised of PHP, JavaScript, and CSS components.
-* Communicated with customers and platform developers via web forums.
-* 4-time RightNow-Oracle development hackathon winner (1 solo, 3 team).
-* Built and maintained several internal, standalone web apps and other internal tools as part of 20% time.
+* Interacted daily with customers and platform developers via web forums.
 * Gave multiple talks at developer conferences (2010 & 2011 RightNow Developers Conference) and several talks internal to the organization.
+* Built and maintained several internal, standalone web apps and other internal tools as part of 20% time.
+* 4-time RightNow-Oracle development hackathon winner (1 solo, 3 team).
 
-
-2007
-
-#### Computers Unlimited - Billings, MT
-
-Software Development Intern
-
-Worked in a team building pharmaceutical inventory management software.
-
-* Responsibilities involved fixing bugs and developing minor features in a mature application.
-* This required learning a new programming language.
 
 ### Side Projects
 
