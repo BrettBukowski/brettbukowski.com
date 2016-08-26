@@ -13,11 +13,13 @@ html {
 }
 
 body {
-    font: 20px/30px 'Puritan20Normal', Arial, serif;
+
+    font: 17px 'Open Sans', Arial, serif;
     text-align: center;
 }
 h1, h2, h3, h4, h5 {
-    font-family: CabinRegular, sans-serif;
+    font-family: 'Ek Mukta', sans-serif;
+    font-weight: 200;
 }
 ul {
     padding: 0;
@@ -121,8 +123,14 @@ img.parallax {
             z-index: -1;
         }
 
-        h2:after {
-            content: none;
+        h2 {
+            position: relative;
+
+            &:after {
+                background: #666565;
+                bottom: -32px;
+                height: 2px;
+            }
         }
     }
 
@@ -133,6 +141,7 @@ img.parallax {
     h1 {
         line-height: 1em;
         margin-bottom: 2em;
+        font-size: 2.3em;
     }
 
     @media screen and (max-width: 973px) {
@@ -249,7 +258,8 @@ img.parallax {
         margin-bottom: 4px;
     }
 
-    img {
+    .figure {
+        background: url(/img/projects.png) no-repeat;
         border: 6px solid #FFF;
         border-radius: 50%;
         display: block;
@@ -257,6 +267,17 @@ img.parallax {
         margin: auto auto 25px;
         width: 190px;
     }
+
+    .catchlater .figure { background-position: 0 0; width: 180px; height: 180px; }
+    .colorant .figure { background-position: 0 -230px; width: 180px; height: 180px; }
+    .downisup .figure { background-position: 0 -460px; width: 190px; height: 190px; }
+    .tomatar .figure {
+        background-position: -8px -708px;
+        width: 186px;
+        height: 186px;
+    }
+    .tweetstasher .figure { background-position: 0 -940px; width: 190px; height: 190px; }
+
 
     aside {
         color: lighten(#222, 10%);
