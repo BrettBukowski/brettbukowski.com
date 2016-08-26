@@ -1,5 +1,5 @@
 set :application, 'brettbukowski'
-set :repo_url, 'https://brettbukowski:FpdY7jfpZmhJU6fb@bitbucket.org/brettbukowski/brettbukowski.com.git'
+set :repo_url, 'https://brettbukowski:axKiLBhpRf7wyaZ7Ed@bitbucket.org/brettbukowski/brettbukowski.com.git'
 
 set :deploy_to, '/var/www/brettbukowski'
 set :scm, :git
