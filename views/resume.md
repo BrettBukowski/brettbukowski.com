@@ -1,6 +1,6 @@
 # Brett Bukowski
 
-Web Engineer
+Software Engineer
 
 - San Francisco, CA
 - <tel:406-624-9094>
@@ -86,7 +86,10 @@ Served on several different teams, adapting to the needs of rapidly-growing comp
 
 * Built a campaign web dashboard for organizers to view key stats and administer their campaigns
 * Added a verified seller feature (API and UI in the Tilt iOS app)
-* Added campaign administration in the Tilt iOS app
+* Referral sales system
+* Ticket checkin w/ QR code scanner
+* Marketing promotion popup
+* Refactored a large portion of the codebase from Objective-C to Swift and drove the Swift 3.0 migration
 
 2008 - Present
 
