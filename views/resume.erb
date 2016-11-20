@@ -44,7 +44,7 @@
         You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.
         </p>
       <![endif]-->
-      <section class="heading-bar" role="toolbar">
+      <section class="heading-bar">
           <i class="icon-pencil" role="presentation" aria-hidden="true"></i> <a href="/resume.md">Markdown version</a>
           <i class="icon-doc" role="presentation" aria-hidden="true"></i> <a href="/resume.pdf#zoom=100">PDF version</a>
           <i class="icon-print" role="presentation" aria-hidden="true"></i> <a href="javascript:window.print()" role="button">Print</a>
@@ -59,11 +59,9 @@
 
         <section class="info">
           <div class="vcard">
-            <p class="adr">
-              <div>
-                <span class="locality">San Francisco</span>,
-                <span class="region">CA</span>
-              </div>
+            <p class="adr icon-pin">
+              <span class="locality">San Francisco</span>,
+              <span class="region">CA</span>
             </p>
             <div class="contact">
               <p class="tel icon-phone"><a href="tel:406-624-9094">406-624-9094</a></p>
@@ -96,19 +94,18 @@ I'm an experienced software developer looking to advance my career. I want to he
           <article class="job">
             <strong class="time-period">2015 - Present</strong>
 
-            <h4 class="gray"><a href="https://tilt.com">Tilt.com</a> - San Francisco, CA</h4>
+            <h4 class="firm"><a href="https://tilt.com">Tilt</a></h4>
 
-            <p class="role gray">Full-stack Engineer</p>
+            <h5 class="location">San Francisco, CA</h5>
 
             <p>Served as a member on three different teams at a fast-growing startup.</p>
 
-            <strong class="overview">Overview</strong>
+            <div class="role clearfix">
+              <span class="title">iOS/Web Engineer - Revenue Team</span>
+              <span class="time-period">January 2016 - Present</span>
+            </div>
 
             <ul>
-              <li>Built-out and maintained an internal admin Rails app that employees use for customer support</li>
-              <li>Worked with the growth team to build an ambassador website where brand ambassadors could view leaderboards and track their stats</li>
-              <li>Worked with the CEO and Director of Growth to build an internal portal for employee resources</li>
-              <li>Built a number of growth-driving features on the tilt.com website and within the Tilt iOS app</li>
               <li>Refactored an antiquated campaign organizer dashboard into a React-driven app with a modern UI</li>
               <li>Built a number of high-impact iOS features
                 <ul>
@@ -119,17 +116,42 @@ I'm an experienced software developer looking to advance my career. I want to he
               </li>
               <li>Refactored a large portion of the codebase from Objective-C to Swift and drove the Swift 3.0 migration</li>
             </ul>
+
+            <div class="role clearfix">
+              <span class="title">Web Engineer - Growth Engineering</span>
+              <span class="time-period">September 2015 - January 2016</span>
+            </div>
+
+            <ul>
+              <li>Built a number of growth-driving features on the tilt.com website and within the Tilt iOS app</li>
+            </ul>
+
+            <div class="role clearfix">
+              <span class="title">Rails Engineer</span>
+              <span class="time-period">January 2015 - September 2015</span>
+            </div>
+
+            <ul>
+              <li>Built-out and maintained an internal admin Rails app that employees use for customer support</li>
+              <li>Worked with the growth team to build an ambassador website where brand ambassadors can view leaderboards and track their stats</li>
+              <li>Worked with the CEO and Director of Growth to build an internal portal for employee resources</li>
+            </ul>
           </article>
           <article class="job">
-<strong class="time-period">2008 - 2015</strong>
+            <strong class="time-period">2008 - 2015</strong>
 
-<h4 id="rightnowtechnologiesacquiredbyoracle2012-bozemanmt" class="gray">RightNow Technologies <small>(Acquired by Oracle, 2012)</small> - Bozeman, MT</h4>
+            <h4 class="firm">RightNow Technologies</h4>
 
-<p class="role gray">Web Developer</p>
+
+            <h5 class="location">Bozeman, MT</h5>
+            <small>Acquired by Oracle, 2012</small>
+
+            <div class="role">
+              <span class="title">Web Engineer</span>
+            </div>
 
 <p>Lead member on a team that built a web platform powering many big-time customer support websites. This product was a hosted, PHP-based application framework that provided a rich set of UI widgets for building support features.</p>
 
-<strong class="overview">Overview</strong>
 
 <ul>
 <li>Built developer-facing framework APIs in PHP and JavaScript.</li>
@@ -170,48 +192,45 @@ I'm an experienced software developer looking to advance my career. I want to he
 
       <section class="education siderail box">
         <h3 class="icon-education">Education</h3>
-        <article>
-          <strong class="time-period">May 2008</strong>
-          <p class="roll">
-            <i class="icon-right"></i> Bachelor of Science, Computer Science
-            <br><em>With Honors (3.65+ GPA)</em>
-            <strong>Montana State University</strong>
-          </p>
-        </article>
+        <article class="job">
+          <h4 class="firm">Montana State University</h4>
+          <div class="role clearfix">
+            <span class="title">Bachelor of Science, Computer Science</span>
+            <span class="time-period">May 2008</span>
+          </div>
+         </article>
       </section>
 
       <section class="skills siderail box">
         <h3 class="icon-skills">Skills</h3>
         <div class="columns">
           <article>
-            <strong title="Ranked in order of proficiency and lines of code shipped">Languages</strong>
+            <strong>Languages</strong>
             <ul>
-              <li>Ruby</li>
-              <li>JavaScript</li>
-              <li>Swift</li>
-              <li>Objective-C</li>
-              <li>PHP</li>
-              <li>Go</li>
-              <li>Python</li>
-              <li>C#</li>
-              <li>Java</li>
-              <li>C</li>
+              <li>Ruby <span class="progress-bar"><span class="progress progress-8"></span></span></li>
+              <li>JavaScript <span class="progress-bar"><span class="progress progress-9"></span></span></li>
+              <li>Swift <span class="progress-bar"><span class="progress progress-8"></span></span></li>
+              <li>Objective-C <span class="progress-bar"><span class="progress progress-6"></span></span></li>
+              <li>PHP <span class="progress-bar"><span class="progress progress-8"></span></span></li>
+              <li>Go <span class="progress-bar"><span class="progress progress-6"></span></span></li>
+              <li>Python <span class="progress-bar"><span class="progress progress-7"></span></span></li>
+              <li>C# <span class="progress-bar"><span class="progress progress-5"></span></span></li>
+              <li>Java <span class="progress-bar"><span class="progress progress-6"></span></span></li>
+              <li>Perl <span class="progress-bar"><span class="progress progress-5"></span></span></li>
             </ul>
           </article>
           <article>
             <strong>Experience with the following frameworks and technologies</strong>
             <ul>
-              <li>CodeIgniter</li>
-              <li>Rails</li>
-              <li>Sinatra</li>
-              <li>Backbone, AngularJS, React</li>
+              <li>UIKit</li>
+              <li>Rails, Sinatra</li>
+              <li>React, Backbone, AngularJS</li>
               <li>YUI, jQuery</li>
               <li>Express</li>
               <li>Apache, Nginx</li>
               <li>MySQL, Postgres</li>
               <li>Redis, memcached</li>
-              <li>MongoDB</li>
-              <li>CouchDB</li>
+              <li>MongoDB, CouchDB</li>
               <li>LESS, SASS, vanilla CSS</li>
             </ul>
           </article>

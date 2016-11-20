@@ -4,10 +4,6 @@
 @charset "UTF-8";
 
 /* MIXINS */
-@mixin img($path, $x, $y) {
-  background-image: url(/img/r/#{$path});
-  background-size: $x $y;
-}
 @mixin icon-font($name: 'entypo') {
   font-family: $name;
   font-size: 2em;
@@ -24,13 +20,12 @@ $white: #FFF;
 $light-gray: #EEE;
 $dark-gray: #272525;
 $gray-blue: #3B3B57;
-$bluish: #046b98;
-$heading-bar: darken(#88878A, 15%);
-$muted-blue: #54ABCC;
-$dark-blue: #3E3E80;
-$link: #515194;
-$subtitle: darken($bluish, 10%);
-$redish: #924949;
+$bluish: #55acee;
+$heading-bar: $bluish;
+$muted-blue: $bluish;
+$dark-blue: $bluish;
+$link: $bluish;
+$subtitle: $bluish;
 $border: 1px solid lighten($text, 50);
 
 /* GENERICS */
@@ -49,12 +44,11 @@ $border: 1px solid lighten($text, 50);
 }
 
 html {
-  @include img('dust.png', 400px, 300px);
   border-bottom: 4px solid $heading-bar;
   box-shadow: 0 -2px 3px rgba(0, 0, 0, .2) inset;
   color: $text;
   font-family: OpenSansRegular;
-  padding: 4em 2em 2em;
+  padding: 6em 4em 2em;
   position: relative;
 }
 
@@ -71,6 +65,11 @@ h1, h2 {
   letter-spacing: -1px;
 }
 
+h3 {
+  color: $bluish;
+  font-size: 1.3em;
+}
+
 a {
   color: $link;
   text-decoration: none;
@@ -79,7 +78,6 @@ a {
   &:hover,
   &:focus {
     color: darken($link, 15%);
-    text-shadow: 0 1px 3px rgba(0, 0, 255, .1);
     text-decoration: underline;
   }
 }
@@ -96,21 +94,10 @@ li ul {
 header {
   @include clearfix;
 
-  border-bottom: $border;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   padding-bottom: 4px;
   margin: 1em 0;
-
-  &:after {
-    border-top: $border;
-    content: "";
-    display: block;
-    height: 0;
-    position: absolute;
-    top: 98%;
-    width: 100%;
-  }
 
   section {
     padding:0 1em 1em;
@@ -144,26 +131,50 @@ header {
 .name {
   float: left;
   width: 60%;
-}
+  position: relative;
+  text-transform: uppercase;
 
-.category {
-  color: $subtitle;
+  &:after {
+    content: "";
+    height: 10px;
+    background: $bluish;
+    position: absolute;
+    width: 120%;
+    bottom: -50px;
+    left: -200px;
+  }
+
+  .given-name {
+    display: block;
+    color: $bluish;
+  }
+
+  .family-name {
+    font-weight: bold;
+  }
+
+  .category {
+    text-transform: none;
+  }
 }
 
 .info {
   float: right;
   width: 40%;
-  border-left: $border;
   padding-bottom: 1.6em;
   position: relative;
 
+  .adr {
+    color: $bluish;
+  }
+
   [class^="icon-"]:before, [class*=" icon-"]:before {
-    background: $bluish;
-    color: $light-gray;
+    // background: $bluish;
+    color: $bluish;
     border-radius: 50%;
     padding: 0 4px;
     margin-right: 8px;
-    font-size: 1.3em;
+    font-size: 1.6em;
   }
 }
 
@@ -171,7 +182,7 @@ header {
   @include clearfix;
 
   font-size: large;
-  margin: 2em 0 1em;
+  margin: 5em 0 1em;
   padding-bottom: 2em;
 }
 
@@ -179,7 +190,7 @@ header {
   clear: left;
   float: left;
   font-size: .89em;
-  width: 30%;
+  width: 26%;
   margin-right: 1em;
 }
 
@@ -204,37 +215,33 @@ header {
 .box {
   @include clearfix;
 
-  border-top: 10px solid $bluish;
-  background: $white;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   margin: 1em 0;
-  padding: 1.4em;
   position: relative;
 
   h3 {
     // border-bottom: 1px solid $text;
     text-transform: uppercase;
     margin-top: .3em;
-    padding-bottom: .3em;
+    padding-bottom: .5em;
+
+    &:after {
+      height: 6px;
+      content: "";
+      width: 60px;
+      background: $bluish;
+      display: block;
+      margin-top: .4em;
+    }
 
     &[class^="icon-"]:before {
-        color: $bluish;
-        float: right;
-        font-size: 2em;
-        line-height: .5em;
+        // color: $bluish;
+        // float: right;
+        // font-size: 2em;
+        // line-height: .5em;
+        position: relative;
+        top: 2px;
+        margin-right: 10px;
     }
-  }
-
-  &:before {
-    height: 0;
-    width: 0;
-    position: absolute;
-    top: 0;
-    left: 1.2em;
-    content: "";
-    border-right: 7px solid transparent;
-    border-left: 7px solid transparent;
-    border-top: 7px solid $bluish;
   }
 }
 
@@ -244,35 +251,6 @@ header {
 
   p {
     margin-bottom:.4em;
-  }
-}
-
-.time-period {
-  text-transform: uppercase;
-  color: $redish;
-}
-
-.roll {
-  color: $dark-gray;
-  padding-left: 1em;
-  position: relative;
-
-  strong {
-    display: block;
-    color: $text;
-    font-weight: 600;
-    margin-top:.3em;
-  }
-
-  i:before {
-    position: absolute;
-    left: -4px;
-    top: -4px;
-
-    @media print {
-      top: -2px;
-      left: -2px;
-    }
   }
 }
 
@@ -295,13 +273,18 @@ h4 {
   }
 }
 
-.gray {
-    color: $gray-blue;
-}
 
 .job {
   ul {
     margin-top:.5em;
+
+    ul {
+      margin: 3px 0;
+    }
+  }
+
+  p {
+    margin: 1em 0;
   }
 
   .overview {
@@ -310,6 +293,67 @@ h4 {
   }
 
   margin-bottom: 2em;
+
+  h5 {
+    margin: 0 0 10px;
+  }
+
+  .firm {
+    text-transform: uppercase;
+    a {
+      color: $text;
+    }
+  }
+
+  .role {
+
+  }
+
+  .title {
+    color: $bluish;
+    font-style: italic;
+  }
+
+  .time-period {
+    float: right;
+  }
+}
+
+.skills {
+  margin-top: 0;
+
+  li {
+    list-style-type: none;
+    margin: 0;
+  }
+  ul {
+    padding: 0;
+  }
+}
+
+.education {
+  margin-bottom: 0;
+}
+
+.progress-bar {
+  margin-top: 5px;
+  float: right;
+  background: #ececec;
+  height: 8px;
+  border-radius: 10px;
+  position: relative;
+  width: 200px;
+
+  .progress {
+    position: absolute;
+    background: $bluish;
+    height: 8px;
+    border-radius: 10px;
+  }
+
+  @for $i from 1 through 10 {
+    .progress-#{$i} { width: $i * 10%; }
+  }
 }
 
 .side-projects {
@@ -374,10 +418,7 @@ h4 {
 }
 
 .cta {
-  background: #EBF8FE;
-  box-shadow:0 0 4px rgba(4, 107, 152, .2);
-  border: 1px solid #6D2121;
-  border-width: 2px 0;
+  border: 2px solid $bluish;
   text-align: center;
   font-size: 1.1em;
   padding: 2.3em 1em;
@@ -385,9 +426,8 @@ h4 {
 
   .prelude {
     position: relative;
-    border-bottom: 1px solid #222;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
   }
 
   .contact-info {
@@ -402,7 +442,6 @@ h4 {
 /* RETINA */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   html {
-    @include img('dust_@2X.png', 400px, 300px);
   }
 }
 
@@ -425,7 +464,6 @@ h4 {
 }
 @media screen and (max-width:650px) {
   .info {
-    border-left: 0;
     border-top: $border;
     padding-top: 1em;
 
@@ -544,8 +582,8 @@ h4 {
   position: absolute;
   right: 50%;
   bottom: -21px;
-  background: #EBF8FE;
   padding: 4px;
+  transform: translateX(50%);
   @media print {
     bottom: -16px;
     padding-top:0;
