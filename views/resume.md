@@ -36,19 +36,25 @@ I'm an experienced software developer looking to advance my career. I want to he
 
 #### Experience with the following frameworks and technologies
 
-* React
-* Rails
-* Sinatra
-* Backbone, AngularJS
+* UIKit
+* Rails, Sinatra
+* React, Backbone, AngularJS
 * Express
 * Apache, Nginx
 * MySQL, Postgres
 * Redis, memcached
-* MongoDB
-* CouchDB
+* MongoDB, CouchDB
 * LESS, SASS, vanilla CSS
 
 #### Areas of Expertise
+
+Adept at building iOS applications using tools like:
+
+* UIKit libraries
+* Autolayout
+* Cocoapods
+* Unit tests and functional testing (Calabash)
+* Libraries like AFNetworking, Snapkit, etc.
 
 Highly-skilled in front-end web development techniques such as:
 
@@ -142,7 +148,7 @@ Pomodoro timer web app.
 
 I would love to work with you.
 
-Get in touch...
+So let's talk!
 
 <tel:406-624-9094>
 

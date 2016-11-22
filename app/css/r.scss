@@ -15,7 +15,7 @@
 }
 
 /* VARIABLES */
-$text: #222;
+$text: #4e4b4f;
 $white: #FFF;
 $light-gray: #EEE;
 $dark-gray: #272525;
@@ -47,13 +47,13 @@ html {
   border-bottom: 4px solid $heading-bar;
   box-shadow: 0 -2px 3px rgba(0, 0, 0, .2) inset;
   color: $text;
-  font-family: OpenSansRegular;
+  font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 6em 4em 2em;
   position: relative;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: carroisgothicregular;
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -147,14 +147,18 @@ header {
   .given-name {
     display: block;
     color: $bluish;
+    letter-spacing: 2px;
+    font-weight: 200;
   }
 
   .family-name {
     font-weight: bold;
+    letter-spacing: 1px;
   }
 
   .category {
     text-transform: none;
+    font-weight: 300;
   }
 }
 
@@ -169,7 +173,6 @@ header {
   }
 
   [class^="icon-"]:before, [class*=" icon-"]:before {
-    // background: $bluish;
     color: $bluish;
     border-radius: 50%;
     padding: 0 4px;
@@ -182,8 +185,7 @@ header {
   @include clearfix;
 
   font-size: large;
-  margin: 5em 0 1em;
-  padding-bottom: 2em;
+  margin: 5em 0 1.5em;
 }
 
 .siderail {
@@ -219,10 +221,10 @@ header {
   position: relative;
 
   h3 {
-    // border-bottom: 1px solid $text;
     text-transform: uppercase;
     margin-top: .3em;
     padding-bottom: .5em;
+    font-weight: 200;
 
     &:after {
       height: 6px;
@@ -321,13 +323,21 @@ h4 {
 
 .skills {
   margin-top: 0;
+}
 
+.languages {
   li {
     list-style-type: none;
     margin: 0;
+    overflow: hidden;
   }
+
   ul {
     padding: 0;
+  }
+
+  .lang {
+    float: left;
   }
 }
 
@@ -342,7 +352,7 @@ h4 {
   height: 8px;
   border-radius: 10px;
   position: relative;
-  width: 200px;
+  width: 64%;
 
   .progress {
     position: absolute;
@@ -431,6 +441,8 @@ h4 {
   }
 
   .contact-info {
+    margin-top: 1em;
+
     a {
       margin-bottom: 0;
       font-size: .9em;
@@ -463,6 +475,20 @@ h4 {
   }
 }
 @media screen and (max-width:650px) {
+  html {
+    padding: 4em 2em 2em;
+  }
+
+  .about {
+    margin-top: 0;
+  }
+
+  .role .time-period {
+    float: none;
+    display: block;
+    margin: 4px 0 6px;
+  }
+
   .info {
     border-top: $border;
     padding-top: 1em;
@@ -478,6 +504,10 @@ h4 {
     float: none;
     text-align: center;
     width: auto;
+
+    &:after {
+      content: none;
+    }
   }
 
   .columns {
@@ -492,28 +522,39 @@ h4 {
 
 /* FONTS */
 
-
 @font-face {
-  font-family: 'carroisgothicregular';
-  src: url('/fonts/CarroisGothic/carroisgothic-regular-webfont.eot');
-  src: url('/fonts/CarroisGothic/carroisgothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/CarroisGothic/carroisgothic-regular-webfont.woff') format('woff'),
-       url('/fonts/CarroisGothic/carroisgothic-regular-webfont.ttf') format('truetype'),
-       url('/fonts/CarroisGothic/carroisgothic-regular-webfont.svg#carroisgothicregular') format('svg');
+  font-family: 'Fira Sans';
+  src: url('/fonts/fira-sans/FiraSans-Regular.eot');
+  src: url('/fonts/fira-sans/FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/fira-sans/FiraSans-Regular.woff') format('woff'),
+       url('/fonts/fira-sans/FiraSans-Regular.ttf') format('truetype'),
+       url('/fonts/fira-sans/FiraSans-Regular.svg#FiraSans') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'OpenSansRegular';
-  src: url('/fonts/OpenSans/OpenSans-Regular-webfont.eot');
-  src: url('/fonts/OpenSans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/OpenSans/OpenSans-Regular-webfont.woff') format('woff'),
-       url('/fonts/OpenSans/OpenSans-Regular-webfont.ttf') format('truetype'),
-       url('/fonts/OpenSans/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+  font-family: 'montserrat';
+  src: url('/fonts/montserrat/Montserrat-Regular.eot');
+  src: url('/fonts/montserrat/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/montserrat/Montserrat-Regular.woff') format('woff'),
+       url('/fonts/montserrat/Montserrat-Regular.ttf') format('truetype'),
+       url('/fonts/montserrat/Montserrat-Regular.svg#Montserrat') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'montserrat';
+  src: url('/fonts/montserrat/Montserrat-Light.eot');
+  src: url('/fonts/montserrat/Montserrat-Light.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/montserrat/Montserrat-Light.woff') format('woff'),
+       url('/fonts/montserrat/Montserrat-Light.ttf') format('truetype'),
+       url('/fonts/montserrat/Montserrat-Light.svg#Montserrat') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
 
 /*! Entypo pictograms by Daniel Bruce — www.entypo.com */
 @font-face {
@@ -596,20 +637,19 @@ h4 {
 
 /* PRINT */
 @media print {
-  * {
-    font-weight: normal !important;
-  }
+  // * {
+  //   font-weight: normal !important;
+  // }
 
   a.print:after {
-    font-size: 11px;
     content:" (" attr(href) ") ";
   }
 
   html {
-    font-size: 10px;
+    font-size: 11px;
     border: 0;
     box-shadow: none;
-    padding: 10px 2em;
+    padding: 5em 5em;
   }
 
   header {
@@ -621,15 +661,20 @@ h4 {
     font-weight: normal !important;
   }
 
+  .about {
+    font-size: inherit;
+    margin-top: 5em;
+  }
+
+  .name {
+    &:after {
+      bottom: -20px;
+    }
+  }
+
   .side-projects {
     h4 {
-      // Hack to get these things to actually display
-      // properly.
-      -webkit-transform: scale(.6) translateX(-145px);
-      -moz-transform: scale(.6) translateX(-145px);
-      -ms-transform: scale(.6) translateX(-145px);
-      -o-transform: scale(.6) translateX(-145px);
-      transform: scale(.6) translateX(-145px);
+      font-size: 20px;
     }
   }
 
@@ -637,8 +682,14 @@ h4 {
     padding-left: 1.5em;
   }
 
-  .about {
-    font-size: inherit;
+  // .about {
+  //   font-size: inherit;
+  // }
+  .progress-bar {
+    height: 5px;
+    .progress {
+      height: 5px;
+    }
   }
 
   .heading-bar,
@@ -650,49 +701,61 @@ h4 {
     padding-bottom: 1em;
   }
 
+  .experience .job:first-of-type:after {
+    content: "continued...";
+    margin-top: 2em;
+    display: block;
+  }
+
+  .experience .job:last-of-type {
+    padding-top: 120px;
+  }
+
+  .expertise {
+    padding-top: 110px;
+  }
+
   .box {
-    border-top-width: 3px;
-    box-shadow: none;
     margin: 0 0 1em 0;
     overflow: visible;
     padding: 10px 4px 4px;
 
-    &:before {
-      top: -1px;
-      border-right: 4px solid transparent;
-      border-left: 4px solid transparent;
-      border-top: 4px solid $bluish;
-    }
+    // &:before {
+    //   top: -1px;
+    //   border-right: 4px solid transparent;
+    //   border-left: 4px solid transparent;
+    //   border-top: 4px solid $bluish;
+    // }
   }
 
-  .experience {
-    page-break-after: always;
-    margin-bottom:20em;
+  // .experience {
+  //   // page-break-after: always;
+  //   // margin-bottom:20em;
 
-    &::after {
-      margin-top: 1em;
-      display: block;
-      text-align: center;
-      content: "Continued...";
-    }
-  }
+  //   &::after {
+  //     margin-top: 1em;
+  //     display: block;
+  //     text-align: center;
+  //     content: "Continued...";
+  //   }
+  // }
 
   .cta,
   .skills > article,
   .side-projects {
-    margin-top: 20em;
-    position: relative;
-    top: 30px;
-    padding-bottom: 20px;
+    // margin-top: 20em;
+    // position: relative;
+    // top: 30px;
+    // padding-bottom: 20px;
   }
 
   .cta {
-    box-shadow: none;
     clear: both;
     float: none;
-    margin-top: 2em;
-    top: 60px;
-    width: 100%;
+    // margin-top: 2em;
+    // top: 60px;
+    width: 50%;
+    margin: 3em auto 0;
   }
 }
 
