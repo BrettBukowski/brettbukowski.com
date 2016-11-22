@@ -74,21 +74,21 @@ Full-stack Engineer
 
 Served on several different teams, adapting to the needs of rapidly-growing company
 
-**Internal tools**
+**Rails Engineer - Internal tools** (January 2015 - September 2015)
 
 * Built a number of high-value internal features in a Rails-based internal web app that provided value to customer support and the growth teams
 * Created an ambassador portal website where brand ambassadors could view leaderboards and detailed stats about promo code usage
 * Co-created an internal intranet-lite site where employees can find company resources and easily see key company metrics and stats
   * Created a feedback system where employees can quickly and easily give feedback to one another
 
-**Growth engineering**
+**Web/API Engineer - Growth engineering** (September 2015 - January 2016)
 
 * Ran a number of A/B experiments with goal of moving quickly and achieving maximum new user growth
   * Implemented two different homepage experiments (six total variations), ultimately finding one that gained an X% uptick in new user signups
   * Ran several mobile web splash screen and deep-linking experiments
 * Built the API and internal dashboard for an in-app promotional landing feature
 
-**Revenue**
+**iOS/Web Engineer - Revenue** (January 2016 - Present)
 
 * Built a campaign web dashboard for organizers to view key stats and administer their campaigns
 * Added a verified seller feature (API and UI in the Tilt iOS app)
