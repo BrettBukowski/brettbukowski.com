@@ -655,11 +655,12 @@ h4 {
     font-size: 11px;
     border: 0;
     box-shadow: none;
-    padding: 5em 5em;
+    padding: 1em 3em;
   }
 
   header {
     margin: 0;
+    padding-bottom: 0;
   }
 
   h4, h4 a {
@@ -669,12 +670,13 @@ h4 {
 
   .about {
     font-size: inherit;
-    margin-top: 5em;
+    margin-top: 3em;
   }
 
   .name {
     &:after {
-      bottom: -20px;
+      bottom: -10px;
+      height: 6px;
     }
   }
 
@@ -714,11 +716,15 @@ h4 {
   }
 
   .experience .job:last-of-type {
-    padding-top: 120px;
+    padding-top: 10px;
   }
 
   .expertise {
-    padding-top: 110px;
+    // padding-top: 200px;
+  }
+
+  .experience-skills {
+    padding-top: 130px;
   }
 
   .box {
@@ -762,6 +768,7 @@ h4 {
     // top: 60px;
     width: 50%;
     margin: 3em auto 0;
+    display: none;
   }
 }
 
