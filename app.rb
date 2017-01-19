@@ -20,6 +20,10 @@ class RootController < App
     erb :resume, :locals => { :company_name => 'you' }
   end
 
+  get '/cv' do
+    erb :cv, :locals => { :company_name => 'you' }
+  end
+
   get '/resume.md' do
     content_type 'text/plain'
     File.read settings.views + '/resume.md'
