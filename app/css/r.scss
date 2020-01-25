@@ -20,7 +20,9 @@ $white: #FFF;
 $light-gray: #EEE;
 $dark-gray: #272525;
 $gray-blue: #3B3B57;
-$bluish: #55acee;
+// $bluish: #2f2fa2;
+$bluish: #29648a;
+// $bluish: #2e9cca;
 $heading-bar: $bluish;
 $muted-blue: $bluish;
 $dark-blue: $bluish;
@@ -48,7 +50,6 @@ html {
   box-shadow: 0 -2px 3px rgba(0, 0, 0, .2) inset;
   color: $text;
   font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  padding: 6em 4em 2em;
   position: relative;
 }
 
@@ -72,6 +73,7 @@ h3 {
 
 a {
   color: $link;
+  font-weight: 600;
   text-decoration: none;
   @include prefix(transition, all .3s, moz webkit ms spec);
 
@@ -83,6 +85,7 @@ a {
 }
 
 p {
+  line-height: 1.4em;
   margin: 2px;
 }
 
@@ -91,17 +94,32 @@ li ul {
   padding-left: 16px;
 }
 
+li {
+  line-height: 1.5em;
+}
+
+ul > li {
+  margin-bottom: 4px;
+}
+
 header {
   @include clearfix;
 
   overflow: visible;
   position: relative;
+  padding-top: 6em;
   padding-bottom: 4px;
+  @include pagepadding;
   margin: 1em 0;
 
   section {
     padding:0 1em 1em;
   }
+}
+
+main {
+  @include pagepadding;
+  padding-bottom: 2em;
 }
 
 /* LAYOUT */
@@ -125,6 +143,27 @@ header {
   a {
     color: $white;
     padding-right: 6px;
+  }
+
+  animation-fill-mode: forwards;
+  animation-duration: 1.4s;
+  animation-delay: 3s;
+  animation-iteration-count: 1;
+  animation-name: slideout;
+
+  &:hover {
+    top: 0;
+    transition: all 2s ease;
+  }
+}
+
+@keyframes slideout {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -24px;
   }
 }
 
@@ -244,6 +283,7 @@ header {
 
   p {
     margin-bottom:.4em;
+    margin-left: -2px;
   }
 }
 
@@ -292,7 +332,6 @@ h4 {
   }
 
   .firm {
-    text-transform: uppercase;
     a {
       color: $text;
     }
@@ -473,8 +512,12 @@ h4 {
   }
 }
 @media screen and (max-width:650px) {
-  html {
-    padding: 4em 2em 2em;
+  header {
+    padding: 4em 2em 0;
+  }
+
+  main {
+    padding: 0 2em 2em;
   }
 
   .about {
@@ -647,12 +690,15 @@ h4 {
     font-size: 11px;
     border: 0;
     box-shadow: none;
-    padding: 1em 3em;
   }
 
   header {
     margin: 0;
     padding-bottom: 0;
+  }
+
+  header, main {
+    padding: 1em 3em;
   }
 
   h4, h4 a {
