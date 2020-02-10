@@ -8,7 +8,7 @@ require './app'
 namespace :assets do
   desc "Combine and minify assets"
   task :compile do
-    %w{application.js application.scss r.js r.scss}.each do |file_name|
+    %w{application.js application.scss r.scss}.each do |file_name|
       output_file_name = (File.extname(file_name) == '.scss') ? File.basename(file_name, '.scss') + '.css' : file_name
       App.sprockets[file_name].write_to "public/assets/#{output_file_name}"
     end
