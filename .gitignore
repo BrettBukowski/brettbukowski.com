@@ -1,1 +1,4 @@
 /log/
+*.css
+.sass-cache
+*.css.map
