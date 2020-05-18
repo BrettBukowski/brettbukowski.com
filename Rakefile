@@ -8,7 +8,7 @@ require './app'
 namespace :assets do
   desc "Combine and minify assets"
   task :compile do
-    %w{application.js application.scss r.scss}.each do |file_name|
+    %w{application.scss r.scss}.each do |file_name|
       output_file_name = (File.extname(file_name) == '.scss') ? File.basename(file_name, '.scss') + '.css' : file_name
       App.sprockets[file_name].write_to "public/assets/#{output_file_name}"
     end
@@ -40,16 +40,14 @@ namespace :cloudflare do
   task :purge_cache do
     site = 'brettbukowski.com'
     files_to_purge = %w{
-      assets/application.js
       assets/application.css
-      assets/r.js
       assets/r.css
       index.html
       resume.pdf
       resume
       resume.md
     }
-    uri = URI('https://www.cloudflare.com/api_json.html')
+    uri = URI('https://api.cloudflare.com/client/v4/zones/brettbukowski.com/purge_cache')
     options = {
         z:      site,
         a:      'zone_file_purge',
