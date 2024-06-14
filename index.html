@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        <title>Brett Bukowski</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet"> -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet"> -->
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            html {
+/* background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); */
+/* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+/* height: 100%; */
+font-family: monospace;
+color: #222;
+font-size: 1.3em;
+min-height: 800px;
+            }
+            body {
+                background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            }
+            a {
+                position: relative;
+                color: #101010;
+                color: #000;
+                transition: all .9s;
+                text-decoration: none;
+            }
+            a:hover::after {
+                background: rgba(255, 255, 255, 0);
+                border: 1px solid rgba(0, 0, 0, 1);
+            }
+            a::after {
+                border: 1px solid rgba(0, 0, 0, 0);
+                background: rgba(255, 255, 255, .1);
+                content: "";
+                position: absolute;
+                left: -4px;
+                right: -4px;
+                top: -3px;
+                bottom: -2px;
+                /* margin-bottom: 6px; */
+                border-radius: 4px;
+                /* border: 1px solid red; */
+            }
+            p {
+                line-height: 1.6em;
+                margin-bottom: 1.2em;
+            }
+            main {
+                padding: 4em 6em 8em;
+                max-width: 700px;                
+            }
+            h1 {
+                font-family: "Cormorant", serif;
+                font-optical-sizing: auto;
+                font-weight: bold;
+                font-style: normal;
+                font-size: 3em;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+            }
+            li > span {
+                display: block;
+                margin-bottom: .2em;
+            }
+            li > span:last-child {
+                font-family: "Source Sans 3";
+                font-weight: 300;
+                font-size: .9em;
+            }
+            footer {
+                color: #000;
+                padding: 2em 6em 3em;
+                /* position: fixed; */
+                /* bottom: 0; */
+                font-family: "Cormorant", serif;
+                font-weight: 300;
+                font-size: .8em;
+                /* font-family: Serif sans-serif; */
+                width: 100%;
+            }
+            @media (min-width: 641px) {
+                footer {
+                    position: fixed;
+                    bottom: 0;
+                }
+            }
+            @media (max-width: 600px) {
+                h1 {
+                    font-size: 2.5em;
+                }
+                main {
+                    padding: 2em 2em;
+                }
+                ul {
+                    flex-direction: column;
+                }
+                ul li:not(:last-child) {
+                    margin-bottom: 1em;
+                }
+                footer {
+                    padding: 2em 2em;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main id="content" role="main">
+            <h1>Brett Bukowski</h1>
+            <p>Hi, thanks for stopping by! I’m a full-stack product-focused software engineer.</p>
+            <p>I’m currently helping build new product experiences at <a href="https://www.airbnb.com">Airbnb</a>, such as <a href="https://www.airbnb.com/giftcards">gift cards</a>, <a href="https://www.airbnb.com/aircover">aircover</a>, and <a href="https://www.airbnb.com/release/host">early access</a>.</p>
+            <p>Previously at <a href="https://en.wikipedia.org/wiki/Tilt.com">Tilt</a> helping to drive growth and improve customer support; and <a href="https://en.wikipedia.org/wiki/RightNow_Technologies">RightNow/Oracle</a> building out a customer service web platform.</p>
+            <!-- <p>                
+                <a href="/resume" rel="nofollow">↪ Resume</a>
+            </p> -->
+            <br>
+            <p>I spend my time <a href="https://www.instagram.com/brettbukowski/">exploring places</a> with my wife, <a href="https://www.goodreads.com/user/show/6387311-brett-bukowski">reading</a>, and learning how to <a href="https://bridgetown.church/">grow in love</a>.</p>
+        </main>
+        <footer>
+            <ul>
+                <li>
+                    <span>Brett Bukowski —</span>
+                    <span>Software engineer</span>
+                </li>
+
+                <li>
+                    <span>Contact —</span>
+                    <span>brett@brettbukowski.com</span>
+                </li>
+
+                <li>
+                    <span>Social —</span>
+                    <span>
+                        <a href="https://www.linkedin.com/in/brettbukowski">Linkedin</a>, <a href="https://www.github.com/brettbukowski">Github</a>
+                    </span>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
